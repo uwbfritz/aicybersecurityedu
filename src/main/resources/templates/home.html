@@ -1,0 +1,44 @@
+<!-- home.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>AI in Cybersecurity</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css"/> <!-- Link to your CSS file -->
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a th:href="@{/}" href="#">Home</a></li>
+            <li><a th:href="@{/spam-email}" href="#spam-email">Spam Email Detection</a></li>
+            <li><a th:href="@{/facial-recognition}" href="#facial-recognition">Facial Recognition</a></li>
+            <li><a th:href="@{/intrusion-detection}" href="#intrusion-detection">Intrusion Detection</a></li>
+            <li><a th:href="@{/faq}" href="#faq">FAQ</a></li>
+            <li><a th:href="@{/contact}" href="#contact">Contact Us</a></li>
+            <li><a th:href="@{/about}" href="#about">About Us</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <section id="intro">
+        <h1>Welcome to AI in Cybersecurity</h1>
+        <p>Explore how Artificial Intelligence is revolutionizing the world of Cybersecurity. Learn about different AI technologies and how they are applied to protect against cyber threats.</p>
+    </section>
+    <section id="technologies">
+        <h2>AI Technologies</h2>
+        <ul>
+            <li><a th:href="@{/machine-learning}" href="#machine-learning">Machine Learning</a></li>
+            <li><a th:href="@{/deep-learning}" href="#deep-learning">Deep Learning</a></li>
+            <li><a th:href="@{/nlp}" href="#nlp">Natural Language Processing</a></li>
+        </ul>
+    </section>
+    <section id="about">
+        <h2>About AI in Cybersecurity</h2>
+        <p>AI in Cybersecurity aims to educate the general population about the applications of various AI technologies in the field of Cybersecurity. Our mission is to make this knowledge accessible and understandable for everyone, even for those with no technical background.</p>
+    </section>
+</main>
+<footer>
+    <p>&copy; 2023 AI in Cybersecurity. All rights reserved.</p>
+</footer>
+</body>
+</html>
