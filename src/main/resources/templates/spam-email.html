@@ -1,10 +1,44 @@
+<!-- spam-email-detection.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Spam Email Detection</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>  <!--ur CSS file -->
 </head>
 <body>
-
+<header>
+    <nav>
+        <ul>
+            <li><a th:href="@{/}" href="#">Home</a></li>
+            <li><a th:href="@{/spam-email-detection}" href="#">Spam Email Detection</a></li>
+            <li><a th:href="@{/facial-recognition}" href="#">Facial Recognition</a></li>
+            <li><a th:href="@{/intrusion-detection}" href="#">Intrusion Detection</a></li>
+            <!-- Other Navigation Items -->
+        </ul>
+    </nav>
+</header>
+<main>
+    <section id="intro">
+        <h1>Spam Email Detection</h1>
+        <p>Spam email detection is a technology that uses Artificial Intelligence to identify and filter out unwanted emails, commonly known as spam.</p>
+    </section>
+    <section id="how-it-works">
+        <h2>How Does It Work?</h2>
+        <p>Think of spam detection as a virtual guardian of your inbox. It analyzes the content of incoming emails and looks for patterns and signals that are commonly associated with spam, like certain keywords or suspicious links.</p>
+        <p>Machine Learning, a type of Artificial Intelligence, is at the heart of spam detection. It learns from examples of spam and non-spam emails and gets better over time at identifying spam.</p>
+    </section>
+    <section id="demo">
+        <h2>Try It Out!</h2>
+        <p>Paste the content of an email below and see if our system identifies it as spam or not:</p>
+        <form th:action="@{/check-spam}" method="post">
+            <textarea name="emailContent" rows="10" cols="50"></textarea><br>
+            <input type="submit" value="Check for Spam">
+        </form>
+        <p th:if="${isSpam != null}" th:text="${isSpam ? 'This email is likely Spam.' : 'This email is not Spam.'}"></p>
+    </section>
+</main>
+<footer>
+    <p>&copy; 2023 AI in Cybersecurity. All rights reserved.</p>
+</footer>
 </body>
 </html>

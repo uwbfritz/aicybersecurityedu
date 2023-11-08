@@ -1,0 +1,44 @@
+<!-- facial-recognition.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Facial Recognition</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>  <!--ur CSS file -->
+</head>
+<body>
+<header>
+  <nav>
+    <ul>
+      <li><a th:href="@{/}" href="#">Home</a></li>
+      <li><a th:href="@{/spam-email-detection}" href="#">Spam Email Detection</a></li>
+      <li><a th:href="@{/facial-recognition}" href="#">Facial Recognition</a></li>
+      <li><a th:href="@{/intrusion-detection}" href="#">Intrusion Detection</a></li>
+      <!-- Other Navigation Items -->
+    </ul>
+  </nav>
+</header>
+<main>
+  <section id="intro">
+    <h1>Facial Recognition</h1>
+    <p>Facial recognition is a technology that identifies or verifies a person by analyzing patterns based on their facial features.</p>
+  </section>
+  <section id="how-it-works">
+    <h2>How Does It Work?</h2>
+    <p>Imagine you are looking at a friend's face. You recognize them because of their eyes, nose, mouth, and the position of these features. Facial recognition works in a similar way. It measures various features of a face and compares them to faces in a database to find a match.</p>
+    <p>Machine Learning, a branch of Artificial Intelligence, makes facial recognition systems smarter over time. It helps these systems learn from every face they analyze, improving their accuracy.</p>
+  </section>
+  <section id="demo">
+    <h2>See It In Action!</h2>
+    <p>Upload a photo and our system will analyze it to detect a face:</p>
+    <form th:action="@{/detect-face}" method="post" enctype="multipart/form-data">
+      <input type="file" name="faceImage">
+      <input type="submit" value="Detect Face">
+    </form>
+    <p th:if="${faceDetected != null}" th:text="${faceDetected ? 'A face was detected in the image!' : 'No face was detected. Please try another image.'}"></p>
+  </section>
+</main>
+<footer>
+  <p>&copy; 2023 AI in Cybersecurity. All rights reserved.</p>
+</footer>
+</body>
+</html>

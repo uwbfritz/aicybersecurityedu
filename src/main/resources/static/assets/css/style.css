@@ -47,3 +47,13 @@ footer {
     background: #50b3a2;
     color: white;
 }
+
+/* style.css */
+#sidebar {
+    width: 250px;
+    float: left;
+}
+
+#content {
+    margin-left: 260px; /* sidebar width + some padding */
+}

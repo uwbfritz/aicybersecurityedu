@@ -1,0 +1,50 @@
+<!-- education.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Education - AI in Cybersecurity</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css"/><!--ur CSS file -->
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a th:href="@{/}" href="#">Home</a></li>
+            <li><a th:href="@{/spam-email}" href="#spam-email">Spam Email Detection</a></li>
+            <li><a th:href="@{/facial-recognition}" href="#facial-recognition">Facial Recognition</a></li>
+            <li><a th:href="@{/intrusion-detection}" href="#intrusion-detection">Intrusion Detection</a></li>
+            <li><a th:href="@{/education}" href="#education">Education</a></li>
+            <li><a th:href="@{/faq}" href="#faq">FAQ</a></li>
+            <li><a th:href="@{/contact}" href="#contact">Contact Us</a></li>
+            <li><a th:href="@{/about}" href="#about">About Us</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <div id="sidebar">
+        <h3>Topics</h3>
+        <ul>
+            <li><a th:href="@{/system-security}" href="#system-security">System Security</a>
+                <ul>
+                    <li><a th:href="@{/network-security}" href="#network-security">Network Security</a></li>
+                    <li><a th:href="@{/cloud-security}" href="#cloud-security">Cloud Security</a></li>
+                    <li><a th:href="@{/iot-security}" href="#iot-security">IoT Security</a></li>
+                    <li><a th:href="@{/malware}" href="#malware">Malware</a></li>
+                    <li><a th:href="@{/autonomous-security}" href="#autonomous-security">Autonomous Security</a></li>
+                </ul>
+            </li>
+            <li><a th:href="@{/data-security}" href="#data-security">Data Security</a></li>
+            <li><a th:href="@{/application-security}" href="#application-security">Application Security</a></li>
+        </ul>
+    </div>
+    <div id="content">
+        <!-- The dynamic content will be loaded here based on the tab clicked -->
+        <h2 th:text="${topicTitle}"></h2>
+        <p th:text="${topicContent}"></p>
+    </div>
+</main>
+<footer>
+    <!-- Your footer content -->
+</footer>
+</body>
+</html>
