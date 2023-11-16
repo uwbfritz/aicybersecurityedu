@@ -11,7 +11,7 @@ function closeNav() {
 // Add event listeners for chapter links
 document.querySelectorAll('#sidebar a').forEach(link => {
     link.addEventListener('click', function(e) {
-        e.preventDefault();
+        // e.preventDefault();
         const chapterId = this.getAttribute('href').substring(1);
         // Load chapter content dynamically here
         // For example, set innerHTML of mainContent

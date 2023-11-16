@@ -4,41 +4,118 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Education in Cybersecurity</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/style2.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/style2.css"/><!--ur CSS file -->
 </head>
 <body>
-<!-- Placeholder for Header -->
-<div id="header-placeholder"></div>
+<header>
+    <h1>AI Education in Cybersecurity</h1>
+    <nav>
+        <ul>
+            <li><a href="javascript:void(0);" onclick="openNav()">Chapters</a></li>
+            <li><a href="#virtuallab">Virtual Lab</a></li>
+            <li><a href="#resources">Resources</a></li>
+        </ul>
+    </nav>
+</header>
 
-<!-- Placeholder for Navigation Sidebar -->
-<div id="chapter-nav-placeholder"></div>
+<!-- Sidebar for chapters -->
+<div id="sidebar" class="sidebar">
+    <ul>
+        <!--          --------------------------------------------  Chapter 1---------------------------------------------->
 
-<!-- Main Content Area -->
+        <li>
+            <a href="#chapter1">Chapter 1: Introduction to Cybersecurity</a>
+            <ul>
+                <li><a href="#chapter1Sub1">1.1: Understanding AI in Cybersecurity</a>
+                    <ul>
+                        <li><a href="#chapter1Sub1Sub1">1.1.1: Fundamentals of AI and Machine Learning</a></li>
+                        <li><a href="#chapter1Sub1Sub2">1.1.2: Key Concepts in Machine Learning</a></li>
+                        <li><a href="#chapter1Sub1Sub1">1.1.3  ML Approaches in Cybersecurity</a></li>
+                        <li><a href="#chapter1Sub1Sub2">1.1.4 Terminology in AI for Cybersecurity</a></li>
+                        <li><a href="#chapter1Sub1Sub1">1.1.5 Most Common Cyber Threats and Attacks </a></li>
+
+                        <!-- More sub-sub-chapters as needed -->
+                    </ul>
+                </li>
+
+                <li><a href="#chapter1Sub2">1.2: Applications of AI in Cybersecurity</a>
+                    <ul>
+                        <li><a href="#chapter1Sub2Sub1">1.2.1: AI in Threat Detection and Prevention</a></li>
+                        <li><a href="#chapter1Sub2Sub2">1.2.2: AI in Security Operations and Incident Response</a></li>
+                        <li><a href="#chapter1Sub2Sub1">1.2.3: AI in Compliance and Governance</a></li>
+
+                        <!-- More sub-sub-chapters as needed -->
+                    </ul>
+                </li>
+
+                <li><a href="#chapter1Sub3">1.3: Benefits and Challenges of AI in Cybersecurity</a>
+                    <ul>
+                        <li><a href="#chapter1Sub3Sub1">1.3.1: Advantages of AI in Cybersecurity</a></li>
+                        <li><a href="#chapter1Sub3Sub2">1.3.2: Limitations and Challenges</a></li>
+                        <li><a href="#chapter1Sub3Sub1">1.3.3: Future Trends in AI for Cybersecurity</a></li>
+
+                        <!-- More sub-sub-chapters as needed -->
+                    </ul>
+                </li>
+
+            </ul>
+
+        </li>
+
+        <!--          --------------------------------------------  Chapter 2---------------------------------------------->
+
+
+        <li><a href="Chapter2.html">Chapter 2: Unsupervised Learning for Cybersecurity</a>
+            <ul>
+                <li><a href="#chapter2Sub1">2.1. Introduction of Unsupervised Learning </a>
+                    <ul>
+                        <li><a href="#chapter2Sub1Sub1">2.1.1 Unsupervised learning and its main objectives.</a></li>
+                        <li><a href="#chapter2Sub1Sub2">2.1.2 Highlighting the absence of labeled data and the focus on discovering patterns and structures within data.</a></li>
+                        <!-- More sub-sub-chapters as needed -->
+                    </ul>
+                </li>
+
+                <li><a href="#chapter2Sub2">2.2  Representative Algorithms in Unsupervised Learning</a>
+                    <ul>
+                        <li><a href="#chapter2Sub2Sub1">2.2.1 K-Means Clustering</a></li>
+                        <li><a href="#chapter2Sub2Sub2">2.2.2 Hierarchical Clustering</a></li>
+                        <li><a href="#chapter2Sub2Sub3">2.2.3 Principal Component Analysis (PCA)</a></li>
+                        <li><a href="#chapter2Sub2Sub4">2.2.4 Isolation Forest</a></li>
+                        <li><a href="#chapter2Sub2Sub5">2.2.5 Autoencoders</a></li>
+
+                        <!-- More sub-sub-chapters as needed -->
+                    </ul>
+                </li>
+
+                <li><a href="#chapter2Sub3">2.3 Common Use Cases for Unsupervised Learning in Cybersecurity</a>
+                    <ul>
+                        <li><a href="#chapter2Sub3Sub1">2.3.1 Anomaly Detection</a></li>
+                        <li><a href="#chapter2Sub3Sub2">2.3.2 Malware Detection</a></li>
+                        <li><a href="#chapter2Sub3Sub3">2.3.3 Traffic Analysis</a></li>
+                        <li><a href="#chapter2Sub3Sub4">2.3.4 Behavioral Analysis</a></li>
+                        <li><a href="#chapter2Sub3Sub5">2.3.5 Data Exfiltration Detection</a></li>
+                        <li><a href="#chapter2Sub3Sub6">2.3.6 Authentication and Fraud Detection</a></li>
+
+
+                        <!-- More sub-sub-chapters as needed -->
+                    </ul>
+                </li>
+
+            </ul>
+
+        </li>
+        <!-- Add more chapters as needed -->
+    </ul>
+</div>
+
+<!-- Main content area -->
 <div id="mainContent">
     <!-- Your page content goes here -->
 </div>
 
-<!-- Placeholder for Footer -->
-<div id="footer-placeholder"></div>
 
-<script>
-    // Function to load a component into a specified placeholder
-    function loadComponent(url, placeholderId) {
-        fetch(url)
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById(placeholderId).innerHTML = data;
-            });
-    }
-
-    // Load Header, Navigation, and Footer
-    document.addEventListener("DOMContentLoaded", function() {
-        loadComponent('CHeaders.html', 'header-placeholder');
-        loadComponent('CChapterNavigate.html', 'chapter-nav-placeholder');
-        loadComponent('CFooter.html', 'footer-placeholder');
-    });
-</script>
-
-<script src="assets/js/script.js"></script> <!-- Your JavaScript File -->
+<script src="assets/js/script.js"></script>
 </body>
 </html>
+
+
