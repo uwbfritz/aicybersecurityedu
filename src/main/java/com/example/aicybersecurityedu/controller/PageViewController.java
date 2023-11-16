@@ -10,9 +10,14 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Controller
 public class PageViewController {
+//    @GetMapping("/")
+//    public String home() {
+//        return "home"; // Returns the home view
+//    }
+
     @GetMapping("/")
     public String home() {
-        return "home"; // Returns the home view
+        return "home2"; // Returns the home view
     }
 
     @GetMapping("/spam-email")

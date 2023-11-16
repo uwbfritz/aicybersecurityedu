@@ -1,0 +1,119 @@
+body, h1, nav ul, nav ul li, nav ul li a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding doesn't affect overall width */
+}
+
+header {
+    background-color: #658B6F; /* A pleasant blue background for the main header */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+h1 {
+    margin-bottom: 10px;
+    font-size: 2.5em;
+}
+
+nav {
+    background-color: #28363D; /* A darker shade of blue for the sub header */
+    overflow: hidden; /* Contains floated elements */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block; /* Side by side display */
+}
+
+nav ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+nav ul li a:hover {
+    background-color: #003366; /* Even darker shade for hover state */
+    color: #fff;
+}
+
+@media (max-width: 600px) {
+    nav ul li {
+        display: block; /* Stacks the navigation items under each other on small screens */
+        width: 100%; /* Makes each link full width */
+    }
+}
+
+/*----------------------------Side bar starts here-----------------------------------*/
+
+.sidebar {
+    height: calc(100% - 120px); /* Adjusted height */
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 145px; /* Starts below the header and sub header */
+    left: 0;
+    background-color: #99AEAD;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 20px; /* Optional, for internal spacing */
+}
+
+
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #DEE1DD;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+.sidebar ul ul {
+    padding-left: 20px; /* Indent sub-chapters */
+    display: none; /* Hide sub-chapters initially */
+}
+
+.sidebar ul li:hover > ul {
+    display: block; /* Show sub-chapters on hover */
+}
+
+.sidebar ul ul li {
+    padding-top: 5px; /* Spacing for sub-chapter items */
+    padding-bottom: 5px;
+}
+
+/* You might want to style sub-chapter links differently */
+.sidebar ul ul a {
+    font-size: 14px; /* Smaller font size for sub-chapters */
+    color: #ffffff; /* Different color for differentiation */
+}
+.sidebar ul {
+    list-style-type: none; /* Removes bullet points */
+    padding-left: 0; /* Resets default padding */
+}
+
+/* If you have specific styles for nested ul, ensure they also have no list-style-type */
+.sidebar ul ul {
+    list-style-type: none;
+    /* ... other styles ... */
+}
