@@ -20,6 +20,17 @@ public class PageViewController {
         return "home2"; // Returns the home view
     }
 
+
+    @GetMapping("/chapter1")
+    public String chapter1() {
+        return "Chapter1"; // Returns the home view
+    }
+    @GetMapping("/chapter2")
+    public String chapter2() {
+        return "Chapter2"; // Returns the home view
+    }
+
+
     @GetMapping("/spam-email")
     public String spamEmailDetectionPage() {
         return "spam-email";

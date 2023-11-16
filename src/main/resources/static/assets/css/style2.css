@@ -56,10 +56,10 @@ nav ul li a:hover {
 
 .sidebar {
     height: calc(100% - 120px); /* Adjusted height */
-    width: 0;
+    width: 350px;
     position: fixed;
     z-index: 1;
-    top: 145px; /* Starts below the header and sub header */
+    top: 146px; /* Starts below the header and sub header */
     left: 0;
     background-color: #99AEAD;
     overflow-x: hidden;
@@ -107,6 +107,10 @@ nav ul li a:hover {
     font-size: 14px; /* Smaller font size for sub-chapters */
     color: #ffffff; /* Different color for differentiation */
 }
+.sidebar ul ul ul {
+    padding-left: 20px; /* Increase indentation for sub-sub-chapters */
+}
+
 .sidebar ul {
     list-style-type: none; /* Removes bullet points */
     padding-left: 0; /* Resets default padding */
@@ -116,4 +120,44 @@ nav ul li a:hover {
 .sidebar ul ul {
     list-style-type: none;
     /* ... other styles ... */
+
 }
+
+/*--------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------*/
+
+
+/* Footer Styling */
+footer {
+    background-color: #28363D; /* Dark background for footer */
+    color: white; /* Light color text for contrast */
+    text-align: center; /* Center align text */
+    padding: 20px 0; /* Padding above and below the text */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a {
+    color: #F0A30A; /* Color for links, can be changed */
+    text-decoration: none; /* No underline for links */
+}
+
+footer a:hover {
+    text-decoration: underline; /* Underline on hover for better user experience */
+}
+
+.footer-content {
+    margin: auto;
+    width: 80%; /* Adjust the width as per your design requirement */
+    font-size: 0.9em; /* Smaller font size for footer content */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+    .footer-content {
+        width: 95%; /* Full width in smaller screens for better readability */
+        padding: 10px; /* Adjust padding */
+    }
+}
+

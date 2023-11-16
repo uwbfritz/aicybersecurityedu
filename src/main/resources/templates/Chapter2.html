@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Education in Cybersecurity</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style2.css"/>
+</head>
+<body>
+<!-- Placeholder for Header -->
+<div id="header-placeholder"></div>
+
+<!-- Placeholder for Navigation Sidebar -->
+<div id="chapter-nav-placeholder"></div>
+
+<!-- Main Content Area -->
+<div id="mainContent">
+    <!-- Your page content goes here -->
+</div>
+
+<!-- Placeholder for Footer -->
+<div id="footer-placeholder"></div>
+
+<script>
+    // Function to load a component into a specified placeholder
+    function loadComponent(url, placeholderId) {
+        fetch(url)
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById(placeholderId).innerHTML = data;
+            });
+    }
+
+    // Load Header, Navigation, and Footer
+    document.addEventListener("DOMContentLoaded", function() {
+        loadComponent('CHeaders.html', 'header-placeholder');
+        loadComponent('CChapterNavigate.html', 'chapter-nav-placeholder');
+        loadComponent('CFooter.html', 'footer-placeholder');
+    });
+</script>
+
+<script src="assets/js/script.js"></script> <!-- Your JavaScript File -->
+</body>
+</html>
