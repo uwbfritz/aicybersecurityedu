@@ -161,3 +161,47 @@ footer a:hover {
     }
 }
 
+#newsSection {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#newsContent {
+    height: 400px; /* Set a fixed height */
+    overflow-y: auto; /* Add vertical scroll */
+    margin: 0 auto;
+    width: 80%; /* Or any width you prefer */
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Optional: adds shadow for depth */
+    border-radius: 5px; /* Optional: rounds the corners */
+    background-color: #ffffff; /* Optional: changes the background color */
+}
+
+.news-item {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.news-item:last-child {
+    border-bottom: none; /* Removes the border from the last item */
+}
+
+.news-item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.news-item h3 {
+    margin: 0;
+    color: #333;
+}
+
+.news-item p {
+    margin: 5px 0;
+}
+
+.news-item a {
+    display: inline-block;
+    margin-top: 5px;
+}

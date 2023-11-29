@@ -30,7 +30,10 @@ public class PageViewController {
         return "Chapter2"; // Returns the home view
     }
 
-
+    @GetMapping("/chapter3")
+    public String chapter3() {
+        return "Chapter3"; // Returns the home view
+    }
     @GetMapping("/spam-email")
     public String spamEmailDetectionPage() {
         return "spam-email";

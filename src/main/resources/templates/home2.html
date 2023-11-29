@@ -9,13 +9,23 @@
 <body>
     <div th:include="common :: header"></div>
 
-    <!-- Sidebar for chapters -->
-    <div th:include="common :: sidebar"></div>
+
 
 
     <!-- Main content area -->
-    <div id="mainContent">
-        <!-- Your page content goes here -->
+    <div id="mainContent" style="text-align:center;"> <!-- Center content -->
+        <!-- Embed YouTube video -->
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/inWWhr5tnEA"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+
+        <div id="newsSection">
+            <h2>Cybersecurity News</h2>
+            <div id="newsContent">
+                <!-- News items will be loaded here -->
+            </div>
+        </div>
     </div>
 
 
