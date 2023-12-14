@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Education in Cybersecurity</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style2.css"/><!--ur CSS file -->
+</head>
+<body>
+<div th:include="common :: header"></div>
+
+<!-- Sidebar for chapters -->
+<div th:include="common :: sidebar"></div>
+
+
+<!-- Main content area -->
+<div id="mainContent">
+    <!-- Your page content goes here -->
+    <h1>Module 4: Supervised Learning for Cybersecurity</h1>
+
+   <!--    Chapter 4.1-->
+
+    <h2>4.1 Introduction of Supervised Learning </h2>
+    <p>Supervised learning is like teaching a child with flashcards. For example, In the flashcards, there is a mix of fruits, which have labels (like the names of objects on the cards). The goal is for the algorithm to learn how to identify new, unseen examples correctly.</p>
+<!-- <img src="assets/images/Supervised Learning.jpg" alt="Supervised Learning" />-->
+    <center><img class="gif" src="assets/images/SL.gif" alt="Supervised Learning" /></center>
+
+
+    <!--    Chapter 4.2-->
+
+    <h2>4.2 Supervised Learning in Cybersecurity </h2>
+    <p>In cybersecurity, supervised learning helps in identifying threats and attacks by learning from past data. It's like training a security guard by showing them pictures of known threats so they can spot similar threats in the future.</p>
+
+
+    <!--    Chapter 4.2.1   -->
+    <h3>4.2.1 Shallow Learning Algorithms</h3>
+    <p>Shallow learning algorithms in cybersecurity are simpler methods compared to deep learning, and they're used to protect computer systems from threats like viruses or hackers. Unlike deep learning, which uses complex networks to process data, shallow learning relies on simpler techniques that look at data more directly. These algorithms are fast and effective for specific tasks, like identifying known types of malware or spotting unusual activities in a network that might indicate an attack. They work well when the security problem is straightforward and doesn't require analyzing vast amounts of data or very complex patterns. Shallow learning is like having a guard who is really good at recognizing familiar faces, rather than one who tries to understand the behavior of every person in a crowd.</p>
+
+    <li>
+        <strong>Random Forrest</strong>
+        <p>Think of a random forest like a team of detectives. Each detective (decision tree) investigates the case (data) and comes up with a conclusion. The most common conclusion amongst them is chosen as the final answer. Useful in detecting diverse types of cyber threats. </p>
+        <p><strong How does the Algorithm work?> </strong></p>
+        <center><img src="assets/images/Random Forest.png" alt="Random Forest" /></center>
+        <p style="margin-left: 40px;"> <b> Create Multiple Decision Trees:</b> Generate a large number of decision trees, each trained on a random subset of the data.</p>
+        <p style="margin-left: 40px;"> <b> Diversity in Trees: </b> Each tree makes its decision based on different features of the data. </p>
+        <p style="margin-left: 40px;"> <b>Majority Voting: </b>For classification, the final output is the majority vote from all trees.</p>
+       <p></p>
+       <p></p>
+        <center><img class="gif" src="assets/images/RF.gif" alt="Random Forest" /></center>
+
+        <p> Effective in detecting various types of cyber threats due to its ensemble approach.</p>
+    </li>
+
+    <li>
+        <strong>Decision Trees</strong>
+        <p>A decision tree is like a flowchart: it asks a series of yes/no questions about the data (like suspect descriptions in an investigation) and, based on the answers, follows a path to a conclusion (like identifying a threat).</p>
+        <p>Overview of the Algorithm:</p>
+        <center><img src="assets/images/Decision Tree.png" alt="Decision Tree.png" /></center>
+        <p style="margin-left: 40px;"><b>Tree Structure: </b> Starts at a root node and splits into branches based on feature values. </p>
+        <p style="margin-left: 40px;"><b>Splitting Criteria: </b> Chooses the best feature to split data using measures like Gini impurity or entropy. </p>
+        <p style="margin-left: 40px;"><b>Leaf Nodes: </b> Ends in leaf nodes that represent the classification or decision. </p>
+        <p></p>
+        <p style="text-align: center;font-size: 2.5em;  font-family: Arial, sans-serif;"> <strong> Example </strong> </p> </center>
+        <center><img class="gif" src="assets/images/DT.gif" alt="Decision Tree" /></center>
+
+    </li>
+
+    <li>
+        <strong>Support Vector Machines (SVM)</strong>
+        <p>SVMs are like drawing lines (or more complex boundaries) to separate different types of data points (like separating safe internet traffic from malicious traffic).</p>
+        <center><img src="assets/images/SVM.png" alt="SVM.png" /></center>
+        <p>In cybersecurity, SVM helps to tell apart safe activities from harmful ones, like spotting harmful software or suspicious network activity. It works by drawing a line (or a more complex boundary in difficult cases) that best separates different types of data, like safe and unsafe. This method is really good at making accurate decisions even with not a lot of information, and it's flexible for different kinds of cybersecurity problems. However, it can be a bit slow with a lot of data and needs careful setup to work best. In short, SVM is a useful tool for keeping computer systems safe by accurately identifying threats.</p>
+    </li>
+
+    <li>
+        <strong>K-nearest neighbors (KNNs)</strong>
+        <p>KNNs work by looking at the 'neighbors' (similar data points). If the new data point has neighbors that are mostly malicious, KNN might identify it as a threat. It's like judging the risk based on the company it keeps.</p>
+        <center><img src="assets/images/KNN.png" alt="KNN.png" /></center>
+        <p>Overview of the Algorithm:</p>
+        <p style="margin-left: 40px;"><b>Neighbor Selection:  </b> Classifies a data point based on the majority label of its 'k' nearest neighbors. </p>
+        <p style="margin-left: 40px;"><b>Distance Metrics: </b> Uses distance metrics like Euclidean or Manhattan distance to find nearest neighbors. </p>
+        <p style="margin-left: 40px;"><b>Parameter Tuning: </b> 'k' value (number of neighbors) needs to be chosen carefully. </p>
+    </li>
+
+    <li>
+        <strong>Naive Bayes</strong>
+        <p>This algorithm is like a superstitious detective who makes predictions based on past occurrences. If historically certain email characteristics often meant spam, Naive Bayes is more likely to classify similar emails as spam too.</p>
+        <p style="margin-left: 40px;"><b>Probabilistic Approach:  </b> Calculates the probability of a class based on feature values.</p>
+        <p style="margin-left: 40px;"><b>Assumption of Independence:  </b> : Assumes that all features are independent of each other. </p>
+        <p style="margin-left: 40px;"><b>Easy to Implement: </b> Simple and efficient, particularly with high-dimensional data. </p>
+    </li>
+    <li>
+        <strong>Logistic Regression</strong>
+        <p>It's used to predict the probability of a category (like 'safe' or 'dangerous'). Logistic regression is like a health check-up, where various tests determine the likelihood of a disease.</p>
+        <p>Overview of the Algorithm:</p>
+        <p style="margin-left: 40px;"><b>Binary Classification: </b> Outputs probabilities, which are then thresholded to classify. </p>
+        <p style="margin-left: 40px;"><b>Sigmoid Function:  </b> Uses the logistic function to model the probability. </p>
+        <p style="margin-left: 40px;"><b>Weight Estimation:  </b> Estimates weights of features to predict the outcome. </p>
+        <p>Application in Cybersecurity: Useful in fraud detection, predicting whether an action or user is legitimate or malicious.</p>
+    </li>
+
+    <!--    Chapter 4.2.2   -->
+    <h3>4.2.2 Deep Learning for Threat Detection</h3>
+    <p>Deep learning algorithms can identify sensitive data patterns and monitor data access and transfer to prevent unauthorized data leakage. These models can analyze data flow across networks, identify potential vulnerabilities, and enforce security policies to protect sensitive information.</p>
+
+    <li>
+        <strong>LSTM (Long Short-Term Memory)</strong>
+        <p>LSTM is a type of neural network good at learning from sequences (like a series of actions in a cyber attack). It's like an investigator who looks at the whole story, not just individual events.</p>
+        <p style="margin-left: 40px;"><b>Remembering Patterns:   </b> LSTM is a type of neural network that can remember past data, which is crucial in understanding sequences, like a series of actions in a cyberattack. </p>
+        <p style="margin-left: 40px;"><b>Long-Term Dependencies  </b> It can recognize and remember long-term patterns, not just recent events. This is like an investigator remembering clues from earlier in a case, not just the most recent ones.</p>
+
+        <p style="text-align: center;font-size: 2.5em;  font-family: Arial, sans-serif;"> <strong> Example </strong> </p> </center>
+        <center><img class="gif" src="assets/images/LSTM.gif" alt="LSTM" /></center>
+
+        <p>Application in Cybersecurity: Ideal for detecting complex, multi-step cyber threats (like Advanced Persistent Threats), where understanding the sequence of actions is key.</p>
+    </li>
+
+    <li>
+        <strong>CNN (Convolutional Neural Networks)</strong>
+        <p>CNNs are great for pattern recognition in data (like identifying malicious patterns in network traffic). They work like a team of analysts who specialize in recognizing specific types of threats.</p>
+        <p style="margin-left: 40px;"><b>Pattern Recognition  </b> CNNs are excellent at recognizing patterns and anomalies in data. In cybersecurity, this might mean identifying unusual patterns in network traffic. </p>
+        <p style="margin-left: 40px;"><b>Layered Approach:   </b> They use layers to process data, with each layer identifying different features. It's like having a team of analysts, where each member looks for different types of suspicious activity. </p>
+        <center><img src="assets/images/CNN.jpg" alt="CNN.jpg" /></center>
+        <p>Application in Cybersecurity: Useful in intrusion detection systems and analyzing large volumes of network data to identify potential threats.</p>
+    </li>
+
+    <li>
+        <strong>Hybrid model of LSTM and CNNs</strong>
+        <p>This is like combining the skills of an investigator who understands the flow of events (LSTM) with the pattern recognition skills of an analyst (CNN) to get a more comprehensive understanding of cybersecurity threats.</p>
+        <p style="margin-left: 40px;"><b>Combining Strengths:   </b> This hybrid approach utilizes LSTM’s ability to understand sequences and CNN’s strength in recognizing patterns. </p>
+        <p style="margin-left: 40px;"><b>Comprehensive Analysis:  </b> Such a model can analyze data both in terms of the sequence of events and the nature of those events. Imagine an investigator who not only understands the timeline of a crime but also recognizes the patterns and techniques used in the crime. </p>
+        <center><img src="assets/images/Hybrid LSTM CNN.png" alt="Hybrid LSTM CNN.png" /></center>
+        <p>Application in Cybersecurity: Particularly effective in sophisticated cybersecurity scenarios, like detecting multi-stage attacks where both the sequence and the nature of the attack are important.</p>
+
+    </li>
+</div>
+
+
+<script src="assets/js/script.js"></script>
+</body>
+</html>
+
+

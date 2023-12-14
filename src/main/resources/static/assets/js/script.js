@@ -8,6 +8,18 @@ function closeNav() {
     document.getElementById("mainContent").style.marginLeft= "0";
 }
 
+window.onload = function() {
+    var gifs = document.querySelectorAll('.gif'); // Select all elements with the class 'gif'
+
+    gifs.forEach(function(gif) {
+        setInterval(function() {
+            var src = gif.src;
+            gif.src = "";
+            gif.src = src;
+        }, 6000); // Adjust the time for each GIF if necessary
+    });
+};
+
 // Add event listeners for chapter links
 document.querySelectorAll('#sidebar a').forEach(link => {
     link.addEventListener('click', function(e) {
@@ -55,3 +67,16 @@ function fetchNews() {
         })
         .catch(error => console.error('Error fetching news:', error));
 }
+window.addEventListener('scroll', function() {
+    var headerHeight = document.querySelector('header').offsetHeight;
+    var sidebar = document.querySelector('.sidebar');
+
+    if (window.pageYOffset > headerHeight) {
+        sidebar.style.top = '0';
+    } else {
+        sidebar.style.top = (headerHeight - window.pageYOffset) + 'px';
+    }
+});
+
+
+

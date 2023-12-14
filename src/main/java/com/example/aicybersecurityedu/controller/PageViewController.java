@@ -20,6 +20,10 @@ public class PageViewController {
         return "home2"; // Returns the home view
     }
 
+    @GetMapping("/chapter")
+    public String chapters() {
+        return "Chapter1"; // Returns the home view
+    }
 
     @GetMapping("/chapter1")
     public String chapter1() {
@@ -33,6 +37,18 @@ public class PageViewController {
     @GetMapping("/chapter3")
     public String chapter3() {
         return "Chapter3"; // Returns the home view
+    }
+    @GetMapping("/chapter4")
+    public String chapter4() {
+        return "Chapter4"; // Returns the home view
+    }
+    @GetMapping("/chapter5")
+    public String chapter5() {
+        return "Chapter5"; // Returns the home view
+    }
+    @GetMapping("/chapter6")
+    public String chapter6() {
+        return "Chapter6"; // Returns the home view
     }
     @GetMapping("/spam-email")
     public String spamEmailDetectionPage() {

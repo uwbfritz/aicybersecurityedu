@@ -15,8 +15,129 @@
 
 <!-- Main content area -->
 <div id="mainContent">
-    <!-- Your page content goes here -->
+    <h1>Module 3: Unsupervised Learning for Cybersecurity</h1>
+
+<!--    Chapter 3.1-->
+
+    <h2>3.1 Introduction of Unsupervised Learning</h2>
+    <p>Unsupervised learning is like sorting a mix of colorful beads into different groups without a guide; the AI looks for patterns and clusters similar items together on its own. In cybersecurity, this helps AI systems spot unusual patterns that could signal a threat, like a guard noticing someone odd in a crowd.</p>
+
+    <p>In Technical language, Unsupervised learning, also known as unsupervised machine learning, uses machine learning algorithms to analyze and cluster unlabeled datasets. These algorithms discover hidden patterns or data groupings without the need for human intervention.</p>
+
+    <p>Its ability to discover similarities and differences in information make it the ideal solution for exploratory data analysis, cross-selling strategies, customer segmentation, and image recognition.</p>
+
+    <!-- External Resource Link -->
+    <p>External Resource Link: <a href="https://www.ibm.com/topics/unsupervised-learning" target="_blank">IBM on Unsupervised Learning</a></p>
+
+                            <!--    Chapter 3.1.1   -->
+    <h3>3.1.1 Unsupervised learning and its main objectives.</h3>
+    <p>Unsupervised learning is a type of AI that teaches itself to organize data by finding common features—like separating fruits into bunches without knowing their names. Its main goal is to uncover hidden patterns and group similar things together, without any human telling it what to look for. This is especially useful in cybersecurity, where it can detect strange or suspicious behavior in a system by noticing what doesn't fit in, much like finding an apple in a pile of oranges.</p>
+
+                             <!--    Chapter 3.1.2   -->
+
+    <h3>3.1.2 Highlighting the absence of labeled data and the focus on discovering patterns and structures within data.</h3>
+    <p>Unsupervised learning works with datasets that don't come with labels or categories – the data is 'unlabeled.' Imagine a massive pile of various coins from different countries mixed together. Normally, if they were labeled, you could sort them easily into labeled jars. But here, you don't know which coin belongs to which country.
+    </p>
+    <p>So how does unsupervised learning sort them out? It looks for similarities and differences among the coins – their size, color, engravings. Over time, it starts to group coins together based on these shared features – all the while without knowing the actual name or value of the coins. It's not told what to look for; it just finds patterns like "these coins are silver and round" or "these have a similar size."
+    </p>
+    <p>In cybersecurity, this translates to the AI analyzing data – say, network traffic – and finding patterns that could indicate a security threat, like a stream of data that's larger or more frequent than usual, without having been previously told what 'normal' looks like. It's a powerful way to detect new or unknown threats that haven't been seen before.
+    </p>
+
+
+    <!--    Chapter 3.1-->
+
+    <h2>3.1 Representative Algorithms in Unsupervised Learning</h2>
+    <p> In this chapter, we'll explore some of the main tools that AI uses in unsupervised learning to make sense of unlabeled data. These tools are called algorithms, which are like different strategies to sort and understand information: <p/>
+
+    <p style="margin-left: 40px;"><b>K-Means Clustering:</b> This algorithm is like organizing a group of different fruits into baskets based on their characteristics, such as color and size, to find out which fruits are similar to each other. </p>
+    <p style="margin-left: 40px;"><b>Hierarchical Clustering:</b> This method creates a tree of the data, showing which items are similar to each other, much like a family tree that groups family members based on their relationships.</p>
+    <p style="margin-left: 40px;"><b>Principal Component Analysis (PCA):</b> PCA is like reducing a big recipe to its essential ingredients. It simplifies the data by keeping only the most important parts, making it easier to analyze.</p>
+    <p style="margin-left: 40px;"><b>Isolation Forest:</b> Imagine finding the one odd out in a group, like a cactus among roses. This algorithm is good at spotting the unusual or rare occurrences in data which could indicate cybersecurity threats.</p>
+    <p style="margin-left: 40px;"><b>Autoencoders:</b> These are like artists who sketch a quick outline of a scene and then fill in the details to reconstruct it. They learn to compress data into a simpler form and then recreate it to help find anomalies or reduce the data's complexity.</p>
+    <p>Each of these algorithms has a special way of looking at complex, unorganized data and making it understandable, helping identify threats and secure systems in the field of cybersecurity.
+    </p>
+
+    <!--    Chapter 3.2.1   -->
+    <h3>3.2.1 K-Means Clustering</h3>
+
+    <p> K-Means Clustering is a method used in unsupervised learning that helps to organize a set of data points into 'clusters'. Here's a simple breakdown of how it works:</p>
+    <center><img src="assets/images/km-clustering.png" alt="km-clustering" /></center>
+    <p style="margin-left: 40px;"><b>Selection of K:</b> 'K' represents the number of clusters you want to identify in your dataset. For instance, if you think the data might group into three clusters, you would start with K=3.</p>
+    <p style="margin-left: 40px;"><b>Placement of Centroids:</b> The algorithm randomly places 'centroids,' which are imaginary central points, for each cluster.</p>
+    <p style="margin-left: 40px;"><b>Assignment of Data Points:</b> Each piece of data is then assigned to the nearest centroid, based on the 'distance' between them, which could be their difference in values on a graph, for example.</p>
+    <p style="margin-left: 40px;"><b>Adjustment of Centroids:</b> Once all data points are assigned, the centroids shift to the center of their assigned points. This new position is now the actual average of all points in the cluster.</p>
+    <p style="margin-left: 40px;"><b>Repeating the Process:</b> Steps 3 and 4 are repeated, with points reassigned to the nearest centroid and centroids moving to the center of their clusters, until the positions of the centroids no longer change significantly. This means the clusters are now stable.</p>
+
+    <p style="text-align: center;font-size: 2.5em;  font-family: Arial, sans-serif;"> <strong> Example </strong> </p> </center>
+    <center><img class="gif" src="assets/images/K-means.gif" alt="K-means" /></center>
+
+
+<!--    <center><iframe width="560" height="315" src="https://www.youtube.com/embed/R2e3Ls9H_fc?si=f3-zW3dhFs6seo5t" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>-->
+
+    <p>In cybersecurity, K-Means can be used to detect anomalies by clustering similar activity patterns and highlighting any outliers that could indicate a security breach or malicious activity.</p>
+<!--    https://youtu.be/R2e3Ls9H_fc?si=O_F3tDkUvP1k51Oy-->
+
+
+    <!--    Chapter 3.2.2   -->
+    <h3>3.2.2 Hierarchical Clustering</h3>
+    <p> Hierarchical clustering is another unsupervised machine learning algorithm that is used to group together the unlabeled data points with similar characteristics into clusters. The process is analogous to building a family tree that charts the relationships between individual data points:</p>
+    <p style="margin-left: 40px;"><b>Building Bottom-Up:</b> Each data point starts as its own cluster. The algorithm then finds the two closest data points and merges them into a single cluster.</p>
+    <p style="margin-left: 40px;"><b>Creating a Dendrogram:</b> As the algorithm continues, it progressively merges clusters that are close to each other. This can be represented visually in a tree-like diagram called a dendrogram, which illustrates how each cluster is related.</p>
+    <p style="margin-left: 40px;">[Note:</b> A dendrogram is like a family tree for data points. It starts with each data point being its own 'branch.' As you go up the tree, branches come together with their closest neighbors, forming larger 'families' or groups. By looking at this tree, you can see how all the data points are related and where you can 'cut' the branches to get a good division into groups.]</p>
+    <p style="margin-left: 40px;"><b>Measuring Distance:</b> The 'closeness' of clusters is measured using various metrics, such as the Euclidean distance (straight-line distance) between data points. The definition of 'closest' can vary, including the shortest distance between two points in different clusters or the average distance between all points in two clusters.</p>
+    <p style="margin-left: 40px;"><b>Deciding Cluster Number:</b> Unlike K-Means, where you define the number of clusters (K) at the beginning, hierarchical clustering does not require you to pre-specify the number of clusters. Instead, you can analyze the dendrogram and choose where to 'cut' the tree to define your clusters based on the data.</p>
+<!--    <img src="assets/images/Hierarchical Clustering Dendogram.png" alt="Hierarchical Clustering Dendogram" />-->
+    <p style="text-align: center;font-size: 2.5em;  font-family: Arial, sans-serif;"> <strong> Example </strong> </p> </center>
+    <center><img class="gif" src="assets/images/hierarch.gif" alt="K-means" /></center>
+
+    <p> In cybersecurity, hierarchical clustering can be helpful for incident response, where it can be used to group similar types of attacks or suspicious activities together. This makes it easier to analyze the nature and extent of an attack on a network.</p>
+
+<!--    [https://www.youtube.com/watch?v=dJ5z2SRwzgs]-->
+<!--    [https://youtu.be/EUQY3hL38cw?si=wbKPpeGt0SCc3nWV]-->
+
+    <!--    Chapter 3.2.3   -->
+    <h3>3.2.3 Principal Component Analysis (PCA)</h3>
+   <p> Principal Component Analysis (PCA) is a way to simplify complex data. Imagine you have a table full of data points about different types of fruit—color, weight, sweetness level, and more. PCA helps you find the most important characteristics (like just color and weight) that still give you a good picture of the types of fruit, making the data easier to understand and work with. It's like finding the best camera angle to capture the most informative view of an object. </p>
+<!--    [https://youtu.be/HMOI_lkzW08?si=sKxTAiMuYodPORpm]-->
+
+    <!--    Chapter 3.2.4   -->
+    <h3>3.2.4 Isolation Forest</h3>
+    <img src="assets/images/Isolation Forest.png" alt="Isolation Forest" />
+    <p> Isolation Forest is an unsupervised learning algorithm for anomaly detection. It works by isolating anomalies or outliers rather than normal data points. Here's a simplified explanation of how it works:</p>
+    <p style="margin-left: 40px;"><b>Random Subsampling: </b> The algorithm randomly selects a subset of the data since anomalies are few and different. Working with a subset makes the process more efficient.</p>
+    <p style="margin-left: 40px;"><b>Tree Construction: </b> For each subset, the algorithm builds a tree by randomly selecting a feature and then randomly selecting a split value between the maximum and minimum values of the selected feature. This splitting process isolates data points by creating partitions in the data.</p>
+    <p style="margin-left: 40px;"><b>Isolation: </b> The key idea is that anomalies or outliers are easier to isolate compared to normal points. Thus, they will have shorter paths in the tree, because fewer splits are required to isolate them.</p>
+    <p style="margin-left: 40px;"><b>Forest of Trees:</b> Many such trees are created, forming a 'forest'. Each tree isolates the data points differently.</p>
+    <p style="margin-left: 40px;"><b>Anomaly Score: </b> A point's path length averaged over all trees in the forest is used as a measure of its "normality". Shorter paths generally indicate anomalies. </p>
+
+    <p style="text-align: center;font-size: 2.5em;  font-family: Arial, sans-serif;"> <strong> Example </strong> </p> </center>
+    <div class="image-container">
+        <center>
+       <img style="border: 1px solid #000;" class="gif" src="assets/images/Io.gif" alt="Isolation Forest Outliner" />
+       <img style="border: 1px solid #000;" class="gif" src="assets/images/II.gif" alt="Isolation Forest Inliner" />
+            </center>
+    </div>
+
+
+
+    <p> An easy way to visualize this is to imagine a game of '20 Questions' designed to isolate one specific item from a diverse list; outliers or anomalies would typically be identified in fewer questions, just as the Isolation Forest algorithm isolates anomalies in fewer splits. </p>
+
+
+    <!--    Chapter 3.2.5   -->
+    <h3>3.2.5 Autoencoders </h3>
+    <p> Autoencoders are a type of unsupervised learning algorithm that are used to learn efficient representations of data, typically for the purpose of dimensionality reduction or feature learning. They work by compressing the input into a lower-dimensional code and then reconstructing the output from this representation. Here's a simplified breakdown:</p>
+    <p style="margin-left: 40px;"><b>Input Layer:  </b> Takes the initial data.</p>
+    <p style="margin-left: 40px;"><b>Encoder: </b> Compresses the data to a smaller representation. </p>
+    <p style="margin-left: 40px;"><b>Code: </b> The compressed version of the input data. </p>
+    <p style="margin-left: 40px;"><b>Decoder:</b> Attempts to generate the original data from the code. </p>
+    <p style="margin-left: 40px;"><b>Output Layer: </b> The reconstruction of the input data. </p>
+    <center><img src="assets/images/Encoders.png" alt="Encoders" /></center>
+    <p> Consider an autoencoder as a sketch artist for a police lineup: it looks at a person's face (the data), draws a simplified sketch (the compressed representation), and then redraws the face from the sketch (the reconstruction). If the redrawn face looks very different from the original, the sketch artist knows something went wrong with their understanding of the face's features.</p>
+    <p> Autoencoders are beneficial in cybersecurity for tasks like anomaly detection, where they can learn to represent normal behavior and then detect deviations from this norm that may signify a security threat.</p>
+<!--    [https://youtu.be/qiUEgSCyY5o?si=Q0LKIQYJv17cjcH3]-->
+
 </div>
+
 
 
 <script src="assets/js/script.js"></script>
