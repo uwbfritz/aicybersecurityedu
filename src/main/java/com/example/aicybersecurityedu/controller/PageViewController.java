@@ -41,9 +41,13 @@ public class PageViewController {
 
     @GetMapping("/chapter5")
     public String chapter5() {
-        return "Chapter4"; // Returns the home view
+        return "Chapter5"; // Returns the home view
     }
 
+    @GetMapping("/chapter4")
+    public String chapter4() {
+        return "Chapter4"; // Returns the home view
+    }
     @GetMapping("/genQuiz")
     public String genQuiz() {
         return "GenAiQuiz"; // Returns the home view

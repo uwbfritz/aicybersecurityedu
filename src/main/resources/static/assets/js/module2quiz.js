@@ -24,6 +24,17 @@ document.addEventListener('DOMContentLoaded', function() {
     fetchNews();
 });
 
+// Responsive Sidebar
+window.addEventListener('scroll', function() {
+    var headerHeight = document.querySelector('header').offsetHeight;
+    var sidebar = document.querySelector('.sidebar');
+
+    if (window.pageYOffset > headerHeight) {
+        sidebar.style.top = '0';
+    } else {
+        sidebar.style.top = (headerHeight - window.pageYOffset) + 'px';
+    }
+});
 function fetchNews() {
     fetch('/api/news/cybersecurity')
         .then(response => response.json())
