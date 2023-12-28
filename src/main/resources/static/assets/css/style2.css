@@ -330,3 +330,102 @@ footer a:hover {
     margin-bottom: 20px; /* Add space between list items */
 }
 
+.quiz-container {
+    width: 80%;
+    margin-left: 370px; /* Push main content to the right to prevent overlap with sidebar */
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.question, .answers {
+    margin-bottom: 20px; /* Adjust this value as needed */
+}
+
+/* Spacing between individual answer options */
+.answers label {
+    display: block; /* Make each label a block to put them on separate lines */
+    margin-bottom: 10px; /* Adjust this value as needed */
+}
+
+/* Style for the results section */
+#results {
+    margin-top: 20px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin: 20px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.explanation {
+    margin-top: 10px;
+    font-style: italic;
+    color: #333;
+}
+
+#chat-interface {
+    border: 1px solid #ccc;
+    padding: 10px;
+    background: #fff;
+    margin-top: 20px;
+}
+#chat-box {
+    width: 100%;
+    height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+#user-input {
+    width: calc(100% - 70px);
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-right: 10px;
+}
+#send-btn {
+    padding: 10px;
+    background: #5cb85c;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#chat-interface2 {
+    border: 1px solid #ccc;
+    padding: 10px;
+    background: #fff;
+    margin-top: 20px;
+}
+#chat-box2 {
+    width: 100%;
+    height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+#user-input2 {
+    width: calc(100% - 70px);
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-right: 10px;
+}
+#send-btn2 {
+    padding: 10px;
+    background: #5cb85c;
+    color: white;
+    border: none;
+    cursor: pointer;
+}

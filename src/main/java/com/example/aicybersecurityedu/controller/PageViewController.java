@@ -34,6 +34,32 @@ public class PageViewController {
     public String chapter3() {
         return "Chapter3"; // Returns the home view
     }
+
+    @GetMapping("/chapter5")
+    public String chapter5() {
+        return "Chapter4"; // Returns the home view
+    }
+
+    @GetMapping("/genQuiz")
+    public String genQuiz() {
+        return "GenAiQuiz"; // Returns the home view
+    }
+
+    @GetMapping("/module1quiz")
+    public String module1Quiz() {
+        return "module1Quiz"; // Returns the home view
+    }
+
+    @GetMapping("/module2quiz")
+    public String module2Quiz() {
+        return "module2Quiz"; // Returns the home view
+    }
+
+    @GetMapping("/phishing")
+    public String phishingLab() {
+        return "phishing"; // Returns the home view
+    }
+
     @GetMapping("/spam-email")
     public String spamEmailDetectionPage() {
         return "spam-email";

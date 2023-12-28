@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Education in Cybersecurity</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style2.css"/><!--ur CSS file -->
+</head>
+<body>
+<div th:include="common :: header"></div>
+
+<!-- Sidebar for chapters -->
+<div th:include="common :: sidebar"></div>
+
+
+<!-- Main content area -->
+<div id="mainContent">
+    <!-- Your page content goes here -->
+    <h1>Using OpenAI Chat to Generate Phishing Campaigns</h1>
+
+    <p>OpenAI's chatbot has rapidly gained popularity in recent weeks, captivating users with its diverse capabilities. For those new to this technology, OpenAI Chat, powered by the GPT-4 AI model, offers a conversational experience similar to interacting with a human. It's proficient in various tasks, including answering questions, coding, and debugging, and it's capable of maintaining context in a conversation, allowing for seamless dialogue. Given these features, We can consider its potential application in my penetration testing work. Penetration testing, or ethical hacking, involves simulating cyberattacks to identify vulnerabilities in a system. We can explore if this AI could assist in creating simulated phishing emails, a common method used in pen tests to assess an organization's cybersecurity preparedness.
+    </p>
+
+    <h2>Generating an Email</h2>
+    <p>In the field of penetration testing, a common strategy employed is the "gift card scam" simulation. This involves sending a simulated phishing email to the target, promising the chance to win a gift card in exchange for completing a survey. The primary objective of this exercise is to gauge whether the target clicks on the link. Ideally, the linked survey page would prompt for a login, encouraging the target to input their credentials. This step is crucial in testing network security, as it simulates how credentials might be compromised in a real-world scenario.</p>
+    <!-- Chat interface block -->
+    <div id="chat-interface">
+        <div id="chat-box">
+            <!-- Chat messages will appear here -->
+        </div>
+        <div id="user-input">
+            Write an email offering the recipient a chance to win a $50 Amazon Gift card if they click a link to complete an employee satisfaction survey. Include the link in the middle of the email. Send the email from human resources.
+        </div>
+        <button id="send-btn">Send</button>
+    </div>
+
+    <script>
+        document.getElementById('send-btn').addEventListener('click', function() {
+            var chatBox = document.getElementById('chat-box');
+            var userInputDiv = document.getElementById('user-input');
+            var userInput = userInputDiv.textContent || userInputDiv.innerText; // Get text from the div
+            if(userInput.trim() !== '') {
+                chatBox.innerHTML += '<div>User: ' + userInput + '</div>';
+                // Here you would typically send the userInput to the server and get a response
+                // Use <pre> to preserve formatting such as new lines and spaces
+                chatBox.innerHTML += '<pre>ChatBot: ' +
+                    'Subject: Your Chance to Win a $50 Amazon Gift Card - Share Your Feedback!\n\n' +
+                    'Dear [Recipient\'s Name],\n\n' +
+                    'I hope this message finds you well! Here at [Your Company], we continuously strive to improve our work environment and ensure that it aligns with the needs and expectations of our valued team members like you. Your insights and feedback play a crucial role in shaping our company’s future.\n\n' +
+                    'Win a $50 Amazon Gift Card!\n' +
+                    'As a token of our appreciation for your valuable time and input, we\'re excited to offer you the chance to win a $50 Amazon Gift Card! Participating is easy – simply click on the link below to complete our Employee Satisfaction Survey:\n\n' +
+                    'Click Here to Take the Survey\n\n' +
+                    'The survey should take no more than 10 minutes to complete. It\'s your opportunity to share your thoughts on various aspects of your work life, including your work environment, team dynamics, and overall job satisfaction.\n\n' +
+                    'Your Privacy Matters\n' +
+                    'Please note that your responses will be kept confidential and will be used solely for the purpose of improving our workplace.\n\n' +
+                    'Survey Deadline: [Insert Date]\n' +
+                    'Don’t miss out! The survey closes on [Insert Date]. Once the survey period ends, we will randomly select a winner for the $50 Amazon Gift Card, and the lucky recipient will be notified via email.\n\n' +
+                    'Thank you in advance for your participation and for helping us make [Your Company] a better place to work. We value your opinion and look forward to hearing your feedback.\n\n' +
+                    'Warm regards,\n\n' +
+                    '[Your Name]\n' +
+                    'Human Resources\n' +
+                    '[Your Company]\n' +
+                    '[Contact Information]</pre>';
+                chatBox.scrollTop = chatBox.scrollHeight; // Scroll to the bottom of the chat
+            }
+        });
+    </script>
+
+    <p>Wow, that was shockingly good. This was created as the first request in a new conversation thread in OpenAI chat, so there was no prior context given. All I would need to do is update the target’s name, the sender’s name, and the link. The base email template is done. Even the subject line was provided.
+
+    </p>
+
+    <h2>Generating a Landing Page</h2>
+    <p>Maybe we can use OpenAI Chat to generate the survey page for us too? Let’s try it out.</p>
+    <!-- Chat interface block -->
+    <div id="chat-interface2">
+        <div id="chat-box2">
+            <!-- Chat messages will appear here -->
+        </div>
+        <div id="user-input2">
+            Generate a webpage that includes an employee satisfaction survey with three questions. Hide the survey behind a login form and reveal the survey if the users submit the form.
+        </div>
+        <button id="send-btn2">Send</button>
+    </div>
+
+    <script>
+        document.getElementById('send-btn2').addEventListener('click', function() {
+            var chatBox = document.getElementById('chat-box2');
+            var userInputDiv = document.getElementById('user-input2');
+            var userInput = userInputDiv.textContent || userInputDiv.innerText; // Get text from the div
+            if(userInput.trim() !== '') {
+                chatBox.innerHTML += '<div>User: ' + userInput + '</div>';
+                // Use .innerText to render as text, not HTML
+                var botResponse = document.createElement('div');
+                botResponse.innerText = 'ChatBot: ' +
+                    '<!DOCTYPE html>\n' +
+                    '<html>\n' +
+                    '<head>\n' +
+                    '  <title>Employee Satisfaction Survey</title>\n' +
+                    '</head>\n' +
+                    '<body>\n\n' +
+                    '<!-- Login form -->\n' +
+                    '<form id="login-form">\n' +
+                    '  <label>Username:</label><br>\n' +
+                    '  <input type="text" id="username"><br>\n' +
+                    '  <label>Password:</label><br>\n' +
+                    '  <input type="password" id="password"><br><br>\n' +
+                    '  <button type="submit">Login</button>\n' +
+                    '</form>\n\n' +
+                    '<!-- Employee satisfaction survey -->\n' +
+                    '<div id="survey" style="display: none;">\n' +
+                    '  <h1>Employee Satisfaction Survey</h1>\n' +
+                    '  <p>Please answer the following questions to help us improve your experience at our company.</p>\n\n' +
+                    '  <form>\n' +
+                    '    <!-- Survey questions will go here -->\n' +
+                    '    <button type="submit">Submit Survey</button>\n' +
+                    '  </form>\n' +
+                    '</div>\n\n' +
+                    '<!-- JavaScript code to reveal the survey when the user logs in -->\n' +
+                    '<script>\n' +
+                    '  document.getElementById("login-form").addEventListener("submit", function(event) {\n' +
+                    '    event.preventDefault();\n' +
+                    '    var username = document.getElementById("username").value;\n' +
+                    '    var password = document.getElementById("password").value;\n' +
+                    '    if (username === "admin" && password === "password") {\n' +
+                    '      document.getElementById("survey").style.display = "block";\n' +
+                    '    } else {\n' +
+                    '      document.getElementById("survey").style.display = "block";\n' +
+                    '      alert("Your username and password is "+ username+" : "+password);\n' +
+                    '    }\n' +
+                    '  });\n' +
+                    '<\/script>\n\n' +
+                    '</body>\n' +
+                    '</html>';
+                chatBox.appendChild(botResponse);
+                chatBox.scrollTop = chatBox.scrollHeight; // Scroll to the bottom of the chat
+            }
+        });
+    </script>
+
+    <p>Amazingly, it works almost exactly as described. The AI actually gave html css and js code to get the username and password. for education purpose it is alerting and revealing the username password but in ideal phising scenario it would store the username and password in a database. This technique can be used to get password for any account if we design the login page for that website such as facebook, gmail, or baking accounts. If I save this code locally and view the page in a browser, I get this:</p>
+
+    <div>
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Employee Satisfaction Survey</title>
+            <style>
+                /* Add your CSS styling here */
+                #survey {
+                    display: none;
+                    margin-top: 20px;
+                }
+            </style>
+        </head>
+        <body>
+
+        <!-- Login form -->
+        <form id="login-form">
+            <label>Username:</label><br>
+            <input type="text" id="username"><br>
+            <label>Password:</label><br>
+            <input type="password" id="password"><br><br>
+            <button type="submit">Login</button>
+        </form>
+
+        <!-- Employee satisfaction survey -->
+        <div id="survey">
+            <h1>Employee Satisfaction Survey</h1>
+            <p>Please answer the following questions to help us improve your experience at our company.</p>
+            <p>There is no survey. You have been scammed</p>
+            <!-- Survey form -->
+            <form>
+                <!-- Survey questions will go here -->
+                <button type="submit">Submit Survey</button>
+            </form>
+        </div>
+
+        <script>
+            // JavaScript to handle the form submission
+            document.getElementById("login-form").addEventListener("submit", function(event) {
+                event.preventDefault();
+                var username = document.getElementById("username").value;
+                var password = document.getElementById("password").value;
+                // Display the survey and alert the username and password
+                if (username === "admin" && password === "password") {
+                    document.getElementById("survey").style.display = "block";
+                } else {
+                    document.getElementById("survey").style.display = "block";
+                    alert("Your username and password is " + username + " : " + password);
+                }
+            });
+        </script>
+
+        </body>
+        </html>
+
+    </div>
+
+</div>
+
+
+<script src="assets/js/script.js"></script>
+</body>
+</html>
+
+
