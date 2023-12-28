@@ -20,10 +20,14 @@ public class PageViewController {
         return "home2"; // Returns the home view
     }
 
+    @GetMapping("/chapter")
+    public String chapters() {
+        return "ChapterMerged"; // Returns the home view
+    }
 
     @GetMapping("/chapter1")
     public String chapter1() {
-        return "Chapter1"; // Returns the home view
+        return "ChapterMerged"; // Returns the home view
     }
     @GetMapping("/chapter2")
     public String chapter2() {

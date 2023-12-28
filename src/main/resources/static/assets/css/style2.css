@@ -9,6 +9,7 @@ header {
     color: white;
     text-align: center;
     padding: 20px 0;
+    height: 105px;
 }
 
 h1 {
@@ -55,17 +56,22 @@ nav ul li a:hover {
 /*----------------------------Side bar starts here-----------------------------------*/
 
 .sidebar {
-    height: calc(100% - 120px); /* Adjusted height */
-    width: 350px;
+    /*height: calc(100% - 120px); !* Adjusted height *!*/
+    height: 100%; /* Adjusted height */
+
+    width: 360px;
     position: fixed;
     z-index: 1000; /* Ensures the sidebar is on top of other elements */
-    top: 146px; /* Starts below the header and sub header */
+    /*top: 145px; !* Starts below the header and sub header *!*/
     left: 0;
     background-color: #99AEAD;
     overflow-y: auto;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 20px; /* Optional, for internal spacing */
+}
+.sticky-sidebar {
+    top: 0; /* Stick to the top when scrolling */
 }
 
 
@@ -184,6 +190,15 @@ footer a:hover {
     font-size: 18px;
 
 }
+/* Figure Caption Styling */
+figcaption {
+    font-style: italic; /* Makes the caption text italic */
+    font-size: 14px; /* Optional: makes the caption text smaller than the surrounding text */
+    color: #777b7e; /* Optional: sets the caption text color */
+    margin-top: 10px; /* Optional: adds space between the image and the caption */
+}
+
+
 
 /* You can also add color styles for links if necessary */
 /*#mainContent a {*/
@@ -264,6 +279,13 @@ footer a:hover {
     max-width: 100%; /* Optional: it ensures the image is responsive and does not overflow its container */
     height: auto; /* Maintain the aspect ratio of the image */
 }
+.learning-image {
+    width: 48%; /* Adjust the width as necessary */
+    margin-right: 2%; /* Spacing between the images */
+    vertical-align: middle; /* Align images vertically if they have different heights */
+    display: inline-block; /* Display images side by side */
+}
+
 
 /* Begin table styling Table 1.1.2 */
 .table1 {
@@ -330,6 +352,30 @@ footer a:hover {
     margin-bottom: 20px; /* Add space between list items */
 }
 
+.center-text {
+    text-align: center;
+}
+
+.side-by-side {
+    width: 50%; /* Adjust the width as necessary */
+    float: left; /* Align images side by side */
+}
+
+.image-container::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+
+
+/*.framed {*/
+/*    border: 2px solid #000; !* Adjust the size and color of the border to your preference *!*/
+/*    padding: 6px; !* Optional: Adds space between the image and the border *!*/
+/*    display: block;*/
+/*    margin: 5px auto; !* Optional: Centers the image and adds margin around it *!*/
+/*    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); !* Optional: Adds a shadow for a 3D frame effect *!*/
+/*}*/
 .quiz-container {
     width: 80%;
     margin-left: 370px; /* Push main content to the right to prevent overlap with sidebar */
