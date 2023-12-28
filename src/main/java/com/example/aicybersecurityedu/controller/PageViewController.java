@@ -22,12 +22,12 @@ public class PageViewController {
 
     @GetMapping("/chapter")
     public String chapters() {
-        return "Chapter1"; // Returns the home view
+        return "ChapterMerged"; // Returns the home view
     }
 
     @GetMapping("/chapter1")
     public String chapter1() {
-        return "Chapter1"; // Returns the home view
+        return "ChapterMerged"; // Returns the home view
     }
     @GetMapping("/chapter2")
     public String chapter2() {
@@ -50,6 +50,7 @@ public class PageViewController {
     public String chapter6() {
         return "Chapter6"; // Returns the home view
     }
+
     @GetMapping("/spam-email")
     public String spamEmailDetectionPage() {
         return "spam-email";

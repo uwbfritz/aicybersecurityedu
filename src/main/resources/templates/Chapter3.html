@@ -15,129 +15,125 @@
 
 <!-- Main content area -->
 <div id="mainContent">
-    <h1>Module 3: Unsupervised Learning for Cybersecurity</h1>
+    <!-- Your page content goes here -->
+    <h1>Module 3: Supervised Learning for Cybersecurity</h1>
 
-<!--    Chapter 3.1-->
+   <!--    Chapter 3.1-->
 
-    <h2>3.1 Introduction of Unsupervised Learning</h2>
-    <p>Unsupervised learning is like sorting a mix of colorful beads into different groups without a guide; the AI looks for patterns and clusters similar items together on its own. In cybersecurity, this helps AI systems spot unusual patterns that could signal a threat, like a guard noticing someone odd in a crowd.</p>
-
-    <p>In Technical language, Unsupervised learning, also known as unsupervised machine learning, uses machine learning algorithms to analyze and cluster unlabeled datasets. These algorithms discover hidden patterns or data groupings without the need for human intervention.</p>
-
-    <p>Its ability to discover similarities and differences in information make it the ideal solution for exploratory data analysis, cross-selling strategies, customer segmentation, and image recognition.</p>
-
-    <!-- External Resource Link -->
-    <p>External Resource Link: <a href="https://www.ibm.com/topics/unsupervised-learning" target="_blank">IBM on Unsupervised Learning</a></p>
-
-                            <!--    Chapter 3.1.1   -->
-    <h3>3.1.1 Unsupervised learning and its main objectives.</h3>
-    <p>Unsupervised learning is a type of AI that teaches itself to organize data by finding common features—like separating fruits into bunches without knowing their names. Its main goal is to uncover hidden patterns and group similar things together, without any human telling it what to look for. This is especially useful in cybersecurity, where it can detect strange or suspicious behavior in a system by noticing what doesn't fit in, much like finding an apple in a pile of oranges.</p>
-
-                             <!--    Chapter 3.1.2   -->
-
-    <h3>3.1.2 Highlighting the absence of labeled data and the focus on discovering patterns and structures within data.</h3>
-    <p>Unsupervised learning works with datasets that don't come with labels or categories – the data is 'unlabeled.' Imagine a massive pile of various coins from different countries mixed together. Normally, if they were labeled, you could sort them easily into labeled jars. But here, you don't know which coin belongs to which country.
-    </p>
-    <p>So how does unsupervised learning sort them out? It looks for similarities and differences among the coins – their size, color, engravings. Over time, it starts to group coins together based on these shared features – all the while without knowing the actual name or value of the coins. It's not told what to look for; it just finds patterns like "these coins are silver and round" or "these have a similar size."
-    </p>
-    <p>In cybersecurity, this translates to the AI analyzing data – say, network traffic – and finding patterns that could indicate a security threat, like a stream of data that's larger or more frequent than usual, without having been previously told what 'normal' looks like. It's a powerful way to detect new or unknown threats that haven't been seen before.
-    </p>
+    <h2 id="chapter3Sub1">3.1 Introduction of Supervised Learning </h2>
+    <p>Supervised learning is like teaching a child with flashcards. For example, In the flashcards, there is a mix of fruits, which have labels (like the names of objects on the cards). The goal is for the algorithm to learn how to identify new, unseen examples correctly.</p>
+<!-- <img src="assets/images/Supervised Learning.jpg" alt="Supervised Learning" />-->
+    <center><img class="gif" src="assets/images/SL.gif" alt="Supervised Learning" /></center>
 
 
-    <!--    Chapter 3.1-->
+    <!--    Chapter 3.2-->
 
-    <h2>3.1 Representative Algorithms in Unsupervised Learning</h2>
-    <p> In this chapter, we'll explore some of the main tools that AI uses in unsupervised learning to make sense of unlabeled data. These tools are called algorithms, which are like different strategies to sort and understand information: <p/>
+    <h2 id="chapter3Sub2">3.2 Supervised Learning in Cybersecurity </h2>
+    <p>In cybersecurity, supervised learning helps in identifying threats and attacks by learning from past data. It's like training a security guard by showing them pictures of known threats so they can spot similar threats in the future.</p>
 
-    <p style="margin-left: 40px;"><b>K-Means Clustering:</b> This algorithm is like organizing a group of different fruits into baskets based on their characteristics, such as color and size, to find out which fruits are similar to each other. </p>
-    <p style="margin-left: 40px;"><b>Hierarchical Clustering:</b> This method creates a tree of the data, showing which items are similar to each other, much like a family tree that groups family members based on their relationships.</p>
-    <p style="margin-left: 40px;"><b>Principal Component Analysis (PCA):</b> PCA is like reducing a big recipe to its essential ingredients. It simplifies the data by keeping only the most important parts, making it easier to analyze.</p>
-    <p style="margin-left: 40px;"><b>Isolation Forest:</b> Imagine finding the one odd out in a group, like a cactus among roses. This algorithm is good at spotting the unusual or rare occurrences in data which could indicate cybersecurity threats.</p>
-    <p style="margin-left: 40px;"><b>Autoencoders:</b> These are like artists who sketch a quick outline of a scene and then fill in the details to reconstruct it. They learn to compress data into a simpler form and then recreate it to help find anomalies or reduce the data's complexity.</p>
-    <p>Each of these algorithms has a special way of looking at complex, unorganized data and making it understandable, helping identify threats and secure systems in the field of cybersecurity.
-    </p>
 
     <!--    Chapter 3.2.1   -->
-    <h3>3.2.1 K-Means Clustering</h3>
+    <h3 id="chapter3Sub2Sub1">3.2.1 Shallow Learning Algorithms</h3>
+    <p>Shallow learning algorithms in cybersecurity are simpler methods compared to deep learning, and they're used to protect computer systems from threats like viruses or hackers. Unlike deep learning, which uses complex networks to process data, shallow learning relies on simpler techniques that look at data more directly. These algorithms are fast and effective for specific tasks, like identifying known types of malware or spotting unusual activities in a network that might indicate an attack. They work well when the security problem is straightforward and doesn't require analyzing vast amounts of data or very complex patterns. Shallow learning is like having a guard who is really good at recognizing familiar faces, rather than one who tries to understand the behavior of every person in a crowd.</p>
 
-    <p> K-Means Clustering is a method used in unsupervised learning that helps to organize a set of data points into 'clusters'. Here's a simple breakdown of how it works:</p>
-    <center><img src="assets/images/km-clustering.png" alt="km-clustering" /></center>
-    <p style="margin-left: 40px;"><b>Selection of K:</b> 'K' represents the number of clusters you want to identify in your dataset. For instance, if you think the data might group into three clusters, you would start with K=3.</p>
-    <p style="margin-left: 40px;"><b>Placement of Centroids:</b> The algorithm randomly places 'centroids,' which are imaginary central points, for each cluster.</p>
-    <p style="margin-left: 40px;"><b>Assignment of Data Points:</b> Each piece of data is then assigned to the nearest centroid, based on the 'distance' between them, which could be their difference in values on a graph, for example.</p>
-    <p style="margin-left: 40px;"><b>Adjustment of Centroids:</b> Once all data points are assigned, the centroids shift to the center of their assigned points. This new position is now the actual average of all points in the cluster.</p>
-    <p style="margin-left: 40px;"><b>Repeating the Process:</b> Steps 3 and 4 are repeated, with points reassigned to the nearest centroid and centroids moving to the center of their clusters, until the positions of the centroids no longer change significantly. This means the clusters are now stable.</p>
+    <li>
+        <strong>Random Forrest</strong>
+        <p>Think of a random forest like a team of detectives. Each detective (decision tree) investigates the case (data) and comes up with a conclusion. The most common conclusion amongst them is chosen as the final answer. Useful in detecting diverse types of cyber threats. </p>
+        <p><strong How does the Algorithm work?> </strong></p>
+        <center><img src="assets/images/Random Forest.png" alt="Random Forest" /></center>
+        <p style="margin-left: 40px;"> <b> Create Multiple Decision Trees:</b> Generate a large number of decision trees, each trained on a random subset of the data.</p>
+        <p style="margin-left: 40px;"> <b> Diversity in Trees: </b> Each tree makes its decision based on different features of the data. </p>
+        <p style="margin-left: 40px;"> <b>Majority Voting: </b>For classification, the final output is the majority vote from all trees.</p>
+       <p></p>
+       <p></p>
+        <center><img class="gif" src="assets/images/RF.gif" alt="Random Forest" /></center>
 
-    <p style="text-align: center;font-size: 2.5em;  font-family: Arial, sans-serif;"> <strong> Example </strong> </p> </center>
-    <center><img class="gif" src="assets/images/K-means.gif" alt="K-means" /></center>
+        <p> Effective in detecting various types of cyber threats due to its ensemble approach.</p>
+    </li>
 
+    <li>
+        <strong>Decision Trees</strong>
+        <p>A decision tree is like a flowchart: it asks a series of yes/no questions about the data (like suspect descriptions in an investigation) and, based on the answers, follows a path to a conclusion (like identifying a threat).</p>
+        <p>Overview of the Algorithm:</p>
+        <center><img src="assets/images/Decision Tree.png" alt="Decision Tree.png" /></center>
+        <p style="margin-left: 40px;"><b>Tree Structure: </b> Starts at a root node and splits into branches based on feature values. </p>
+        <p style="margin-left: 40px;"><b>Splitting Criteria: </b> Chooses the best feature to split data using measures like Gini impurity or entropy. </p>
+        <p style="margin-left: 40px;"><b>Leaf Nodes: </b> Ends in leaf nodes that represent the classification or decision. </p>
+        <p></p>
+        <p style="text-align: center;font-size: 2.5em;  font-family: Arial, sans-serif;"> <strong> Example </strong> </p> </center>
+        <center><img class="gif" src="assets/images/DT.gif" alt="Decision Tree" /></center>
 
-<!--    <center><iframe width="560" height="315" src="https://www.youtube.com/embed/R2e3Ls9H_fc?si=f3-zW3dhFs6seo5t" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>-->
+    </li>
 
-    <p>In cybersecurity, K-Means can be used to detect anomalies by clustering similar activity patterns and highlighting any outliers that could indicate a security breach or malicious activity.</p>
-<!--    https://youtu.be/R2e3Ls9H_fc?si=O_F3tDkUvP1k51Oy-->
+    <li>
+        <strong>Support Vector Machines (SVM)</strong>
+        <p>SVMs are like drawing lines (or more complex boundaries) to separate different types of data points (like separating safe internet traffic from malicious traffic).</p>
+        <center><img src="assets/images/SVM.png" alt="SVM.png" /></center>
+        <p>In cybersecurity, SVM helps to tell apart safe activities from harmful ones, like spotting harmful software or suspicious network activity. It works by drawing a line (or a more complex boundary in difficult cases) that best separates different types of data, like safe and unsafe. This method is really good at making accurate decisions even with not a lot of information, and it's flexible for different kinds of cybersecurity problems. However, it can be a bit slow with a lot of data and needs careful setup to work best. In short, SVM is a useful tool for keeping computer systems safe by accurately identifying threats.</p>
+    </li>
 
+    <li>
+        <strong>K-nearest neighbors (KNNs)</strong>
+        <p>KNNs work by looking at the 'neighbors' (similar data points). If the new data point has neighbors that are mostly malicious, KNN might identify it as a threat. It's like judging the risk based on the company it keeps.</p>
+        <center><img src="assets/images/KNN.png" alt="KNN.png" /></center>
+        <p>Overview of the Algorithm:</p>
+        <p style="margin-left: 40px;"><b>Neighbor Selection:  </b> Classifies a data point based on the majority label of its 'k' nearest neighbors. </p>
+        <p style="margin-left: 40px;"><b>Distance Metrics: </b> Uses distance metrics like Euclidean or Manhattan distance to find nearest neighbors. </p>
+        <p style="margin-left: 40px;"><b>Parameter Tuning: </b> 'k' value (number of neighbors) needs to be chosen carefully. </p>
+    </li>
+
+    <li>
+        <strong>Naive Bayes</strong>
+        <p>This algorithm is like a superstitious detective who makes predictions based on past occurrences. If historically certain email characteristics often meant spam, Naive Bayes is more likely to classify similar emails as spam too.</p>
+        <p style="margin-left: 40px;"><b>Probabilistic Approach:  </b> Calculates the probability of a class based on feature values.</p>
+        <p style="margin-left: 40px;"><b>Assumption of Independence:  </b> : Assumes that all features are independent of each other. </p>
+        <p style="margin-left: 40px;"><b>Easy to Implement: </b> Simple and efficient, particularly with high-dimensional data. </p>
+    </li>
+    <li>
+        <strong>Logistic Regression</strong>
+        <p>It's used to predict the probability of a category (like 'safe' or 'dangerous'). Logistic regression is like a health check-up, where various tests determine the likelihood of a disease.</p>
+        <p>Overview of the Algorithm:</p>
+        <p style="margin-left: 40px;"><b>Binary Classification: </b> Outputs probabilities, which are then thresholded to classify. </p>
+        <p style="margin-left: 40px;"><b>Sigmoid Function:  </b> Uses the logistic function to model the probability. </p>
+        <p style="margin-left: 40px;"><b>Weight Estimation:  </b> Estimates weights of features to predict the outcome. </p>
+        <p>Application in Cybersecurity: Useful in fraud detection, predicting whether an action or user is legitimate or malicious.</p>
+    </li>
 
     <!--    Chapter 3.2.2   -->
-    <h3>3.2.2 Hierarchical Clustering</h3>
-    <p> Hierarchical clustering is another unsupervised machine learning algorithm that is used to group together the unlabeled data points with similar characteristics into clusters. The process is analogous to building a family tree that charts the relationships between individual data points:</p>
-    <p style="margin-left: 40px;"><b>Building Bottom-Up:</b> Each data point starts as its own cluster. The algorithm then finds the two closest data points and merges them into a single cluster.</p>
-    <p style="margin-left: 40px;"><b>Creating a Dendrogram:</b> As the algorithm continues, it progressively merges clusters that are close to each other. This can be represented visually in a tree-like diagram called a dendrogram, which illustrates how each cluster is related.</p>
-    <p style="margin-left: 40px;">[Note:</b> A dendrogram is like a family tree for data points. It starts with each data point being its own 'branch.' As you go up the tree, branches come together with their closest neighbors, forming larger 'families' or groups. By looking at this tree, you can see how all the data points are related and where you can 'cut' the branches to get a good division into groups.]</p>
-    <p style="margin-left: 40px;"><b>Measuring Distance:</b> The 'closeness' of clusters is measured using various metrics, such as the Euclidean distance (straight-line distance) between data points. The definition of 'closest' can vary, including the shortest distance between two points in different clusters or the average distance between all points in two clusters.</p>
-    <p style="margin-left: 40px;"><b>Deciding Cluster Number:</b> Unlike K-Means, where you define the number of clusters (K) at the beginning, hierarchical clustering does not require you to pre-specify the number of clusters. Instead, you can analyze the dendrogram and choose where to 'cut' the tree to define your clusters based on the data.</p>
-<!--    <img src="assets/images/Hierarchical Clustering Dendogram.png" alt="Hierarchical Clustering Dendogram" />-->
-    <p style="text-align: center;font-size: 2.5em;  font-family: Arial, sans-serif;"> <strong> Example </strong> </p> </center>
-    <center><img class="gif" src="assets/images/hierarch.gif" alt="K-means" /></center>
+    <h3 id="chapter3Sub2Sub2">3.2.2 Deep Learning for Threat Detection</h3>
+    <p>Deep learning algorithms can identify sensitive data patterns and monitor data access and transfer to prevent unauthorized data leakage. These models can analyze data flow across networks, identify potential vulnerabilities, and enforce security policies to protect sensitive information.</p>
 
-    <p> In cybersecurity, hierarchical clustering can be helpful for incident response, where it can be used to group similar types of attacks or suspicious activities together. This makes it easier to analyze the nature and extent of an attack on a network.</p>
+    <li>
+        <strong>LSTM (Long Short-Term Memory)</strong>
+        <p>LSTM is a type of neural network good at learning from sequences (like a series of actions in a cyber attack). It's like an investigator who looks at the whole story, not just individual events.</p>
+        <p style="margin-left: 40px;"><b>Remembering Patterns:   </b> LSTM is a type of neural network that can remember past data, which is crucial in understanding sequences, like a series of actions in a cyberattack. </p>
+        <p style="margin-left: 40px;"><b>Long-Term Dependencies  </b> It can recognize and remember long-term patterns, not just recent events. This is like an investigator remembering clues from earlier in a case, not just the most recent ones.</p>
 
-<!--    [https://www.youtube.com/watch?v=dJ5z2SRwzgs]-->
-<!--    [https://youtu.be/EUQY3hL38cw?si=wbKPpeGt0SCc3nWV]-->
+        <p style="text-align: center;font-size: 2.5em;  font-family: Arial, sans-serif;"> <strong> Example </strong> </p> </center>
+        <center><img class="gif" src="assets/images/LSTM.gif" alt="LSTM" /></center>
 
-    <!--    Chapter 3.2.3   -->
-    <h3>3.2.3 Principal Component Analysis (PCA)</h3>
-   <p> Principal Component Analysis (PCA) is a way to simplify complex data. Imagine you have a table full of data points about different types of fruit—color, weight, sweetness level, and more. PCA helps you find the most important characteristics (like just color and weight) that still give you a good picture of the types of fruit, making the data easier to understand and work with. It's like finding the best camera angle to capture the most informative view of an object. </p>
-<!--    [https://youtu.be/HMOI_lkzW08?si=sKxTAiMuYodPORpm]-->
+        <p>Application in Cybersecurity: Ideal for detecting complex, multi-step cyber threats (like Advanced Persistent Threats), where understanding the sequence of actions is key.</p>
+    </li>
 
-    <!--    Chapter 3.2.4   -->
-    <h3>3.2.4 Isolation Forest</h3>
-    <img src="assets/images/Isolation Forest.png" alt="Isolation Forest" />
-    <p> Isolation Forest is an unsupervised learning algorithm for anomaly detection. It works by isolating anomalies or outliers rather than normal data points. Here's a simplified explanation of how it works:</p>
-    <p style="margin-left: 40px;"><b>Random Subsampling: </b> The algorithm randomly selects a subset of the data since anomalies are few and different. Working with a subset makes the process more efficient.</p>
-    <p style="margin-left: 40px;"><b>Tree Construction: </b> For each subset, the algorithm builds a tree by randomly selecting a feature and then randomly selecting a split value between the maximum and minimum values of the selected feature. This splitting process isolates data points by creating partitions in the data.</p>
-    <p style="margin-left: 40px;"><b>Isolation: </b> The key idea is that anomalies or outliers are easier to isolate compared to normal points. Thus, they will have shorter paths in the tree, because fewer splits are required to isolate them.</p>
-    <p style="margin-left: 40px;"><b>Forest of Trees:</b> Many such trees are created, forming a 'forest'. Each tree isolates the data points differently.</p>
-    <p style="margin-left: 40px;"><b>Anomaly Score: </b> A point's path length averaged over all trees in the forest is used as a measure of its "normality". Shorter paths generally indicate anomalies. </p>
+    <li>
+        <strong>CNN (Convolutional Neural Networks)</strong>
+        <p>CNNs are great for pattern recognition in data (like identifying malicious patterns in network traffic). They work like a team of analysts who specialize in recognizing specific types of threats.</p>
+        <p style="margin-left: 40px;"><b>Pattern Recognition  </b> CNNs are excellent at recognizing patterns and anomalies in data. In cybersecurity, this might mean identifying unusual patterns in network traffic. </p>
+        <p style="margin-left: 40px;"><b>Layered Approach:   </b> They use layers to process data, with each layer identifying different features. It's like having a team of analysts, where each member looks for different types of suspicious activity. </p>
+        <center><img src="assets/images/CNN.jpg" alt="CNN.jpg" /></center>
+        <p>Application in Cybersecurity: Useful in intrusion detection systems and analyzing large volumes of network data to identify potential threats.</p>
+    </li>
 
-    <p style="text-align: center;font-size: 2.5em;  font-family: Arial, sans-serif;"> <strong> Example </strong> </p> </center>
-    <div class="image-container">
-        <center>
-       <img style="border: 1px solid #000;" class="gif" src="assets/images/Io.gif" alt="Isolation Forest Outliner" />
-       <img style="border: 1px solid #000;" class="gif" src="assets/images/II.gif" alt="Isolation Forest Inliner" />
-            </center>
-    </div>
+    <li>
+        <strong>Hybrid model of LSTM and CNNs</strong>
+        <p>This is like combining the skills of an investigator who understands the flow of events (LSTM) with the pattern recognition skills of an analyst (CNN) to get a more comprehensive understanding of cybersecurity threats.</p>
+        <p style="margin-left: 40px;"><b>Combining Strengths:   </b> This hybrid approach utilizes LSTM’s ability to understand sequences and CNN’s strength in recognizing patterns. </p>
+        <p style="margin-left: 40px;"><b>Comprehensive Analysis:  </b> Such a model can analyze data both in terms of the sequence of events and the nature of those events. Imagine an investigator who not only understands the timeline of a crime but also recognizes the patterns and techniques used in the crime. </p>
+        <center><img src="assets/images/Hybrid LSTM CNN.png" alt="Hybrid LSTM CNN.png" /></center>
+        <p>Application in Cybersecurity: Particularly effective in sophisticated cybersecurity scenarios, like detecting multi-stage attacks where both the sequence and the nature of the attack are important.</p>
 
-
-
-    <p> An easy way to visualize this is to imagine a game of '20 Questions' designed to isolate one specific item from a diverse list; outliers or anomalies would typically be identified in fewer questions, just as the Isolation Forest algorithm isolates anomalies in fewer splits. </p>
-
-
-    <!--    Chapter 3.2.5   -->
-    <h3>3.2.5 Autoencoders </h3>
-    <p> Autoencoders are a type of unsupervised learning algorithm that are used to learn efficient representations of data, typically for the purpose of dimensionality reduction or feature learning. They work by compressing the input into a lower-dimensional code and then reconstructing the output from this representation. Here's a simplified breakdown:</p>
-    <p style="margin-left: 40px;"><b>Input Layer:  </b> Takes the initial data.</p>
-    <p style="margin-left: 40px;"><b>Encoder: </b> Compresses the data to a smaller representation. </p>
-    <p style="margin-left: 40px;"><b>Code: </b> The compressed version of the input data. </p>
-    <p style="margin-left: 40px;"><b>Decoder:</b> Attempts to generate the original data from the code. </p>
-    <p style="margin-left: 40px;"><b>Output Layer: </b> The reconstruction of the input data. </p>
-    <center><img src="assets/images/Encoders.png" alt="Encoders" /></center>
-    <p> Consider an autoencoder as a sketch artist for a police lineup: it looks at a person's face (the data), draws a simplified sketch (the compressed representation), and then redraws the face from the sketch (the reconstruction). If the redrawn face looks very different from the original, the sketch artist knows something went wrong with their understanding of the face's features.</p>
-    <p> Autoencoders are beneficial in cybersecurity for tasks like anomaly detection, where they can learn to represent normal behavior and then detect deviations from this norm that may signify a security threat.</p>
-<!--    [https://youtu.be/qiUEgSCyY5o?si=Q0LKIQYJv17cjcH3]-->
-
+    </li>
 </div>
-
 
 
 <script src="assets/js/script.js"></script>

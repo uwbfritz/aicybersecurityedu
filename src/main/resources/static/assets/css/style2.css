@@ -190,6 +190,15 @@ footer a:hover {
     font-size: 18px;
 
 }
+/* Figure Caption Styling */
+figcaption {
+    font-style: italic; /* Makes the caption text italic */
+    font-size: 14px; /* Optional: makes the caption text smaller than the surrounding text */
+    color: #777b7e; /* Optional: sets the caption text color */
+    margin-top: 10px; /* Optional: adds space between the image and the caption */
+}
+
+
 
 /* You can also add color styles for links if necessary */
 /*#mainContent a {*/
@@ -357,6 +366,7 @@ footer a:hover {
     display: block;
     clear: both;
 }
+
 
 
 /*.framed {*/

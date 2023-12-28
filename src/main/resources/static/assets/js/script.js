@@ -16,7 +16,7 @@ window.onload = function() {
             var src = gif.src;
             gif.src = "";
             gif.src = src;
-        }, 6000); // Adjust the time for each GIF if necessary
+        }, 15000); // Adjust the time for each GIF if necessary
     });
 };
 
@@ -67,6 +67,7 @@ function fetchNews() {
         })
         .catch(error => console.error('Error fetching news:', error));
 }
+// Responsive Sidebar
 window.addEventListener('scroll', function() {
     var headerHeight = document.querySelector('header').offsetHeight;
     var sidebar = document.querySelector('.sidebar');
@@ -77,6 +78,38 @@ window.addEventListener('scroll', function() {
         sidebar.style.top = (headerHeight - window.pageYOffset) + 'px';
     }
 });
+// Scroll to each sections on CLick
+//
+// document.addEventListener("DOMContentLoaded", function () {
+//     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+//         anchor.addEventListener('click', function (e) {
+//             e.preventDefault(); // Prevent the default behavior of the anchor link
+//
+//             const targetId = this.getAttribute('href').substring(1);
+//             const targetElement = document.getElementById(targetId);
+//
+//             if (targetElement) {
+//                 const offset = document.getElementById("mainContent").offsetTop; // Adjust the offset if needed
+//                 window.scrollTo({
+//                     top: targetElement.offsetTop - offset,
+//                     behavior: 'smooth'
+//                 });
+//             }
+//         });
+//     });
+// });
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault(); // Prevent the default behavior of the anchor link
+            console.log("Clicked")
+            openNav();
+        });
+    });
+});
+
+
 
 
 
