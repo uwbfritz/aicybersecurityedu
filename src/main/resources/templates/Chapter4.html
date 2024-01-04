@@ -15,287 +15,364 @@
 
 <!-- Main content area -->
 <div id="mainContent">
-    <h2>Understanding Generative AI</h2>
-<!--    <h3>Definition</h3>-->
-    <p>Generative AI refers to a type of artificial intelligence that is capable of creating new content, whether it be text, images, or even audio, based on the data it has learned from. Unlike traditional AI which is primarily focused on analyzing and interpreting existing data, Generative AI takes a step further by producing new, original outputs that didn't exist before.</p>
+    <!-- Your page content goes here -->
+    <h1>Module 3: Supervised Learning for Cybersecurity</h1>
 
-    <h3>Core Principles</h3>
-    <ul>
-        <li><strong>Learning from Data:</strong> It learns patterns, styles, and structures from large datasets.</li>
-        <li><strong>Creativity and Originality:</strong> Generates new content that is original and not simply a repetition of what it has seen.</li>
-        <li><strong>Adaptability:</strong> Can be fine-tuned to generate content in various domains (e.g., art, literature, technology).</li>
-    </ul>
+   <!--    Chapter 3.1-->
 
-    <h2>Examples of Generative AI</h2>
-    <h3>Text Generation (GPT-4)</h3>
-    <p> GPT-4, developed by OpenAI, is one of the most advanced text generation models. It can write essays, create poetry, or even generate code based on the input it receives.</p>
-    <p><strong>Applications:</strong> Used in chatbots, content creation, and even programming assistance. In many cases Helping with learning to hack or even hacking a website.</p>
-    <p><strong>Books by ChatGPT:</strong> An array of books authored by ChatGPT can be found on platforms like <a href="https://www.amazon.com/s?i=stripbooks&rh=p_27%3AChat+GPT+4&s=relevancerank&text=Chat+GPT+4" target="_blank">Amazon</a>, showcasing the ability of this AI to create engaging and diverse literary content.</p>
-    <center><img src="assets/images/gptWriteBooks.jpeg" alt="GPT Writing Books" /></center>
+    <h2>3.1 Introduction of Supervised Learning </h2>
+    <p>Supervised learning is an approach to creating artificial intelligence (AI) where a computer algorithm is trained on input data labeled for a particular output. Supervised learning teaches a computer to recognize patterns by showing it examples that already have answers. It's like giving a child a bunch of pictures of fruits with names on them so they can learn to name the fruits they see later on. This type of learning helps computers do things like figure out what kind of fruit is in a picture or guess how many items a store will sell next week. Companies use it to find weird things in data, stop hackers, sort photos, decide if something is risky, or detect spam emails. For example, a labeled dataset of images of Elephant, Camel, and Cow would have each image tagged with either “Elephant”, “Camel” or “Cow.”</p>
+<!-- <img src="assets/images/Supervised Learning.jpg" alt="Supervised Learning" />-->
+   <!-- <center><img class="gif" src="assets/images/SL.gif" alt="Supervised Learning" /></center> />-->
+     <center><img class="gif" src="assets/images/SL01.png" alt="Supervised Learning" /></center>
 
-    <h3>Image Creation (DALL-E)</h3>
-    <p> DALL-E, another creation by OpenAI, generates images from textual descriptions. It can create realistic as well as surreal images based on the description it is given.</p>
-    <p><strong>Applications:</strong> Useful in graphic design, advertising, and digital art</p>
-    <p><strong>AI Art at Christie’s Sells for $432,500:</strong> Check out this <a href="https://www.nytimes.com/2018/10/25/arts/design/ai-art-sold-christies.html" target="_blank">Article</a>, Where AI Art is being sold for 432,500</p>
-    <center><img class="gif" src="assets/images/interacting_with_dalle2.gif" alt="GPT Writing Books" /></center>
+    <p>On the other hand, unsupervised learning is when the computer looks at data that doesn’t have any answers to start with. It’s like giving a child a bunch of different toys and letting them group the toys into categories on their own, like all the cars in one place and all the dolls in another. This way, the computer learns to find its own patterns and group things together by itself. </p>
 
-    <h3>Music Generation</h3>
-    <p>AI models can now compose music by learning from a vast corpus of musical works. These models understand rhythm, melody, and harmony to create new compositions.</p>
-    <p><strong>Applications:</strong> Music creation for games, films, and relaxation apps. Also useful for content creation with royalty free music</p>
-    <p><strong>Lost Tapes of the 27 Club:</strong> Lost Tapes of the 27 Club is a mental health initiative that uses artificial intelligence (AI) to create songs from musicians who died at age 27. The project was created by the Toronto-based organization Over The Bridge. The project won Clio Awards for Audio in 2022.
-        Some of the musicians included in the project are: Kurt Cobain, Amy Winehouse, Jimi Hendrix, Jim Morrison.
+    <!--    Chapter 3.2-->
+
+    <h2>3.2 How does Supervised Algorithm Works </h2>
+    <p>Supervised learning is when a computer learns by practicing with examples that are already marked with the right answers. It’s like a practice test where every question comes with the correct answer, so the computer can learn the pattern. After practicing, the computer is given a real test with questions it hasn’t seen before. The answers are there but hidden from the computer, to check if it has learned well enough to figure out the answers on its own. This real test helps to see if the computer can now make good guesses without being told the answers. </p>
+    <p>As an example, an algorithm could be trained to identify images of cats and dogs by being fed an ample amount of training data that would consist of different labeled images of cats and dogs. </p>
+    <center><img class="gif" src="assets/images/SL.gif" alt="Supervised Learning" /></center>
+    <p>This training data would be a subset of photos from a much larger data set of images. After training, the model should then be capable of predicting if an output of an image is either a cat or a dog. Another set of images can be run through the algorithm to validate the model.</p>
+
+    <!--    Chapter 3.3   -->
+    <h2>3.3 Supervised Vs Unsupervised Learning</h2>
+    <p>The main difference between unsupervised and supervised learning is in how the algorithm learns.</p>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+    <table>
+        <tr>
+            <th>Parameters</th>
+            <th>Supervised Learning</th>
+            <th>Unsupervised Learning</th>
+        </tr>
+        <tr>
+            <td>Input Data</td>
+            <td>Algorithms are trained using labeled data.</td>
+            <td>Algorithms are used against data that is not labeled</td>
+        </tr>
+        <tr>
+            <td>Computational Complexity</td>
+            <td>Simpler method</td>
+            <td>Computationally complex</td>
+        </tr>
+        <tr>
+            <td>Accuracy</td>
+            <td>Highly accurate</td>
+            <td>Less accurate</td>
+        </tr>
+        <tr>
+            <td>No. of classes</td>
+            <td>No. of classes is known</td>
+            <td>No. of classes is not known</td>
+        </tr>
+        <tr>
+            <td>Data Analysis</td>
+            <td>Uses offline analysis</td>
+            <td>Uses real-time analysis of data</td>
+        </tr>
+        <tr>
+            <td>Algorithms used</td>
+            <td>Linear and Logistics regression, Random Forest, Support Vector Machine, Neural Network, etc.</td>
+            <td>K-Means clustering, Hierarchical clustering, Apriori algorithm, etc.</td>
+        </tr>
+        <tr>
+            <td>Output</td>
+            <td>Desired output is given.</td>
+            <td>Desired output is not given.</td>
+        </tr>
+        <tr>
+            <td>Training data</td>
+            <td>Use training data to infer model.</td>
+            <td>No training data is used.</td>
+        </tr>
+        <tr>
+            <td>Feedback Mechanism</td>
+            <td>Has a feedback mechanism</td>
+            <td>Has no feedback mechanism</td>
+        </tr>
+        <tr>
+            <td>Purpose</td>
+            <td>Used for prediction</td>
+            <td>Used for analysis</td>
+        </tr>
+        <tr>
+            <td>Division</td>
+            <td>Divided into Regression & Classification</td>
+            <td>Divided into Clustering & Association</td>
+        </tr>
+        <tr>
+            <td>Example</td>
+            <td>Example: Optical character recognition.</td>
+            <td>Example: Find a face in an image.</td>
+        </tr>
+    </table>
+
+    <p>Since the machine learning model works on its own to discover patterns in data, the model might not make the same classifications as in supervised learning. In the cats-and-dogs example, the unsupervised learning model might mark the differences, similarities and patterns between cats and dogs but can't label them as cats or dogs.</p>
+
+
+    <!--    Chapter 3.4   -->
+    <h2>3.4 Kinds of Supervised Learning</h2>
+    <p>The main difference between unsupervised and supervised learning is in how the algorithm learns.</p>
+    <p>Supervised learning algorithms primarily generate two kinds of results: </p>
+    <p style="margin-left: 40px;"> <b> •    Classification</b>	</p>
+    <p style="margin-left: 40px;"> <b> •    Regression	</b></p>
+
+    <center><img class="gif" src="assets/images/kinds.png" alt="Supervised Learning" width="1000" height="600" /></center>
+
+    <h3>3.4.1 Classification Algorithms</h3>
+    <p>Supervised learning algorithms are divided into two types: classification and regression.</p>
+    <p>A classification algorithm aims to sort inputs into a given number of categories -- or classes -- based on the labeled data it was trained on. Classification algorithms can be used for binary classifications, such as classifying an image as a dog or cat; filtering email into spam or no spam, and categorizing customer feedback as positive or negative.</p>
+    <p>Examples of classification machine learning techniques include the following:</p>
+
+
+    <li>
+        <strong>Decision Trees</strong>
+        <p>A Decision Tree is a flowchart for making decisions. It's a method used by computers to help decide between different options by asking a series of yes-or-no questions.</p>
+
+        <p>Overview of the Algorithm:</p>
+        <center><img src="assets/images/Decision Tree.png" alt="Decision Tree.png" /></center>
+        <p style="margin-left: 40px;"><b>Tree Structure: </b> Starts at a root node and splits into branches based on feature values. </p>
+        <p style="margin-left: 40px;"><b>Splitting Criteria: </b> Chooses the best feature to split data using measures like Gini impurity or entropy. </p>
+        <p style="margin-left: 40px;"><b>Leaf Nodes: </b> Ends in leaf nodes that represent the classification or decision. </p>
+        <p></p>
+
+        <p>For example, consider a scenario where three colors are mixed, and we want to classify points based on two features: (i) diameter size and (ii) color. Initially, the algorithm segments the mixture by diameter size, effectively isolating the pink color. Subsequently, the algorithm distinguishes the remaining mixture by assessing the color feature.</p>
+        <center><img class="gif" src="assets/images/DT.gif" alt="Decision Tree" /></center>
+
+        <p>•	Application of Decision Tree in Cyber Security</p>
+        <p>In cyber security, a Decision Tree can be used to decide if something on a computer is safe or not. Let's use an email as an example. The Decision Tree starts by asking questions about the email:</p>
+        <p style="margin-left: 40px;"> <b> 1.	Does the email come from a known sender? If yes, go to the next question. If no, it might be unsafe.</b>	</p>
+        <p style="margin-left: 40px;"> <b> 2.	Does the email contain attachments? If yes, this could be risky. If no, it's probably safe.</b></p>
+        <p style="margin-left: 40px;"> <b> 3.	Are there any strange links in the email? If yes, it might be a phishing attempt. If no, it's likely safe.</b></p>
+
+        <p>So, the Decision Tree looks at different parts of the email, one step at a time, to decide if it's safe or a threat like spam or a phishing attack. This helps protect computers from harmful emails by methodically checking for danger signs.</p>
+    </li>
+
+
+    <li>
+        <strong>Random Forrest</strong>
+        <p>Random Forest is a clever way to make decisions based on lots of information. Think of it like a team of experts, where each expert gives their opinion, and then the team decides together what's the best answer.</p>
+        <p>Imagine your computer is a house, and you want to keep burglars (hackers or viruses) out. The Random Forest acts like a group of security guards. Each guard watches for different suspicious activities. One might look for strange emails, another for odd software behavior, and so on.</p>
+
+
+        <p><strong How does the Algorithm work?> </strong></p>
+        <center><img src="assets/images/Random Forest.png" alt="Random Forest" /></center>
+        <p style="margin-left: 40px;"> <b> Create Multiple Decision Trees:</b> Generate a large number of decision trees, each trained on a random subset of the data.</p>
+        <p style="margin-left: 40px;"> <b> Diversity in Trees: </b> Each tree makes its decision based on different features of the data. </p>
+        <p style="margin-left: 40px;"> <b>Majority Voting: </b>For classification, the final output is the majority vote from all trees.</p>
+       <p></p>
+       <p></p>
+        <p>•	Application of Random Forest in Cyber Security</p>
+        <p>Let's say you have a program that checks emails to see if they're safe or spam (unwanted, harmful emails). The Random Forest uses lots of "trees" (security guards). Each tree checks the email in a different way. One tree might look at the sender's address, another at the words used in the email, and another at the time it was sent. Some trees might think the email is spam, while others might not.</p>
+
+        <center><img class="gif" src="assets/images/RF.gif" alt="Random Forest"width="1000" height="500" /></center>
+
+
+        <p> In the end, the Random Forest looks at what most trees say (see the example image most trees say ‘A’, so the final voting result is ‘A’). If most think it's spam, the email is blocked. This way, the Random Forest helps keep your computer safe by looking at many signs of danger and combining them to make the best decision. It's like having a team of experts working together to protect your house from burglars.</p>
+    </li>
+    <li>
+        <strong>Logistic Regression</strong>
+        <p>Logistic Regression is like a smart method for making decisions between two choices, such as "yes or no" or "true or false". Imagine you have a bunch of information, like details about emails. Logistic Regression helps to decide, based on this information, if an email is spam (yes) or not spam (no). It does this by calculating a score from the information. If the score is high, it might decide the email is spam. If the score is low, it likely thinks the email is not spam. It's like a seesaw; the more evidence you have for one side, the more likely Logistic Regression will tilt in that direction. This method is especially useful in situations where you need a clear yes or no answer based on the information you have.</p>
+        <center><img class="gif" src="assets/images/LR.gif" alt="Logistic Regression" /></center>
+        <p>•	Application of Logistic Regression in Cyber Security</p>
+        <p>In cyber security, Logistic Regression is used to detect harmful activities on a computer network. For example, the system looks at data traffic – like how much data is being sent, how fast, and to where. Each piece of information is a clue (or weight). Logistic Regression adds up these clues to decide if the activity is normal or if there's a chance of a cyber-attack.</p>
+
+    </li>
+
+
+    <li>
+        <strong>Support Vector Machines (SVM)</strong>
+        <p>SVMs are like drawing lines (or more complex boundaries) to separate different types of data points (like separating safe internet traffic from malicious traffic).</p>
+        <center><img src="assets/images/SVM.png" alt="SVM.png" /></center>
+        <p>•	Application of SVM in Cyber Security</p>
+        <p>In cybersecurity, SVM helps to tell apart safe activities from harmful ones, like spotting harmful software or suspicious network activity. It works by drawing a line (or a more complex boundary in difficult cases) that best separates different types of data, like safe and unsafe. This method is really good at making accurate decisions even with not a lot of information, and it's flexible for different kinds of cybersecurity problems. However, it can be a bit slow with a lot of data and needs careful setup to work best. In short, SVM is a useful tool for keeping computer systems safe by accurately identifying threats.</p>
+    </li>
+
+    <li>
+        <strong>K-nearest neighbors (KNNs)</strong>
+        <p>KNNs work by looking at the 'neighbors' (similar data points). If the new data point has neighbors that are mostly malicious, KNN might identify it as a threat. It's like judging the risk based on the company it keeps.</p>
+        <center><img src="assets/images/KNN.png" alt="KNN.png" /></center>
+        <p>Overview of the Algorithm:</p>
+        <p style="margin-left: 40px;"><b>Neighbor Selection:  </b> Classifies a data point based on the majority label of its 'k' nearest neighbors.</b> </p>
+        <p style="margin-left: 40px;"><b>Distance Metrics: </b> Uses distance metrics like Euclidean or Manhattan distance to find nearest neighbors.</b> </p>
+        <p style="margin-left: 40px;"><b>Parameter Tuning: </b> 'k' value (number of neighbors) needs to be chosen carefully.</b> </p>
+        <p>•	Application of KNN in Cyber Security</p>
+        <p>In cyber security, the k-Nearest Neighbors (kNN) algorithm can identify potential cyber threats by comparing new network activity with known patterns. If new activity closely resembles past incidents of security breaches, kNN classifies it as a threat, prompting defensive measures like alerts or blocking access.</p>
+
+    </li>
+
+    <h3>3.4.2 Regression Algorithms</h3>
+    <p>In supervised learning, the goal is to create a model that can predict an output based on input data. Regression tasks are one type of supervised learning where the model aims to establish a numerical output from given inputs. For example, regression models could estimate house prices using location data, forecast click-through rates on digital ads based on the time of day, or gauge the price customers might pay for a product according to their demographics.</p>
+    <p>Some common regression model algorithms in supervised learning are:</p>
+    <p style="margin-left: 40px;"> <b> •	Bayesian logic,  </b> which builds statistical models and incorporates existing knowledge about the parameters or the model. Bayesian logic is predicated on how to think about conditional probabilities. You see the outcome, and you know that there are multiple paths from initial states to that outcome. You want to know something about the initial states based on the outcomes that you observe.</p>
+    <p style="margin-left: 40px;"> <b> •	Linear Regression,  </b> where the value of one variable is predicted from the value of another. A linear regression algorithm defines a linear relationship between independent and dependent variables. It uses a linear equation to identify the line of best fit (straight line) for a problem, thereby enabling the visualization and prediction of the output of the dependent variables.</p>
+    <p>The line of best fit is considered to be the line for which the error between the predicted values and the observed values is minimum. It is also called the regression line and the errors are also known as residuals.</p>
+    <center><img src="assets/images/linear.gif" alt="linear.gif" width="800" height="400"  /></center>
+    <p>The red line is the regression line, the green dots are the observed data value, and d1,d2,d3,….are the error values(y actual — y pred).</p>
+    <p style="margin-left: 40px;"> <b> •	Nonlinear regression,  </b> suitable when outputs do not directly correspond to linear inputs and data points exhibit a nonlinear relationship, such as a curved trend. </p>
+    <p style="margin-left: 40px;"> <b> •	Regression trees,   </b> are another way of calling Decision Trees that are used for regression and it can be useful in a lot of areas where the relationship between the variables are found to be non-linear. </p>
+
+    <p>Selecting a supervised learning algorithm involves considering several factors, such as the trade-off between bias and variance, ensuring the model has the right level of complexity, and understanding the function it needs to learn. Additionally, the diversity, precision, redundancy, and linearity of the data set should be evaluated to ensure the chosen algorithm is well-suited for the data.</p>
+
+    <!--    Chapter 3.5   -->
+    <h3>3.5 Supervised Learning in Neural Network Algorithms</h3>
+    <p>When we teach computers using neural network algorithms, we keep checking and adjusting their work to help them get better at making correct guesses. How well they do can depend on two main things: the information they learn from (which should be good and varied) and the rules they use to learn.</p>
+
+
+    <h3>3.5.1 What is Neural Network</h3>
+    <p>A neural network is a technique in AI where computers learn to process information in a manner similar to the human brain. This method, part of deep learning in machine learning, employs a network of nodes or neurons arranged in layers that mimic the brain's structure. This forms a dynamic system enabling computers to learn from errors and enhance their performance over time. Consequently, artificial neural networks (ANNs) are designed to tackle complex tasks such as document summarization or facial recognition with increased precision.</p>
+    <p>Artificial Neural Networks (ANNs) consist of several layers of nodes, including an input layer, several hidden layers, and an output layer. Each node, also known as an artificial neuron, forms connections with others and is assigned a specific weight and threshold. If a node's output exceeds this threshold, it becomes activated and transmits data to the next layer in the network. If not, it does not pass on any data.</p>
+    <p>The performance of neural networks is heavily dependent on training data, which helps them learn and enhance their accuracy. Once these algorithms are precisely calibrated, they become formidable tools in the realms of computer science and artificial intelligence. They enable rapid data classification and clustering. For instance, tasks like speech or image recognition, which would take hours for humans to perform manually, can be completed in mere minutes using these networks. A notable example of a neural network application is Google's search algorithm.</p>
+    <h3>3.5.2 How do Neural Networks work?</h3>
+    <p>In the process of an Artificial Neural Network (ANN), the first step involves setting up an input layer with designated weights. These weights play a crucial role in assessing the significance of each variable; higher weights imply greater influence on the final output. The network multiplies all input values by their corresponding weights and sums them up. This summed value is then processed through an activation function, which is responsible for determining the final output of the node.</p>
+    <p>If this output surpasses a certain threshold, the node becomes "active" or "fires," thereby transmitting the data to the subsequent layer in the network. Consequently, the output from one node serves as the input for the next. This sequential relay of data from one layer to another characterizes the network as a feedforward network, where information consistently moves forward from the input to the output layers.</p>
+
+    <h3>3.5.2.1 Simple Neural Network Architecture:</h3>
+    <p>A basic neural network includes three layers of interconnected artificial neurons:</p>
+    <center><img src="assets/images/nu.webp" alt="nu.webp" width="600" height="400"  /></center>
+    <p style="margin-left: 40px;"> <b> o	Input Layer:  </b>
+    <p style="margin-left: 40px;">•	Data Reception:   This layer receives the raw input data. Each neuron in the input layer represents a feature of the input dataset. </p>
+    <p style="margin-left: 40px;">•	Initial Processing:   TThe input data are usually preprocessed (normalized or standardized) before being fed into the network. The preprocessing step is crucial for the network's performance. </p>
+
+
+
+    <p style="margin-left: 40px;"> <b> o	Hidden Layer:  </b>
+    <p style="margin-left: 40px;">•	Data Transformation:   In these layers, the data from the input layer is transformed through a series of computations. </p>
+    <p style="margin-left: 40px;">•	Weights and Biases:    Each neuron in the hidden layers has associated weights and biases. The data from the previous layer is multiplied by these weights and then added to the biases. </p>
+    <p style="margin-left: 40px;">•	Activation Function:   After the weighted sum,Z is calculated, an activation function is applied to introduce non-linearity into the model. This allows the network to handle complex patterns. </p>
+    <p style="margin-left: 40px;">•	Layer-wise Processing: If there are multiple hidden layers, the output of one layer becomes the input for the next, progressively refining the data.  </p>
+
+    <center><img src="assets/images/w.png" alt="w.png" width="600" height="400"  /></center>
+
+    <p style="margin-left: 40px;"> <b> o	Output Layer:  </b>
+    <p style="margin-left: 40px;">•	Final Transformation: This layer receives the processed data from the last hidden layer.    </p>
+    <p style="margin-left: 40px;">•	Activation Function: Like in hidden layers, an activation function is applied, but it's tailored to the specific needs of the output. For instance, a softmax function for classification tasks or a linear function for regression tasks.   </p>
+    <p style="margin-left: 40px;">•	Output Generation:   The output layer converts the final transformed data into a format suitable for the problem at hand, such as a predicted class label in classification or a value in regression.  </p>
+
+
+
+    <h3>3.5.2.2 Deep Neural Network Architecture:</h3>
+    <p>Deep neural networks, or deep learning networks, consist of multiple hidden layers with possibly millions of interconnected artificial neurons. As we already know that the connections between nodes are represented by a numerical value known as weight. Positive weights imply one node activating another, while negative weights indicate suppression. Nodes with higher weights exert more influence over other nodes.</p>
+    <center><img src="assets/images/deep neural network.png" alt="deep neural network.png"  /></center>
+    <p>Deep neural networks are theoretically capable of mapping any input to any output type. However, they require significantly more training data—possibly millions of examples—compared to simpler networks, which might need only hundreds or thousands of examples.</p>
+    <p>Imagine teaching a robot by showing it many pictures of cats and dogs with labels on them, so it knows which is which. The robot, like a deep learning model, looks at all the details in the pictures to learn the patterns—like the shape of ears, the size, and the fur. Once it learns enough from all these examples, you can show it a new picture without a label, and it will be able to tell you if it's a cat or a dog. Deep learning models are great because they can learn from a huge number of examples and get really good at making the right guesses, just like a student who has studied a lot and can ace a test. </p>
+    <p>Deep learning algorithms like LSTM, RNN, CNN, or hybrids can identify sensitive data patterns and monitor data access and transfer to prevent unauthorized data leakage. These models can analyze data flow across networks, identify potential vulnerabilities, and enforce security policies to protect sensitive information.</p>
+
+
+
+    <h3>3.5.3 RNN (Recurrent Neural Network)</h3>
+    <p>RNNs (Recurrent Neural Networks) are a type of neural network where data flow is not unidirectional, allowing for a more dynamic processing of information. These networks are particularly useful in tasks such as language modeling or Natural Language Processing (NLP).</p>
+    <p>The core principle of RNNs is their ability to process sequential data. Unlike traditional neural networks that treat inputs and outputs as independent entities, RNNs consider the sequence of inputs. For example, predicting the next word in a sentence requires knowledge of the preceding words.</p>
+    <p>The term "recurrent" in RNNs refers to their method of performing the same function on each element of a sequence, where each output is influenced by prior computations. This gives RNNs a form of "memory", allowing them to retain information about earlier calculations. While in theory, RNNs can handle very long sequences, in practice, their ability to remember tends to be limited to a few steps back.</p>
+
+    <center><img src="assets/images/RNN.jpg" alt="RNN.jpg"  /></center>
+    <p>Long short-term memory networks (LSTMs) are the most commonly used RNNs.Together with Convolutional Neural Networks, RNNs have been used as part of a model to generate descriptions for unlabeled images. It is quite amazing how well this seems to work.
     </p>
-    <center>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/uRRgiaC7cxg?si=aBC3JdIpZWJwi6b0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    </center>
-
-    <h3>Deepfakes and Voice Generation</h3>
-    <p>This technology synthesizes human-like voices or creates realistic video footage. It can mimic the voice or appearance of a specific individual.</p>
-    <p><strong>Applications:</strong> Used in entertainment, but also raises significant ethical concerns due to potential misuse.</p>
-    <p><strong>Deepfake is real:</strong> A real example of a deepfake incident involved a U.K-based energy firm's CEO, who in March 2019, received a phone call from someone impersonating the voice of the CEO's boss — the leader of the firm’s German parent company. The caller, using a deepfake of the German executive's voice, ordered the transfer of €220,000 to a supplier in Hungary. The U.K CEO, recognizing the boss's slight German accent and melody, complied with the request and transferred the money. However, he grew suspicious when additional requests for money were made and stopped further transfers. The transferred funds were moved to Mexico and then channeled to other accounts. This incident was reported to the company's insurance firm, Euler Hermes Group SA, and was a significant example of the use of artificial intelligence to create a convincing deepfake voice <a href="https://www.trendmicro.com/vinfo/mx/security/news/cyber-attacks/unusual-ceo-fraud-via-deepfake-audio-steals-us-243-000-from-u-k-company#:~:text=Unusual%20CEO%20Fraud%20via%20Deepfake%20Audio%20Steals%20US%24243%2C000%20From%20UK%20Company,-05%20de%20septiembre&text=An%20unusual%20case%20of%20CEO,a%20U.K.%2Dbased%20energy%20company." target="_blank">Read more.</a>
-    </p>
-    <center><img class="gif" src="assets/images/deepfake.gif" alt="Deepfake" /></center>
-
-    <h2>Implications in Cybersecurity</h2>
-    <h3>Pros:</h3>
-    <p>Can be used to simulate cybersecurity scenarios, aid in developing security solutions, or even automate certain cybersecurity tasks.</p>
-    <h3>Cons:</h3>
-    <p>The same technology can be used for creating sophisticated phishing attacks, spreading misinformation, or impersonating individuals.</p>
-
-    <h2>Generative AI in Cybersecurity (Offense)</h2>
-    <h3>Phishing Attack Creation:</h3>
-    <p>Generative AI can create convincing phishing emails and websites. It can generate realistic content that mimics legitimate sources, tricking users into divulging sensitive information like passwords or credit card numbers.</p>
-    <p>To learn more about how generative AI can be used in phishing attacks, we have designed a lab you can try. <a href="/phishing">Click here to try the lab.</a></p>
-
-    <h3>Malware Development:</h3>
-    <p>AI can design new forms of malware that are harder to detect. It can generate unique variants of existing malware or completely new strains, challenging traditional antivirus software that relies on known signatures.</p>
-    <p>One popular generative AI model that you can use is WormGPT. If you try building a malware using chatGPT it will respond like:I can't assist with that.</p>
-    <p>But you can try using <a href="https://flowgpt.com/p/wormgpt-6">WormGPT</a> and ask a question like "how to build a maleware" it will give you step by step instructions to produce malicious software that can harm or compromise computer systems. . </p>
-
-    <h3>Social Engineering Attacks</h3>
-    <p>AI can analyze vast amounts of data from social media and other sources to craft personalized and highly effective social engineering attacks. These attacks could be tailored to specific targets, increasing the likelihood of success.</p>
-
-    <ul>
-        <li>AI can help create deep fakes (synthetic videos and fake virtual identities) that appear all too realistic. Scammers can mimic a real person (a senior executive, a customer, partner, etc.), engage victims in a conversation and social engineer them into revealing sensitive information, carrying out financial transactions or spreading misinformation.</li>
-        <li>Threat actors can clone human speech and audio to carry out advanced types of voice phishing (“vishing”) attacks. The Federal Trade Commission has warned about scammers using AI voice cloning technology to impersonate family members and con victims into transferring money on the pretext of a family emergency.</li>
-        <li>AI tools can also be weaponized as a tool for phishing. For example, using a complex technique called Indirect Prompt Injection, researchers successfully manipulated a Bing chatbot into impersonating a Microsoft employee, then generating phishing messages that requested credit card information from users.</li>
-        <li>Using autonomous agents, as well as clever scripting and other automation tools, threat actors can carry out highly targeted social engineering attacks at an industrial scale. For instance, they can automate the steps involved—from target-selection to delivery of the phishing email to a human-like response in a chat box or phone call.</li>
-    </ul>
-    <center>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/aemvKgJ_KaY?si=NEKk-P3fc929v5sq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    </center>
-
-    <h3>Exploiting Vulnerabilities</h3>
-    <p>AI can be used to find and exploit vulnerabilities in software and systems. It can rapidly test numerous combinations and techniques to identify weak points in a system's security.</p>
-
-    <h3>Automating Cyber Attacks</h3>
-    <p>AI can automate the process of launching attacks, making them more efficient and scalable. For instance, it can manage large-scale Distributed Denial of Service (DDoS) attacks, orchestrating a network of compromised devices to overwhelm a target.</p>
-
-    <h3>Generating Fake Content (Deepfakes)</h3>
-    <p>AI can create realistic audio, video, or text content to deceive individuals or manipulate public opinion. This could be used to impersonate individuals in videos or create fake news stories.</p>
-    <center><iframe width="560" height="315" src="https://www.youtube.com/embed/oxXpB9pSETo?si=tHUipKmJMpN4LIsn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>
-
-    <h3>Bypassing Biometric Security</h3>
-    <p>Generative AI can be used to create fake biometric data like fingerprints, facial recognition, or voice patterns, potentially allowing unauthorized access to systems protected by biometric security measures.</p>
-    <center><iframe width="560" height="315" src="https://www.youtube.com/embed/t52Bi-ZUZjA?si=HfJDla_OQHE-miJM&amp;start=290" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>
-
-    <h3>Adaptive Attack Strategies:</h3>
-    <p>AI can learn from defensive responses and adapt its attack methods accordingly. This means it can modify its approach in real-time, making it harder for defenders to anticipate and counteract.</p>
-
-    <h3>Network Infiltration:</h3>
-    <p>AI can analyze network traffic and behavior to find stealthy ways to infiltrate networks. It can identify patterns and create strategies that allow it to move laterally within a network, avoiding detection.</p>
-
-    <h3>Data Poisoning and Model Stealing</h3>
-    <p>In environments where machine learning models are used for security, AI can be used for data poisoning – introducing flawed or malicious data to corrupt the learning process. It can also engage in model stealing, where it infers the functionality of a proprietary algorithm for malicious use.</p>
-
-    <h2>Generative AI in Cybersecurity (Defense)</h2>
-
-    <h3>Generating Security Protocols</h3>
-    <p><strong></strong> Generative AI in cybersecurity is like having a super-smart assistant that specializes in keeping information safe on the internet. Just like a locksmith designs different types of locks for security, this AI can create complex rules and systems to protect computer networks from hackers and cyber threats.</p>
-    <p>Here's a simpler explanation with analogies and examples:</p>
-    <p><strong>Designing Complex Security Protocols:</strong> Imagine you have a treasure chest that needs to be kept safe. Generative AI in cybersecurity acts like an expert lock designer who can create a unique and complicated lock for your chest. Similarly, it designs security protocols (special sets of rules) to protect computer networks.</p>
-    <p>Understanding the Treasure Chest (Network Analysis):
-
-        Just as a lock designer first needs to understand the specifics of the chest they're securing, Generative AI starts by analyzing the computer network. It examines the type of data stored, how it's used, and who needs access to it. This is similar to considering what's inside the chest, how often you need to open it, and who is allowed to access its contents.</p>
-    <p>Designing the Lock (Creating Security Protocols):
-
-        Based on its analysis, the AI then designs a 'lock' – in this case, a set of security protocols. These protocols are rules and methods specifically tailored to protect the network, much like a unique lock designed for a specific treasure chest. The AI might create complex encryption methods (turning data into a secret code), just like a lock that requires a special key pattern.</p>
-    <p>Adapting to Different Chests (Customization):
-
-        The AI understands that not all 'treasure chests' (networks) are the same. Some might hold more valuable information (like financial data) and require stronger 'locks' (security measures), while others might need simpler protection. The AI customizes the security protocols to match the value and sensitivity of the information, much like how a more valuable chest would need a more sophisticated lock.</p>
-    <p>Testing the Lock (Simulation and Improvement):
-
-        Before finalizing the design, the AI simulates different breach attempts to test the strength of the security protocols, just like testing a lock to see if it can be picked or broken. It learns from these tests and improves the protocols, ensuring they can withstand real-world hacking attempts.</p>
-    <P>
-        Implementation and Monitoring:
-
-        Once the AI has designed the optimal security protocols, they are implemented on the network. The AI doesn't just stop there; it continuously monitors the network, much like a security guard constantly checking the integrity of a lock. If new threats or vulnerabilities are detected, the AI can update or redesign the protocols, ensuring ongoing protection.
-    </P>
-
-    <p><strong>Adapting to Various Cybersecurity Needs:</strong> Different houses need different types of locks depending on their size and location. Likewise, the AI can analyze different computer networks and suggest the best type of security based on their unique needs. It's like a security consultant who can give personalized advice for every home.</p>
-
-    <p>Analyzing the House (Network Analysis):
-
-        Just like a security consultant assesses the specifics of each house, such as its size, location, and what valuables it contains, Generative AI starts by thoroughly analyzing the computer network. It looks into the type of data the network handles, how many users access it, the nature of transactions conducted, and potential vulnerabilities. This is akin to understanding the layout of a house, the number of doors and windows, and the neighborhood's safety.</p>
-    <p>Personalizing the Security Solution (Customized Security Protocols):
-
-        Based on this detailed analysis, the AI then designs a personalized security plan. In the context of a house, this would involve deciding on the types of locks, alarms, and surveillance needed. In cybersecurity, this translates to custom-tailored measures like specific encryption techniques, firewalls, access control systems, and intrusion detection mechanisms. The AI ensures that these measures are suited to the specific risks and needs of each network, just as a home's security system is tailored to its unique characteristics.</p>
-    <p>Considering Environmental Factors (External Threat Assessment):
-
-        The AI also takes into account external threats, much like a security consultant considers the crime rate in a neighborhood. It evaluates the types of cyber threats prevalent in the industry or area the network operates in, and then incorporates defenses specifically designed to guard against these threats.</p>
-    <p>Scalability and Flexibility (Adaptive Security):
-
-        Just as a home might need different security features over time (like when a new floor is added or the neighborhood changes), the AI’s security protocols are scalable and flexible. It can adapt its strategies as the company grows, new technologies are adopted, or new types of cyber threats emerge.</p>
-    <p>Continuous Monitoring and Updating (Ongoing Security Consultation):
-
-        Finally, the AI continuously monitors the network for any signs of security breaches or vulnerabilities, much like a security consultant might conduct regular check-ups. It updates the security protocols as needed, ensuring the network remains protected against evolving cyber threats.</p>
-    <p>Examples of What It Can Do:</p>
-    <ul>
-        <li><strong>Automated Generation of Encryption Algorithms:</strong> This is like creating a secret language for messages. The AI can develop new secret languages (encryption algorithms) that only the sender and the receiver can understand, making it very hard for intruders to understand these messages.</li>
-        <li><strong>Firewall Rules:</strong> Imagine a gatekeeper who decides who can enter your property. Similarly, the AI can set up rules (firewall rules) for who can access a network, blocking unwanted visitors (like hackers).</li>
-        <li><strong>Access Control Policies:</strong> This is like having a VIP list for a party. The AI can decide which employees in a company get access to certain sensitive information, just like how a bouncer checks the VIP list before letting people into a party.</li>
-    </ul>
+    <p>•	Application of RNNs in Cyber Security</p>
+    <p>RNNs can be utilized in cybersecurity to detect anomalies by analyzing sequences of network traffic, identify potential threats by learning from patterns of system logs, and automate response to security incidents by understanding the context from historical data.</p>
 
 
-    <h3>Simulating Cyber Attacks for Training</h3>
-    <p><strong></strong> AI can simulate sophisticated cyber attacks, providing realistic training scenarios for cybersecurity teams. These simulations help in preparing for potential threats and testing the resilience of systems.</p>
-
-    <p><strong>Simulating Sophisticated Cyber Attacks:</strong>
-
-        Just as a soccer coach sets up practice drills that mimic real game situations, AI can create realistic cyber attack scenarios. This means it can pretend to be a hacker and launch attacks on the organization's computer systems. The catch is, these attacks are controlled and safe, designed for training purposes, much like a controlled scrimmage in soccer.</p>
-
-    <p><strong>Providing Realistic Training Scenarios:</strong>
-
-        In soccer, players get better by facing opponents in practice matches. In cybersecurity, teams improve their skills by dealing with these simulated attacks. The AI creates situations that are as close to real-life attacks as possible, helping teams learn how to respond effectively under pressure.</p>
-
-    <p><strong>Preparing for Potential Threats:</strong>
-
-        Just like a coach prepares the team for different types of opponents, the AI helps cybersecurity teams prepare for a variety of cyber threats. By facing these simulated attacks, the team learns to anticipate and counter different hacking strategies.</p>
-
-    <p>
-        <strong>Testing the Resilience of Systems:</strong>
-
-        It’s like testing how well a soccer team can hold up against a tough opponent. The AI’s simulated attacks test the strength of an organization's cybersecurity defenses, highlighting areas that need improvement.
-    </p>
-
-    <p>Examples of Simulated Attacks:</p>
-    <ul>
-        <li><strong>Phishing Attack Simulations:</strong> Imagine a practice drill where players learn to spot a fake soccer ball. In a phishing simulation, the AI sends emails or messages that look like they’re from a trusted source but aren’t. This trains employees to spot fake, malicious messages.</li>
-        <li><strong>Breach Attempt Simulations:</strong> This is like a drill where the team practices defending their goal against surprise attacks. Here, the AI attempts to break into the network, helping the cybersecurity team practice defending against unauthorized access.</li>
-        <li><strong>DDoS (Distributed Denial of Service) Attack Scenarios:</strong> Think of this as a drill where the soccer team practices playing under extreme pressure with many opponents attacking at once. In a DDoS simulation, the AI floods the network with excessive traffic to test how well it can handle overwhelming demands.</li>
-    </ul>
-
-
-    <h3>Creating Security Patches and Updates</h3>
-    <p><strong></strong>Think of your computer's security like a house with several doors and windows. Just as these doors and windows can develop weaknesses or damages over time, computer software can have vulnerabilities – weak spots where hackers can break in. AI in cybersecurity acts like a super-efficient repair team that quickly fixes these weak spots before they can be exploited.</p>
-    <p>Here's a simpler explanation with analogies and examples:</p>
-    <p><strong>Understanding Vulnerabilities:</strong>
-
-        Imagine discovering cracks in the walls of your house. Similarly, AI first identifies vulnerabilities in computer software – these are like 'cracks' where hackers could potentially 'break into' the software.</p>
-    <p><strong>Rapid Development of Security Patches:</strong>
-
-        Once the AI finds these vulnerabilities, it works like a quick-response repair team. It develops 'security patches', which are like special repair kits designed to fix specific problems. Just as a repair team patches up a crack in the wall, these security patches fix the weak spots in the software.</p>
-    <p><strong>Accelerating the Response to Security Threats:</strong>
-
-        In the same way that repairing a crack quickly can prevent further damage to a house, these AI-generated patches are applied swiftly to protect the software from hackers. The faster a vulnerability is patched, the less chance there is for a hacker to exploit it.</p>
-    <p>Examples of Gen AI in Action</p>
-    <ul>
-        <li><strong>Automatic Patch Generation for Software Vulnerabilities:</strong> Imagine if a repair team not only fixed existing cracks in your house but also regularly checked and reinforced areas that might become weak. AI does this by automatically creating patches for any new vulnerabilities it discovers in software, keeping the 'house' secure.</li>
-        <li><strong>Updates to Security Systems:</strong> This is like upgrading the locks on your doors or installing a better alarm system. The AI regularly updates the security systems of the software, improving their ability to prevent and fight off hacking attempts.</li>
-    </ul>
-    <center><img height="500px" width="500px" src="assets/images/securityPatch.png" alt="Here are the images representing AI in cybersecurity as a team of robot repair workers fixing a large digital structure, symbolizing the rapid development and application of security patches in a futuristic, virtual environment." /></center>
-
-    <h3>Threat Detection and Response</h3>
-    <p><strong></strong> Imagine you're a detective trying to catch a clever thief who constantly changes their methods. To stay ahead, you need to predict the thief's next move and be ready to respond quickly. This is similar to how Generative AI works in threat detection and response in cybersecurity.</p>
-    <p>Here's a simpler explanation with analogies and examples:</p>
-    <p><strong>Predicting and Generating Patterns of Cyber Attacks:</strong>
-
-        Like a detective who studies past crimes to predict future ones, AI analyzes patterns from previous cyber attacks. It understands how hackers operate and uses this knowledge to predict how they might attack in the future. This is like creating a 'profile' of a thief's behavior.
-    </p>
-    <p><strong>Improving the Ability to Identify New Threats:</strong>
-
-        Just as a detective stays alert for new methods used by criminals, the AI is constantly learning and adapting to recognize new types of cyber threats. It's always updating its knowledge base, ensuring it can quickly identify any unusual activity that might indicate a cyber attack.
-    </p>
-    <p><strong>AI-driven Intrusion Detection Systems (IDS):</strong>
-
-        Think of an Intrusion Detection System as a high-tech alarm system in a museum. It's designed to detect any unauthorized entry or suspicious activity. AI-driven IDS are even more advanced – they can learn from every attempted break-in, becoming smarter and more efficient at spotting potential threats, much like an ever-evolving security system.
-    </p>
-    <p><strong>Anomaly Detection in Network Traffic:</strong>
-
-        This is like having a neighborhood watch program where residents are trained to notice anything out of the ordinary. In cybersecurity, AI monitors the 'neighborhood' of a computer network, watching the flow of data (network traffic). It's trained to spot any 'anomalous' or unusual activity – like a strange car repeatedly driving past a house – which could indicate a cyber attack.
-    </p>
-
-    <h3>Benefits:</h3>
-    <ul>
-        <li><strong>Efficiency and Speed:</strong> AI can operate much faster than humans in analyzing data, identifying threats, and generating solutions, leading to a more efficient cybersecurity process.</li>
-        <li><strong>Predictive Capabilities:</strong> Generative AI can anticipate potential cybersecurity threats by analyzing trends and patterns, allowing for proactive rather than reactive measures.</li>
-        <li><strong>Customization and Scalability:</strong> AI systems can be tailored to specific cybersecurity needs and scaled according to the size and complexity of the network or organization.</li>
-        <li><strong>Enhanced Training and Preparedness:</strong> By simulating realistic cyber attacks, AI helps in training cybersecurity professionals, enhancing their preparedness for real-world scenarios.</li>
-    </ul>
-
-    <h3>Challenges:</h3>
-    <ul>
-        <li><strong>Ethical Concerns:</strong> The use of AI in cybersecurity raises ethical questions, particularly around privacy, as AI systems often require access to sensitive data for analysis and learning.</li>
-        <li><strong>Potential for Misuse:</strong> The same technology that can protect against cyber threats can also be used to create advanced cyber attacks, such as AI-generated phishing emails or deepfakes.</li>
-        <li><strong>Reliability and Dependence:</strong> Over-reliance on AI can be risky if these systems fail or are compromised, highlighting the need for robust backup strategies and human oversight.</li>
-        <li><strong>Complexity in Management:</strong> Managing and understanding the outputs of AI systems can be challenging, requiring specialized knowledge and skills.</li>
-    </ul>
+    <h3>3.5.4 LSTM (Long Short-Term Memory)</h3>
+    <p>LSTM stands for Long Short-Term Memory, and it's a type of deep learning used in supervised learning that's really good at remembering information for a long time. Think of it like a smart notebook that keeps track of things that are related over long periods.</p>
+    <p>Suppose we want to predict the next word in a text message. We would train the LSTM by showing it lots of text messages where we already know the order of the words. The LSTM pays special attention to the flow of words—what comes before and after—and learns patterns, like how the word "sky" often follows "the blue."</p>
+    <p>When you then give it a new sentence like "the blue," the LSTM uses what it learned to predict the next word could be "sky." It's smart enough to consider the context from words that came much earlier in the sentence, not just the ones right before. This memory feature makes LSTMs good for tasks like language translation, speech recognition, and text prediction, where understanding the sequence is key.</p>
+    <p>•	Application of LSTM in Cyber Security</p>
+    <p>LSTMs are ideal for detecting complex, multi-step cyber threats (like Advanced Persistent Threats), where understanding the sequence of actions is key.</p>
 
 
 
-    <h2>Case Studies and Examples in Generative AI and Cybersecurity</h2>
+    <h3>3.5.5 CNN (Convolutional Neural Network)</h3>
+    <p>Convolutional Neural Networks (CNNs) are a type of artificial intelligence used in supervised learning, where the system learns from examples with known outcomes. In simple terms, a CNN learns to recognize patterns, like identifying objects in images, by processing data through various layers (shown in the gif below).</p>
+    <center><img src="assets/images/CNN.gif" alt="CNN.gif"  /></center>
+    <p>Imagine the CNN as a detective learning to spot criminals in a crowd. You show it many photos, some with criminals and some without. Each time, you tell the CNN whether a criminal is present or not. The model examines these photos, focusing on specific features like faces or clothing, to learn what makes a criminal look different from others.</p>
+    <p>•	Application of CNNs in Cyber Security</p>
+    <p>In cyber security, CNNs can be used to detect malicious activities, like identifying harmful software (malware) in computer systems. For example, you might train a CNN with lots of computer files, telling it which ones are safe and which ones are malware. Over time, the CNN learns to spot the subtle signs of malware, such as unusual code patterns, helping to protect computers from attacks. This is like teaching the detective to recognize not just criminals in a crowd, but also hidden clues that suggest someone might be up to no good.</p>
 
-    <!-- Secureframe Comply AI for Risk -->
-    <h3>Secureframe Comply AI for Risk</h3>
-    <p><strong>Application:</strong> Automates the risk assessment process, saving time and resources for organizations.</p>
-    <p><strong>Functionality:</strong> Generates detailed insights into risks, including likelihood, impact, and treatment plans, thereby improving risk awareness and response.</p>
-    <p><strong>Impact:</strong> Helps organizations understand and mitigate risks more effectively.</p>
 
-    <!-- Secureframe Comply AI for Remediation -->
-    <h3>Secureframe Comply AI for Remediation</h3>
-    <p><strong>Application:</strong> Provides tailored guidance for remediating failed cybersecurity tests.</p>
-    <p><strong>Functionality:</strong> Offers contextual and accurate remediation advice, enabling organizations to quickly address cybersecurity issues and achieve compliance.</p>
-    <p><strong>Impact:</strong> Enhances the security and compliance posture of organizations.</p>
+    <h2>3.6 Advantages and Limitations of Supervised Learning</h2>
+    <p><b>ADVANTAGES:</b></p>
+    <p>Supervised learning models offer distinct advantages and have certain drawbacks compared to unsupervised models. Here are the benefits:</p>
+    <p>•	Supervised models tend to deliver results that align with human reasoning, as they're trained on human-labeled data.</p>
 
-    <!-- Tenable ExposureAI -->
-    <h3>Tenable ExposureAI</h3>
-    <p><strong>Application:</strong> Facilitates exposure management for cybersecurity analysts.</p>
-    <p><strong>Functionality:</strong> Allows natural language search queries for exposure data, summarizes attack paths, and surfaces high-risk exposure insights.</p>
-    <p><strong>Impact:</strong> Speeds up decision-making about exposures and prioritization of remediation efforts.</p>
+    <p> •	They enhance performance by leveraging the insights gained from this additional guidance.</p>
 
-    <!-- Ironscales Phishing Simulation Testing -->
-    <h3>Ironscales Phishing Simulation Testing</h3>
-    <p><strong>Application:</strong> Conducts personalized phishing simulation testing to enhance security awareness.</p>
-    <p><strong>Functionality:</strong> Uses a proprietary large language model to generate realistic phishing scenarios tailored to employees.</p>
-    <p><strong>Impact:</strong> Aids in preparing organizations against sophisticated socially engineered attacks.</p>
 
-    <!-- ZeroFox FoxGPT -->
-    <h3>ZeroFox FoxGPT</h3>
-    <p><strong>Application:</strong> Accelerates the analysis and summarization of intelligence across large datasets.</p>
-    <p><strong>Functionality:</strong> Assists in contextualizing malicious content, phishing attacks, and potential account takeovers.</p>
-    <p><strong>Impact:</strong> Improves the efficiency and effectiveness of security teams in identifying threats.</p>
+    <p> •	These models can carry out both classification and regression tasks effectively.</p>
 
-    <!-- SentinelOne Purple AI -->
-    <h3>SentinelOne Purple AI</h3>
-    <p><strong>Application:</strong> Offers a generative AI-powered threat hunting platform.</p>
-    <p><strong>Functionality:</strong> Combines real-time neural networks and a large language model for rapid threat identification and analysis.</p>
-    <p><strong>Impact:</strong> Enhances the speed and accuracy of threat mitigation strategies.</p>
+    <p> •	Practitioners can dictate the class count within the training dataset.</p>
 
-    <!-- VirusTotal Code Insight -->
-    <h3>VirusTotal Code Insight</h3>
-    <p><strong>Application:</strong> Assists in analyzing and understanding the behavior of potentially malicious scripts.</p>
-    <p><strong>Functionality:</strong> Produces natural language summaries of code snippets using Sec-PaLM, a generative AI model.</p>
-    <p><strong>Impact:</strong> Serves as a 24/7 assistant to cybersecurity analysts, boosting their performance and effectiveness.</p>
 
-    <center><button onclick="redirectToQuiz()" type="button">Quiz</button></center>
+    <p> •	Predictive outcomes from these models are derived from their learned experiences.</p>
+
+    <p> •	Object classes are explicitly defined and labeled.</p>
+
+    <p><b>DRAWBACKS:</b></p>
+    <p>•	When it comes to methods based on retrieval, these models can struggle with novel information. For instance, a model trained to recognize cats and dogs might incorrectly categorize a zebra if it encounters one because it lacks a predefined category for it. In contrast, an unsupervised (generative) system might not recognize what a zebra is but could still identify it as distinct from cats and dogs.</p>
+
+    <p>•	A substantial amount of accurately labeled data is necessary for these models to perform well, which isn't always feasible to obtain. Unsupervised learning models, on the other hand, can function with unlabeled data.</p>
+
+
+    <p>•	Before they can be deployed, supervised models require a period of training.</p>
+
+
+
+    <h2>3.7 Common Use cases of Supervised Learning in Cyber security</h2>
+
+    <h3>1. Malware Detection</h3>
+    <strong>Algorithms:</strong> Decision Trees, Support Vector Machines (SVM), Neural Networks.<br>
+    <strong>Application:</strong> Differentiating between benign and malicious software by learning from labeled data sets of known malware samples and benign files.<br>
+
+    <h3>2. Phishing Email Detection</h3>
+    <strong>Algorithms:</strong> Logistic Regression, Random Forest.<br>
+    <strong>Application:</strong> Identifying phishing emails by analyzing email content, sender information, and other metadata against labeled examples of phishing and legitimate emails.<br>
+
+    <h3>3. Intrusion Detection Systems (IDS)</h3>
+    <strong>Algorithms:</strong> K-Nearest Neighbors (KNN), Decision Trees.<br>
+    <strong>Application:</strong> Detecting network intrusions by training on network traffic labeled as normal or anomalous, to recognize patterns of attacks.<br>
+
+    <h3>4. Fraud Detection</h3>
+    <strong>Algorithms:</strong> Neural Networks, Logistic Regression, Decision Trees.<br>
+    <strong>Application:</strong> Identifying fraudulent transactions by learning from historical data of known frauds and legitimate transactions.<br>
+
+    <h3>5. Anomaly Detection</h3>
+    <strong>Algorithms:</strong> Support Vector Machines (SVM), Neural Networks.<br>
+    <strong>Application:</strong> Detecting unusual patterns or anomalies in data, like unusual network traffic or access patterns, by training on data labeled as normal or anomalous.<br>
+
+    <h3>6. Predictive Analytics for Security Threats</h3>
+    <strong>Algorithms:</strong> Random Forest, Neural Networks.<br>
+    <strong>Application:</strong> Predicting future security threats and vulnerabilities by analyzing historical security breach data.<br>
+
+
+
+    <head>
+        <title>Fraud Detection Using Decision Trees</title>
+        <style>
+            /* Add your CSS styling here */
+            #decisionTreeVisualization {
+                width: 100%;
+                height: 400px; /* Adjust as needed */
+                border: 1px solid #ccc;
+                margin-top: 20px;
+            }
+
 
 
 </div>
-<script type="text/javascript">
-    function redirectToQuiz() {
-        window.location.href = "/genQuiz";
-    }
-</script>
+
 
 <script src="assets/js/script.js"></script>
 </body>
