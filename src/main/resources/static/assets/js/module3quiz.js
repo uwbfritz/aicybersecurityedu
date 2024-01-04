@@ -71,61 +71,62 @@ function fetchNews() {
 
 const quizQuestions = [
     {
-        question: "In the context of cybersecurity, what is the primary goal of unsupervised learning?",
+        question: "What is the primary goal of supervised learning in AI?",
         answers: {
-            a: "To follow strict rules set by cybersecurity experts.",
-            b: "To uncover hidden patterns and group similar data without prior labeling.",
-            c: "To rely on predefined datasets for detecting threats.",
-            d: "To focus solely on supervised learning methods."
+            a: "To train algorithms on unlabeled data",
+            b: "To make predictions based on new data",
+            c: "To find hidden patterns in data",
+            d: "To categorize data in real-time"
         },
         correctAnswer: "b",
-        explanation: "Unsupervised learning in cybersecurity aims to discover hidden patterns in data and group similar things together without prior labeling, enhancing the detection of unusual or suspicious behavior."
+        explanation: "Supervised learning trains algorithms using labeled data to make predictions about new, unseen data."
     },
     {
-        question: "How does K-Means Clustering work in identifying cybersecurity threats?",
+        question: "Which algorithm is commonly used in supervised learning for classification tasks?",
         answers: {
-            a: "By using labeled data to classify types of cyber threats.",
-            b: "By clustering similar activity patterns and highlighting anomalies.",
-            c: "By following a predefined set of rules for threat detection.",
-            d: "By relying on human intervention for data analysis."
+            a: "K-Means Clustering",
+            b: "Logistic Regression",
+            c: "Principal Component Analysis",
+            d: "Apriori Algorithm"
         },
         correctAnswer: "b",
-        explanation: "K-Means Clustering in cybersecurity groups similar activity patterns, helping to detect anomalies that could indicate security breaches or malicious activities."
+        explanation: "Logistic Regression is a classification algorithm used in supervised learning."
     },
     {
-        question: "What is a key feature of Hierarchical Clustering in unsupervised learning for cybersecurity?",
+        question: "In machine learning, what is 'overfitting'?",
         answers: {
-            a: "It requires a pre-specified number of clusters.",
-            b: "It builds a dendrogram to illustrate relationships between data points.",
-            c: "It primarily focuses on supervised learning techniques.",
-            d: "It uses only labeled data for clustering."
+            a: "Reducing the complexity of a model",
+            b: "The model performs well on the training data but poorly on new data",
+            c: "Increasing the speed of learning",
+            d: "The process of selecting the right features"
         },
         correctAnswer: "b",
-        explanation: "Hierarchical Clustering creates a dendrogram, a tree-like diagram, to show how individual data points are related, useful for understanding the nature of cyber attacks."
+        explanation: "Overfitting occurs when a model learns the training data too well, including its noise and outliers, leading to poor generalization."
     },
     {
-        question: "What makes the Isolation Forest algorithm effective for anomaly detection in cybersecurity?",
+        question: "Which supervised learning algorithm is particularly effective for large and complex datasets?",
         answers: {
-            a: "It focuses on clustering large groups of similar data points.",
-            b: "It isolates anomalies by constructing multiple decision trees.",
-            c: "It requires extensive labeled datasets for analysis.",
-            d: "It operates based on pre-defined threat signatures."
+            a: "Linear Regression",
+            b: "Decision Trees",
+            c: "Neural Networks",
+            d: "K-Nearest Neighbors"
         },
-        correctAnswer: "b",
-        explanation: "The Isolation Forest algorithm is effective in anomaly detection as it isolates outliers or anomalies by constructing multiple decision trees, efficiently identifying unusual patterns."
+        correctAnswer: "c",
+        explanation: "Neural networks are powerful for handling large and complex datasets due to their deep learning capabilities."
     },
     {
-        question: "In what way do Autoencoders contribute to cybersecurity?",
+        question: "Which metric is often used to evaluate the performance of a classification algorithm?",
         answers: {
-            a: "By encrypting sensitive data using complex algorithms.",
-            b: "By learning to represent normal behavior to detect deviations that may indicate threats.",
-            c: "By manually inspecting data for potential security breaches.",
-            d: "By relying solely on external threat intelligence."
+            a: "Accuracy",
+            b: "Mean Squared Error",
+            c: "Clustering Coefficient",
+            d: "Entropy"
         },
-        correctAnswer: "b",
-        explanation: "Autoencoders contribute to cybersecurity by learning efficient representations of normal behavior and detecting deviations, useful in identifying potential security threats."
+        correctAnswer: "a",
+        explanation: "Accuracy is a common metric for assessing classification models, indicating the percentage of correctly classified instances."
     }
 ];
+
 
 function buildQuiz(){
     const output = [];
@@ -183,6 +184,7 @@ function showResults(){
             }
         }
     });
+
 
     document.getElementById('results').innerHTML = `${numCorrect} out of ${quizQuestions.length}`;
 }

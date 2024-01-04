@@ -63,6 +63,11 @@ public class PageViewController {
         return "module2Quiz"; // Returns the home view
     }
 
+    @GetMapping("/module3quiz")
+    public String module3Quiz() {
+        return "module3Quiz"; // Returns the home view
+    }
+
     @GetMapping("/phishing")
     public String phishingLab() {
         return "phishing"; // Returns the home view
