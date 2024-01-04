@@ -81,6 +81,7 @@
     <p>In cybersecurity, K-Means can be used to detect anomalies by clustering similar activity patterns and highlighting any outliers that could indicate a security breach or malicious activity.</p>
 <!--    https://youtu.be/R2e3Ls9H_fc?si=O_F3tDkUvP1k51Oy-->
 
+    <center><button onclick="redirectToKLab()" type="button">Try K means clusturing simulation lab</button></center>
 
     <!--    Chapter 2.2.2   -->
     <h3 id="chapter2Sub2Sub2">2.2.2 Hierarchical Clustering</h3>
@@ -156,6 +157,7 @@
 
     <h3 id="chapter2Sub3Sub2">2.3.2 Malware Detection</h3>
     <p>Traditional malware detection relies on known signatures, but unsupervised learning can uncover new malware strains by analyzing file characteristics and behaviors rather than matching known signatures. By learning from the structure and execution patterns of files, these models can isolate potential threats, providing a robust defense against zero-day attacks.</p>
+    <center><button onclick="redirectToQuiz()" type="button">Malware Code Detection using Unsupervised Learning</button></center>
 
     <h3 id="chapter2Sub3Sub3">2.3.3 Traffic Analysis</h3>
     <p>Unsupervised learning models can analyze network traffic flows to discern benign from potentially malicious activities. By clustering similar traffic patterns and identifying outliers, these algorithms can detect signs of cyber threats such as distributed denial-of-service (DDoS) attacks, unauthorized access attempts, or suspicious data transfers.</p>
@@ -181,6 +183,10 @@
 <script type="text/javascript">
     function redirectToQuiz() {
         window.location.href = "/module2quiz";
+    }
+
+    function redirectToKLab() {
+        window.location.href = "/klab";
     }
 </script>
 <script src="assets/js/script.js"></script>

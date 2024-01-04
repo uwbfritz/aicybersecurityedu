@@ -73,6 +73,11 @@ public class PageViewController {
         return "phishing"; // Returns the home view
     }
 
+    @GetMapping("/klab")
+    public String klab() {
+        return "kmeans"; // Returns the home view
+    }
+
     @GetMapping("/spam-email")
     public String spamEmailDetectionPage() {
         return "spam-email";
