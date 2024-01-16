@@ -58,6 +58,25 @@ public class PageViewController {
         return "module1Quiz"; // Returns the home view
     }
 
+    @GetMapping("/moduleoneoonequiz")
+    public String module1dot1Quiz() {
+        return "module1dot1Quiz"; // Returns the home view
+    }
+
+    @GetMapping("/moduleoneotwoquiz")
+    public String module1dot2Quiz() {
+        return "module1dot2Quiz"; // Returns the home view
+    }
+
+    @GetMapping("/moduletwootwoquiz")
+    public String module2dot2Quiz() {
+        return "module2dot2Quiz"; // Returns the home view
+    }
+
+    @GetMapping("/modulethreeofivequiz")
+    public String module3dot5Quiz() {
+        return "module3dot5Quiz"; // Returns the home view
+    }
     @GetMapping("/module2quiz")
     public String module2Quiz() {
         return "module2Quiz"; // Returns the home view

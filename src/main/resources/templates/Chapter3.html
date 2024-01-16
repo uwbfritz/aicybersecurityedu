@@ -211,13 +211,14 @@
         <p>Support Vector Machines (SVM) are a potent analytical tool for cybersecurity, particularly due to their robustness in high-dimensional spaces and their effectiveness in binary classification problems. In cybersecurity, SVMs are extensively used for intrusion detection by creating a hyperplane that optimally separates malicious network activities from benign ones. Their capability to handle large feature sets makes them particularly suitable for distinguishing complex attack patterns in network traffic, such as identifying subtle anomalies that may signal advanced persistent threats (APTs) or unauthorized data exfiltration attempts. SVMs can be trained on historical security data to recognize the characteristics of different types of cyber attacks, thus providing a predictive mechanism to bolster a network's defenses against novel and emerging threats.</p>
         <p>In the domain of malware detection and classification, SVMs contribute significantly by categorizing executable files or scripts into malicious or safe categories based on their behavior and code structure. By extracting key features from the binaries and applying kernel tricks, SVMs can classify new, unseen samples with high accuracy, which is paramount for defending against zero-day malware. Furthermore, SVMs are also applied in phishing detection, where they analyze and learn from website URLs, content, and other metadata to differentiate between legitimate and fraudulent sites. Their generalization ability ensures that even with evolving phishing techniques, SVMs remain a steadfast component in the arsenal of tools used to maintain cybersecurity integrity.</p>
 
+        <button onclick="window.location.href='/spam-email'" type="button" style="margin-right: 10px;">Try the SVM to Email Spam Detection Lab</button>
 
 
 
     </li>
 
     <li>
-        <strong>3.4.1.5 K-nearest neighbors (KNNs)</strong>
+        <strong id="chapter3Sub4Sub1Sub5">3.4.1.5 K-nearest neighbors (KNNs)</strong>
         <p>KNNs work by looking at the 'neighbors' (similar data points). If the new data point has neighbors that are mostly malicious, KNN might identify it as a threat. It's like judging the risk based on the company it keeps.</p>
         <center><img src="assets/images/KNN.png" alt="KNN.png" /></center>
         <p>Overview of the Algorithm:</p>
@@ -285,9 +286,10 @@
     <p style="margin-left: 40px;">•	Activation Function: Like in hidden layers, an activation function is applied, but it's tailored to the specific needs of the output. For instance, a softmax function for classification tasks or a linear function for regression tasks.   </p>
     <p style="margin-left: 40px;">•	Output Generation:   The output layer converts the final transformed data into a format suitable for the problem at hand, such as a predicted class label in classification or a value in regression.  </p>
 
+    <button onclick="window.location.href='/draw'" type="button" style="margin-right: 10px;">Try the Quik Draw by Google Labs which Uses Neural Networks to guess what you Draw</button>
 
 
-    <h3>3.5.2.2 Deep Neural Network Architecture:</h3>
+    <h3 id="chapter3Sub5Sub2Sub2">3.5.2.2 Deep Neural Network Architecture:</h3>
     <p>Artificial neural networks (ANNs), drawing inspiration from biological neural networks, are structured to perform specific tasks through a series of interconnected layers. These networks typically feature an input layer, a few hidden layers, and an output layer, with each layer comprising a set of nodes that work in unison. This basic architecture is adept at handling simpler computational tasks, such as solving basic mathematical problems or interpreting elementary computer logic, like gate structures and their corresponding truth tables. However, ANNs face limitations when it comes to more intricate challenges, especially in fields like image processing, computer vision, and natural language processing.</p>
     <p>To address these complex tasks, deep neural networks (DNNs) are employed, characterized by their intricate and diverse layer structures, which often include convolutional layers, max-pooling layers, dense layers, among others. These additional layers significantly enhance the network's ability to comprehend and analyze intricate patterns, thereby providing more effective solutions to sophisticated problems. The key distinction between DNNs and traditional ANNs lies in their depth: DNNs incorporate more layers, each contributing additional complexity and depth to the model, enabling it to process and transform input data into highly accurate outputs.</p>
     <center><img src="assets/images/avsd.png" alt="avsd.png" width="600" height="300"  /></center>
@@ -371,6 +373,7 @@
 
     <p>Another application of CNNs in cyber security is in the field of phishing detection. Phishing attacks often involve fake websites designed to mimic legitimate ones to steal user data. CNNs can be employed to analyze the visual content of web pages. By learning the visual features of legitimate websites, they can identify subtle discrepancies in phishing websites, such as changes in layout, color schemes, or logo distortions. This method enhances the detection of phishing sites, providing a layer of security that complements traditional text-based analysis. Furthermore, CNNs are being explored for their potential in biometric authentication systems, such as facial recognition or fingerprint analysis, where their ability to process and recognize complex patterns can enhance the security and reliability of these systems. The adaptability and learning capabilities of CNNs make them a valuable asset in the constantly evolving landscape of cyber threats, where novel methods of attacks are continually emerging.</p>
 
+    <button onclick="window.location.href='/modulethreeofivequiz'" type="button" style="margin-right: 10px;">Quiz CNN</button>
 
     <h2>3.6 Advantages and Limitations of Supervised Learning</h2>
     <h3><b>3.6.1 Advantages:</b></h3>
@@ -399,7 +402,7 @@
 
 
 
-    <h2>3.7 Common Use cases of Supervised Learning in Cyber security</h2>
+    <h2 id="chapter3Sub7">3.7 Common Use cases of Supervised Learning in Cyber security</h2>
 
     <p>Supervised learning in cybersecurity involves training a model on a labeled dataset, where the inputs are various cyber-related metrics and the outputs are predefined classifications, such as 'malicious' or 'benign'. Here are some common uses of supervised learning in cybersecurity, with examples:</p>
 
@@ -411,6 +414,7 @@
 
     <h3>3.7.3 Facial Recognition</h3>
     <p>Facial recognition is a technology used to identify or verify a person's identity using their face, leveraging features such as the structure, shape, and proportions of the face. Supervised learning plays a key role in this process by employing algorithms like convolutional neural networks (CNNs), which are trained on vast datasets of facial images annotated with the identities of the people in the images. These models learn to extract and analyze key facial features from the training data, effectively learning a mathematical representation of each face. When new facial images are presented, the system uses the trained model to find the closest match in its database, thus identifying or verifying an individual's identity. This technology is widely used in various applications, from security systems and surveillance to unlocking smartphones and personalizing user experiences in digital platforms.</p>
+    <button onclick="window.location.href='/face'" type="button" style="margin-right: 10px;">Try The Facial Recognition Lab</button>
 
     <h3>3.7.4 Fraud Detection</h3>
     <p>Fraud detection in cybersecurity involves identifying unauthorized or deceptive transactions that could indicate financial or data-related crimes. Supervised learning plays a pivotal role in this arena by employing algorithms that are trained on historical transaction data labeled as fraudulent or legitimate. These algorithms, such as logistic regression or neural networks, learn to recognize complex patterns and anomalies indicative of fraudulent activity, such as irregular transaction amounts, unusual locations, or atypical user behavior. By applying these learned models to new transactions in real-time, the system can effectively predict and flag potential fraud, thereby enabling preemptive action to prevent financial losses and secure sensitive information.</p>
@@ -432,6 +436,11 @@
         <button onclick="window.location.href='/chapter4'" type="button">Next Module</button>
     </div>
 </div>
+<script type="text/javascript">
+    function redirectToQuiz() {
+        window.location.href = "/module3quiz";
+    }
+</script>
 <script src="assets/js/script.js"></script>
 
 </body>
