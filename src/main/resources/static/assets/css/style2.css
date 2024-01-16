@@ -475,3 +475,33 @@ button:hover {
     border: none;
     cursor: pointer;
 }
+
+#app {
+    margin: 20px;
+}
+
+#suspect-list {
+    margin-top: 20px;
+}
+
+.suspect {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.node circle {
+    fill: #fff;
+    stroke: steelblue;
+    stroke-width: 3px;
+}
+
+.node text { font: 12px sans-serif; }
+
+.link {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 2px;
+}

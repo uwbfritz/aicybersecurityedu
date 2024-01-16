@@ -63,14 +63,39 @@ public class PageViewController {
         return "module2Quiz"; // Returns the home view
     }
 
+    @GetMapping("/module3quiz")
+    public String module3Quiz() {
+        return "module3Quiz"; // Returns the home view
+    }
+
     @GetMapping("/phishing")
     public String phishingLab() {
         return "phishing"; // Returns the home view
     }
 
+    @GetMapping("/klab")
+    public String klab() {
+        return "kmeans"; // Returns the home view
+    }
+
+    @GetMapping("/draw")
+    public String draw() {
+        return "draw"; // Returns the home view
+    }
+
+    @GetMapping("/face")
+    public String face() {
+        return "faceRecognition"; // Returns the home view
+    }
+
+    @GetMapping("/dtree")
+    public String dtree() {
+        return "decisionTree"; // Returns the home view
+    }
+
     @GetMapping("/spam-email")
     public String spamEmailDetectionPage() {
-        return "spam-email";
+        return "spam";
     }
 
     @PostMapping("/check-spam")

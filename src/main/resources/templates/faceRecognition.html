@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Education in Cybersecurity</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/style2.css"/><!--ur CSS file -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</head>
+<body>
+<div th:include="common :: header"></div>
+
+<!-- Sidebar for chapters -->
+<div th:include="common :: sidebar"></div>
+
+<div style="margin-left: 400px">
+  <h2>Welcome to Our Facial Recognition Lab!</h2>
+
+  <p>Welcome to our interactive facial recognition lab! Here, we'll explore the fascinating world of facial recognition technology. This lab is designed for everyone, regardless of your technical background. You'll learn how facial recognition works and get to try it out for yourself!</p>
+
+  <h2>How Does Facial Recognition Work?</h2>
+  <p>Facial recognition technology is a method for identifying or verifying the identity of an individual using their face. It captures, analyzes, and compares patterns based on the person's facial contours.</p>
+
+  <p>Think of facial recognition like a skilled artist drawing a portrait. Just as an artist observes and captures unique features like the distance between eyes or the shape of the chin, facial recognition software maps out distinct characteristics of a face. These are called "facial landmarks." The technology then creates a digital "sketch" or a mathematical formula of these features.</p>
+
+  <h2>Behind the Scenes: Machine Learning</h2>
+  <p>Facial recognition is powered by a type of artificial intelligence called machine learning. Machine learning allows computers to learn from data and improve over time.</p>
+  <p>Imagine machine learning as teaching a child to differentiate between different types of fruit. By showing them various fruits multiple times, they learn to recognize each one. Similarly, we "teach" the computer by feeding it lots of images, helping it learn to identify and differentiate faces.</p>
+
+  <p>Facial recognition technology typically employs Convolutional Neural Networks (CNNs), a type of deep learning model particularly well-suited for processing and analyzing visual imagery.</p>
+  <h3>Convolutional Neural Networks (CNNs) in Facial Recognition:</h3>
+  <p>Image Processing: CNNs are adept at processing pixel data from images. They use various filters to capture different aspects of an image, such as edges, shapes, or textures.</p>
+  <p>Feature Extraction: In facial recognition, CNNs analyze facial features by detecting specific patterns and variations in a face. These could include the distance between eyes, the shape of the nose, the contour of the jawline, etc.</p>
+  <p>Layered Architecture: CNNs have multiple layers. The initial layers might detect basic features like edges or colors, while deeper layers recognize more complex features. This hierarchical structure enables the network to gradually learn more detailed aspects of the data.</p>
+  <p>Training with Large Datasets: CNNs are trained on vast datasets of facial images. This training allows the model to learn a wide variety of facial features and characteristics, improving its accuracy in recognizing faces.</p>
+  <p>Classification and Matching: After training, the CNN can classify and match faces by comparing the facial features of new images with the data it has learned.</p>
+
+
+
+<!--  <h2>Try It Yourself!</h2>-->
+<!--  <p><b>Original Source Image:</b> This is the face you want the system to recognize. Upload a clear photo of the person's face.</p>-->
+<!--  <p><b>Comparison Image:</b> Upload any other image here. It could be another person's face or the same person under different conditions.</p>-->
+
+  <h2>Try It Yourself!</h2>
+
+  <!-- Image Preview Containers -->
+  <div id="imagePreview1" style="display:inline-block; margin-right:20px;"></div>
+  <div id="imagePreview2" style="display:inline-block;"></div>
+
+  <div id="result"></div>
+
+
+  <form id="faceRecognitionForm">
+    <p><b>Original Source Image:</b> This is the face you want the system to recognize. Upload a clear photo of the person's face. <input type="file" id="photo1" name="photo1" required></p>
+    <p><b>Comparison Image:</b> Upload any other image here. It could be another person's face or the same person under different conditions. <input type="file" id="photo2" name="photo2" required></p>
+    <button type="submit">Submit</button>
+  </form>
+
+
+
+
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('faceRecognitionForm');
+    const submitButton = form.querySelector('button[type="submit"]');
+    const imagePreview1 = document.getElementById('imagePreview1');
+    const imagePreview2 = document.getElementById('imagePreview2');
+
+    document.getElementById('faceRecognitionForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      submitButton.textContent = 'Loading...';
+
+      const formData = new FormData();
+      const photo1 = document.getElementById('photo1').files[0];
+      const photo2 = document.getElementById('photo2').files[0];
+      formData.append('photo1', photo1);
+      formData.append('photo2', photo2);
+
+      // Display image previews
+      displayImagePreview(photo1, imagePreview1);
+      displayImagePreview(photo2, imagePreview2);
+
+      const options = {
+        method: 'POST',
+        url: 'https://face-verification2.p.rapidapi.com/FaceVerification',
+        headers: {
+          'X-RapidAPI-Key': 'c29f53ccb8mshf803ebf49194781p1503abjsn656970979677',
+          'X-RapidAPI-Host': 'face-verification2.p.rapidapi.com',
+        },
+        data: formData
+      };
+
+      try {
+        const response = await axios.post(options.url, formData, { headers: options.headers });
+        document.getElementById('result').innerHTML = 'Result: ' + response.data.data.resultMessage;
+      } catch (error) {
+        console.error(error);
+        document.getElementById('result').innerHTML = 'An error occurred: ' + error;
+      }
+      submitButton.textContent = 'Submit';
+    });
+
+    function displayImagePreview(file, previewElement) {
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          previewElement.innerHTML = '<img src="' + e.target.result + '" style="max-width:200px; max-height:200px;"/>';
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+  });
+</script>
+<script src="assets/js/script.js"></script>
+</body>
+</html>
+

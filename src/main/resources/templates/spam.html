@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Education in Cybersecurity</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/style2.css"/><!--ur CSS file -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</head>
+<body>
+<div th:include="common :: header"></div>
+
+<!-- Sidebar for chapters -->
+<div th:include="common :: sidebar"></div>
+
+<div style="margin-left: 400px">
+  <h1>Spam Email Detection</h1>
+  <p>Spam email detection is a technology that uses Artificial Intelligence to identify and filter out unwanted emails, commonly known as spam.</p>
+
+  <h2>How Does It Work?</h2>
+  <p>Think of spam detection as a virtual guardian of your inbox. It analyzes the content of incoming emails and looks for patterns and signals that are commonly associated with spam, like certain keywords or suspicious links.</p>
+  <p>Machine Learning, a type of Artificial Intelligence, is at the heart of spam detection. It learns from examples of spam and non-spam emails and gets better over time at identifying spam.</p>
+
+  <h2>Behind the Scenes: Machine Learning</h2>
+  <p>Support Vector Machines (SVM) are a powerful set of supervised machine learning algorithms used for classification and regression. When it comes to spam email detection, SVM is used to classify emails into two categories: spam and non-spam (also known as "ham"). Here's a simplified explanation of how SVM works, using an analogy:</p>
+  <p>Imagine you're at a party and you're tasked with separating the partygoers into two groups: those who like to dance and those who prefer to sit. You notice that there are some obvious differences in clothing style, energy levels, and whether they're already dancing or not. Your job is to draw a line on the ground that separates the dancers from the non-dancers. In machine learning terms, this line is called a hyperplane, and the attributes you use to distinguish the groups (clothing style, energy level, dancing state) are called features.</p>
+  <p>Feature Extraction: Just like you observed partygoers' characteristics, SVM looks at emails and extracts features. This could be the presence of certain keywords that are often found in spam, the frequency of those words, the sender's email address, or even the time the email was sent.</p>
+
+  <p>Training the SVM: Once the features are extracted, the SVM is trained with a dataset of emails that are already labeled as spam or non-spam. This is similar to you learning from observing a few parties which kinds of behaviors typically indicate a preference for dancing.</p>
+  <p>Finding the Optimal Hyperplane: The SVM algorithm tries to find the hyperplane that best separates the spam emails from the non-spam emails. This is like drawing the best line on the floor of the party that separates dancers from non-dancers, which maximizes the distance (margin) from the line to the nearest partygoers of any group.</p>
+  <p>Classification: After the hyperplane is established, when a new email comes in, the SVM checks which side of the hyperplane the email falls on, based on its features. If it lands on the side with spam emails, it's classified as spam; if it lands on the side with non-spam emails, it's classified as non-spam. Think of it as watching where a new guest goes when they arrive at the party — if they head for the dance floor, you'd classify them as a dancer; if they head for the seats, you'd classify them as a non-dancer.</p>
+  <p>Handling Misclassification: Sometimes, SVM might make a mistake, just like you might misclassify a shy dancer who's sitting down. To handle this, SVM uses a cost function that penalizes wrong classifications, which it tries to minimize. This is like adjusting your line when you see that someone you placed in the non-dancers' side</p>
+  <p>Classification and Matching: After training, the CNN can classify and match faces by comparing the facial features of new images with the data it has learned.actually starts to dance later on. You learn from this mistake and adjust your criteria (or hyperplane) accordingly.</p>
+
+
+
+<!--  <h2>Try It Yourself!</h2>-->
+<!--  <p><b>Original Source Image:</b> This is the face you want the system to recognize. Upload a clear photo of the person's face.</p>-->
+<!--  <p><b>Comparison Image:</b> Upload any other image here. It could be another person's face or the same person under different conditions.</p>-->
+
+  <h2>Try It Yourself!</h2>
+
+  <p>Test the spam detection model with your own examples or use our predefined samples.</p>
+
+  <button id="spamExample">Load Spam Example</button>
+  <br>
+  <button id="nonSpamExample">Load Non-Spam Example</button>
+  <br>
+  <p id="result"></p>
+  <br>
+  <textarea id="emailContent" rows="6" cols="50" placeholder="Type or paste email content here"></textarea>
+  <br>
+  <button id="checkEmail">Check Email</button>
+
+
+
+
+</div>
+<script>
+  // Your existing JavaScript code
+  async function query(data) {
+    const response = await fetch(
+            "https://api-inference.huggingface.co/models/h-e-l-l-o/email-spam-classification-merged",
+            {
+              headers: { Authorization: "Bearer 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" },
+              method: "POST",
+              body: JSON.stringify(data),
+            }
+    );
+    return await response.json();
+  }
+
+  // Additional JavaScript for handling button clicks and pasting examples
+  document.getElementById('spamExample').addEventListener('click', function() {
+    document.getElementById('emailContent').value = 'I am working with many individuals making over $10,000.00 a week, none of which have been with us for more then 6 months. We are capitalizing on the Internet growth and expansion. For more information please call 1-888-244-2021 this call is Free and could change your lifestyle!';
+  });
+
+  document.getElementById('nonSpamExample').addEventListener('click', function() {
+    document.getElementById('emailContent').value = 'Hey there, are we still on for the meeting tomorrow at 10 am? Let me know. Cheers!';
+  });
+
+  document.getElementById('checkEmail').addEventListener('click', function() {
+    const emailText = document.getElementById('emailContent').value;
+    query({"inputs": emailText}).then((response) => {
+      const spamScore = response[0].find(obj => obj.label === "Spam").score;
+      const hamScore = response[0].find(obj => obj.label === "Ham").score;
+
+      let message = "";
+      if (spamScore > hamScore) {
+        message = "It's a Spam email.";
+      } else {
+        message = "It's not a Spam email.";
+      }
+
+      document.getElementById('result').innerText = 'Result: ' + message;    });
+  });
+</script>
+<script src="assets/js/script.js"></script>
+</body>
+</html>
+

@@ -164,9 +164,23 @@ function showResults(){
 
         if(userAnswer === currentQuestion.correctAnswer){
             numCorrect++;
-            answerContainers[questionNumber].style.color = 'green';
-        } else {
-            answerContainers[questionNumber].style.color = 'red';
+        }
+
+        // Find and style the correct answer green
+        const correctSelector = `input[name=question${questionNumber}][value="${currentQuestion.correctAnswer}"]`;
+        const correctAnswerElement = answerContainer.querySelector(correctSelector);
+        if (correctAnswerElement) {
+            const correctAnswerContainer = correctAnswerElement.parentNode;
+            correctAnswerContainer.style.color = 'green';
+        }
+
+        // If the user's answer is wrong, style their answer red
+        if(userAnswer !== currentQuestion.correctAnswer){
+            const userAnswerElement = answerContainer.querySelector(selector);
+            if (userAnswerElement) {
+                const userAnswerContainer = userAnswerElement.parentNode;
+                userAnswerContainer.style.color = 'red';
+            }
         }
     });
 
