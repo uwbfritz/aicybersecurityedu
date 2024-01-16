@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Education in Cybersecurity</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/style2.css"/><!--ur CSS file -->
+</head>
+<body>
+<div th:include="common :: header"></div>
+
+<!-- Sidebar for chapters -->
+<!--<div th:include="common :: sidebar"></div>-->
+<div style="margin-left: 400px">
+<div id="app">
+  <h2>Mystery of the Manor Heist</h2>
+  <p>The fictional setting is Hawthorne Manor, a large estate with valuable artifacts. One morning, a rare antique vase is discovered missing. The manor was locked, and there were no signs of forced entry. The suspects are people who had access to the manor and might have motives.</p>
+  <h3>Suspects</h3>
+  <div id="suspect-list"></div>
+  <div id="evidence-details"></div>
+
+
+
+</div>
+</div>
+
+<script src="https://d3js.org/d3.v6.min.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    let suspects = [
+      {
+        id: 1,
+        name: 'The Butler',
+        details: 'Has keys to all rooms.',
+        evidence: [
+          'Fingerprints: Found on the lock of the room where the vase was kept.',
+          'Alibi: Claims to have been in the kitchen, but no one can confirm his presence.',
+          'Financial Records: No unusual activities or debts.',
+          'Phone Records: Received a call around the time of the theft, but the caller is unidentified.'
+        ]
+      },
+      {
+        id: 2,
+        name: 'The Gardener',
+        details: 'Was seen near the manor late at night.',
+        evidence: [
+          'Footprint Evidence: Muddy footprints matching the gardener\'s shoes were found leading to the back door.',
+          'Tool Marks: Tools owned by the gardener match some marks on a window near the crime scene.',
+          'Alibi: Seen near the manor late at night, claims it was for routine work.',
+          'Financial Records: Recently paid off a large debt unexpectedly.'
+        ]
+      },
+      {
+        id: 3,
+        name: 'The Art Collector',
+        details: 'Interested in rare antiques.',
+        evidence: [
+          'Security Camera Footage: Seen in the hallway near the room of the theft around the time it occurred.',
+          'Handwriting Analysis: A note found in the room matches the collector\'s handwriting style.',
+          'Digital Evidence: Browser history shows searches for the stolen vase.',
+          'Psychological Profile: Known to be obsessed with rare collectibles.'
+        ]
+      },
+      {
+        id: 4,
+        name: 'The Housekeeper',
+        details: 'Has a history of financial troubles.',
+        evidence: [
+          'DNA Evidence: A hair found at the crime scene matches the housekeeper.',
+          'Financial Records: Deep in debt and recently denied a request for a salary advance.',
+          'Alibi Verification: Claims to have been in town, but no evidence to confirm her whereabouts.',
+          'Possession of Suspicious Items: Found with a large amount of cash shortly after the theft.'
+        ]
+      }
+    ];
+
+    const suspectListElement = document.getElementById('suspect-list');
+    const evidenceDetailsElement = document.getElementById('evidence-details');
+
+    suspects.forEach(suspect => {
+      const suspectElement = document.createElement('div');
+      suspectElement.classList.add('suspect');
+      suspectElement.innerHTML = `<h3>${suspect.name}</h3><p>${suspect.details}</p>`;
+      suspectElement.onclick = function() {
+        showEvidence(suspect);
+      };
+      suspectListElement.appendChild(suspectElement);
+    });
+
+    function showEvidence(suspect) {
+      evidenceDetailsElement.innerHTML = `<h3>Evidence for ${suspect.name}</h3>`;
+      suspect.evidence.forEach(item => {
+        const itemElement = document.createElement('p');
+        itemElement.textContent = item;
+        evidenceDetailsElement.appendChild(itemElement);
+      });
+    }
+
+    // Add scores to the suspects
+    suspects = suspects.map(suspect => ({
+      ...suspect,
+      score: calculateScore(suspect.evidence)
+    }));
+    buildDecisionTree(suspects);
+
+
+  });
+  // Function to calculate score based on evidence
+  function calculateScore(evidence) {
+    let score = 0;
+
+    // Define the weight for each type of evidence
+    const evidenceWeights = {
+      'DNA Evidence': 5,
+      'Fingerprints': 4,
+      'Financial Records': 3,
+      'Phone Records': 2,
+      'Alibi': 1
+    };
+
+    // Calculate the score based on the evidence weights
+    evidence.forEach(item => {
+      // Extract the key evidence phrase to match with our weights
+      let keyEvidence = item.split(':')[0];
+      if (evidenceWeights[keyEvidence]) {
+        score += evidenceWeights[keyEvidence];
+      }
+    });
+
+    return score;
+  }
+  // Function to build the decision tree (very simplified for this example)
+  function buildDecisionTree(suspects) {
+    // Define the data for the root node
+    let treeData = {
+      name: "Root",
+      children: []
+    };
+
+    // Populate the tree with suspects and their evidence
+    suspects.forEach(suspect => {
+      let suspectNode = {
+        name: suspect.name,
+        children: suspect.evidence.map(evidence => {
+          return { name: evidence };
+        })
+      };
+      treeData.children.push(suspectNode);
+      suspect.score = calculateScore(suspect.evidence);
+    });
+
+    suspects.sort((a, b) => b.score - a.score);
+
+
+    // Set the dimensions and margins of the diagram
+    const margin = { top: 20, right: 90, bottom: 30, left: 90 },
+            width = 660 - margin.left - margin.right,
+            height = 500 - margin.top - margin.bottom;
+
+    // Append the svg object to the body of the page
+    const svg = d3.select("body").append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr("transform", "translate("
+                    + margin.left + "," + margin.top + ")");
+
+    let i = 0;
+    const duration = 750;
+    const root = d3.hierarchy(treeData, function(d) { return d.children; });
+    root.x0 = height / 2;
+    root.y0 = 0;
+
+    // Collapse after the second level
+    root.children.forEach(collapse);
+
+    update(root);
+
+    // Collapse the node and all it's children
+    function collapse(d) {
+      if(d.children) {
+        d._children = d.children
+        d._children.forEach(collapse)
+        d.children = null
+      }
+    }
+
+    function update(source) {
+      // Assigns the x and y position for the nodes
+      const tree = d3.tree().size([height, width]);
+      const treeData = tree(root);
+
+      // Compute the new tree layout.
+      const nodes = treeData.descendants(),
+              links = treeData.descendants().slice(1);
+
+      // Normalize for fixed-depth.
+      nodes.forEach(function(d){ d.y = d.depth * 180});
+
+      // ****************** Nodes section ***************************
+
+      // Update the nodes...
+      const node = svg.selectAll('g.node')
+              .data(nodes, function(d) {return d.id || (d.id = ++i); });
+
+      // Enter any new modes at the parent's previous position.
+      const nodeEnter = node.enter().append('g')
+              .attr('class', 'node')
+              .attr("transform", function(d) {
+                return "translate(" + source.y0 + "," + source.x0 + ")";
+              })
+              .on('click', click);
+
+      // Add Circle for the nodes
+      nodeEnter.append('circle')
+              .attr('class', 'node')
+              .attr('r', 1e-6)
+              .style("fill", function(d) {
+                return d._children ? "lightsteelblue" : "#fff";
+              });
+
+      // Add labels for the nodes
+      nodeEnter.append('text')
+              .attr("dy", ".35em")
+              .attr("x", function(d) {
+                return d.children || d._children ? -13 : 13;
+              })
+              .attr("text-anchor", function(d) {
+                return d.children || d._children ? "end" : "start";
+              })
+              .text(function(d) { return d.data.name; });
+
+      // UPDATE
+      const nodeUpdate = nodeEnter.merge(node);
+
+      // Transition to the proper position for the node
+      nodeUpdate.transition()
+              .duration(duration)
+              .attr("transform", function(d) {
+                return "translate(" + d.y + "," + d.x + ")";
+              });
+
+      // Update the node attributes and style
+      nodeUpdate.select('circle.node')
+              .attr('r', 10)
+              .style("fill", function(d) {
+                return d._children ? "lightsteelblue" : "#fff";
+              })
+              .attr('cursor', 'pointer');
+
+
+      // Remove any exiting nodes
+      const nodeExit = node.exit().transition()
+              .duration(duration)
+              .attr("transform", function(d) {
+                return "translate(" + source.y + "," + source.x + ")";
+              })
+              .remove();
+
+      // On exit reduce the node circles size to 0
+      nodeExit.select('circle')
+              .attr('r', 1e-6);
+
+      // On exit reduce the opacity of text labels
+      nodeExit.select('text')
+              .style('fill-opacity', 1e-6);
+
+      // ****************** links section ***************************
+
+      // Update the links...
+      const link = svg.selectAll('path.link')
+              .data(links, function(d) { return d.id; });
+
+      // Enter any new links at the parent's previous position.
+      const linkEnter = link.enter().insert('path', "g")
+              .attr("class", "link")
+              .attr('d', function(d){
+                const o = {x: source.x0, y: source.y0}
+                return diagonal(o, o)
+              });
+
+      // UPDATE
+      const linkUpdate = linkEnter.merge(link);
+
+      // Transition back to the parent element position
+      linkUpdate.transition()
+              .duration(duration)
+              .attr('d', function(d){ return diagonal(d, d.parent) });
+
+      // Remove any exiting links
+      const linkExit = link.exit().transition()
+              .duration(duration)
+              .attr('d', function(d) {
+                const o = {x: source.x, y: source.y}
+                return diagonal(o, o)
+              })
+              .remove();
+
+      // Store the old positions for transition.
+      nodes.forEach(function(d){
+        d.x0 = d.x;
+        d.y0 = d.y;
+      });
+
+      // Creates a curved (diagonal) path from parent to the child nodes
+      function diagonal(s, d) {
+        const path = `M ${s.y} ${s.x}
+            C ${(s.y + d.y) / 2} ${s.x},
+              ${(s.y + d.y) / 2} ${d.x},
+              ${d.y} ${d.x}`
+
+        return path
+      }
+
+      // Toggle children on click.
+      function click(d) {
+        if (d.children) {
+          d._children = d.children;
+          d.children = null;
+        } else {
+          d.children = d._children;
+          d._children = null;
+        }
+        update(d);
+      }
+    }
+  }
+
+  // Call createDecisionTree with your suspects
+
+</script>
+<script src="assets/js/script.js"></script>
+</body>
+</html>
+

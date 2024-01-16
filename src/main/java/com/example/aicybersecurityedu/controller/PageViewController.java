@@ -78,9 +78,24 @@ public class PageViewController {
         return "kmeans"; // Returns the home view
     }
 
+    @GetMapping("/draw")
+    public String draw() {
+        return "draw"; // Returns the home view
+    }
+
+    @GetMapping("/face")
+    public String face() {
+        return "faceRecognition"; // Returns the home view
+    }
+
+    @GetMapping("/dtree")
+    public String dtree() {
+        return "decisionTree"; // Returns the home view
+    }
+
     @GetMapping("/spam-email")
     public String spamEmailDetectionPage() {
-        return "spam-email";
+        return "spam";
     }
 
     @PostMapping("/check-spam")

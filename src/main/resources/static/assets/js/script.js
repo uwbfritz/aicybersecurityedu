@@ -102,7 +102,7 @@ window.addEventListener('scroll', function() {
 document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault(); // Prevent the default behavior of the anchor link
+            // e.preventDefault(); // Prevent the default behavior of the anchor link
             console.log("Clicked")
             openNav();
         });
@@ -283,3 +283,4 @@ const quiz = document.getElementById('quiz');
 const submitButton = document.getElementById('submit-button');
 buildQuiz();
 submitButton.addEventListener('click', showResults);
+
