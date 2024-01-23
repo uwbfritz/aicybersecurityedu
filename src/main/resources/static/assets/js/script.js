@@ -28,7 +28,7 @@ document.querySelectorAll('#sidebar a').forEach(link => {
         // Load chapter content dynamically here
         // For example, set innerHTML of mainContent
         // document.getElementById('mainContent').innerHTML = '<h2>Chapter Content</h2>';
-        closeNav();
+        // closeNav();
     });
 });
 

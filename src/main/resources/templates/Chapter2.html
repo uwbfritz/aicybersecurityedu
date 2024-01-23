@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Education in Cybersecurity</title>
     <link rel="stylesheet" type="text/css" href="assets/css/style2.css"/><!--ur CSS file -->
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
 <body>
 <div th:include="common :: header"></div>
@@ -18,7 +23,7 @@
     <h1>Module 2: Unsupervised Learning for Cybersecurity</h1>
 
 <!--    Chapter 2.1-->
-<div>
+<div id="module2_1">
     <h2 id="chapter2Sub1">2.1 Introduction of Unsupervised Learning</h2>
     <p>Unsupervised learning is like sorting a mix of colorful beads into different groups without a guide; the AI looks for patterns and clusters similar items together on its own. In cybersecurity, this helps AI systems spot unusual patterns that could signal a threat, like a guard noticing someone odd in a crowd.</p>
 
@@ -47,7 +52,7 @@
 </div>
 
     <!--    Chapter 2.2-->
-<div>
+<div id="module2_2" class="hidden">
     <h2 id="chapter2Sub2">2.2 Representative Algorithms in Unsupervised Learning</h2>
     <p> In this chapter, we'll explore some of the main tools that AI uses in unsupervised learning to make sense of unlabeled data. These tools are called algorithms, which are like different strategies to sort and understand information: <p/>
 
@@ -149,7 +154,7 @@
 </div>
 
     <!--    Chapter 2.3-->
-<div>
+<div id="module2_3" class="hidden">
     <h2 id="chapter2Sub3">2.3 Common Use Cases for Unsupervised Learning in Cybersecurity</h2>
     <p>In Section 2.3, we delve into the fascinating world of unsupervised learning and its pivotal role in cybersecurity. Unsupervised learning algorithms are designed to parse through data without explicit instructions, identifying patterns and anomalies that often elude traditional detection methods. This section will guide you through several key applications of unsupervised learning in cybersecurity: Anomaly Detection, Malware Detection, Traffic Analysis, Behavioral Analysis, Data Exfiltration Detection, and Authentication and Fraud Detection. Each of these use cases harnesses the power of AI to fortify cybersecurity defenses, providing an essential layer of protection against increasingly sophisticated cyber threats. We'll explore how these algorithms work in the background, silently sifting through data, learning from it, and flagging irregularities that could signify security breaches, all to safeguard the digital infrastructure of businesses and individuals alike.</p>
 
@@ -179,7 +184,7 @@
     <center><button onclick="redirectToQuiz()" type="button">Quiz</button></center>
     <div style="text-align: center;">
         <button onclick="window.location.href='/chapter1'" type="button" style="margin-right: 10px;">Previous Module</button>
-        <button onclick="window.location.href='/chapter3'" type="button">Next Module</button>
+        <button  onclick="showNextModule()"  type="button">Next Module</button>
     </div>
 
 
@@ -194,6 +199,88 @@
 
     function redirectToKLab() {
         window.location.href = "/klab";
+    }
+    let currentModule = 1;  // Starting with Module 1.1
+
+    function showNextModule() {
+        // Hide current module
+        document.getElementById("module2_" + currentModule).classList.add("hidden");
+
+        // Increment module count
+        currentModule++;
+
+        // Show next module
+        const nextModule = document.getElementById("module2_" + currentModule);
+        if (nextModule) {
+            nextModule.classList.remove("hidden");
+            window.scrollTo(0, 0);
+        } else {
+            // If no more modules, maybe redirect or hide the button
+            // For example: document.getElementById("nextButton").classList.add("hidden");
+            window.location.href ='/chapter3'
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        // Check if there is a URL fragment
+        if (window.location.hash) {
+            const hash = window.location.hash; // e.g., #chapter1Sub3Sub2
+
+            // Determine the module to show based on the hash
+            // You'll need to map hash values to your module IDs
+            const moduleToShow = mapHashToModuleId(hash);
+
+            if (moduleToShow) {
+                showModule(moduleToShow);
+            }
+        }
+    });
+
+    function showModule(moduleId) {
+        // Hide all modules first
+        let totalNumberOfModules=3;
+        for (let i = 1; i <= totalNumberOfModules; i++) {
+            document.getElementById("module2_" + i).classList.add("hidden");
+        }
+
+        // Show the requested module
+        document.getElementById(moduleId).classList.remove("hidden");
+
+        // Update currentModule
+        currentModule = parseInt(moduleId.split("_")[1]);
+
+        // Scroll to the top of the page
+        window.scrollTo(0, 0);
+    }
+
+    function mapHashToModuleId(hash) {
+        // Mapping each hash to its corresponding module ID for Module 2
+        const hashToModuleMap = {
+            // Assuming you have similar module IDs for Module 2
+            '#chapter2Sub1': 'module2_1',
+            '#chapter2Sub1Sub1': 'module2_1',
+            '#chapter2Sub1Sub2': 'module2_1',
+            // Add more sub-sub-chapters as needed
+
+            '#chapter2Sub2': 'module2_2',
+            '#chapter2Sub2Sub1': 'module2_2',
+            '#chapter2Sub2Sub2': 'module2_2',
+            '#chapter2Sub2Sub3': 'module2_2',
+            '#chapter2Sub2Sub4': 'module2_2',
+            '#chapter2Sub2Sub5': 'module2_2',
+            // Add more sub-sub-chapters as needed
+
+            '#chapter2Sub3': 'module2_3',
+            '#chapter2Sub3Sub1': 'module2_3',
+            '#chapter2Sub3Sub2': 'module2_3',
+            '#chapter2Sub3Sub3': 'module2_3',
+            '#chapter2Sub3Sub4': 'module2_3',
+            '#chapter2Sub3Sub5': 'module2_3',
+            '#chapter2Sub3Sub6': 'module2_3',
+            // Add more sub-sub-chapters as needed
+        };
+
+        return hashToModuleMap[hash] || null;
     }
 </script>
 <script src="assets/js/script.js"></script>

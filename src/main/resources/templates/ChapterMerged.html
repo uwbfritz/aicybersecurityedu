@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Education in Cybersecurity</title>
     <link rel="stylesheet" type="text/css" href="assets/css/style2.css"/><!--ur CSS file -->
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
 <body>
 <div th:include="common :: header"></div>
@@ -21,7 +26,7 @@
     <p>Artificial Intelligence (AI) and Machine Learning (ML) are groundbreaking technologies significantly impacting various sectors, including cybersecurity. These technologies enable machines to perform tasks that traditionally required human intelligence. They are transforming the way we approach complex problems and data analysis, allowing for more efficient and effective solutions.</p>
 
     <!--    Chapter 1.1-->
-    <div>
+    <div id="module1_1">
 
         <h2 id="chapter1Sub1">1.1: Overview of Artificial Intelligence-AI </h2>
         <p>AI refers to the capability of machines to mimic human-like intelligence, encompassing skills such as problem-solving, pattern recognition, and learning from data. In essence, AI provides computers with a level of understanding and decision-making ability that was once considered exclusive to humans. This aspect of AI is particularly significant in fields like cybersecurity, where it aids in identifying and responding to evolving threats through advanced pattern recognition and predictive analysis. AI's role in automating complex tasks, like monitoring network traffic and analyzing security logs, not only enhances efficiency but also allows cybersecurity professionals to focus on more strategic aspects of their work.</p>
@@ -66,7 +71,7 @@
     </div>
 
     <!--    Chapter 1.2-->
-    <div>
+    <div id="module1_2" class="hidden">
 
         <h2 id="chapter1Sub2">1.2: Overview of Machine Learning- ML </h2>
         <p>Machine Learning (ML) is a vital component of AI, distinguished by its ability to enable computers to learn and improve from experience without being explicitly programmed. At its core, ML involves the analysis of large datasets to identify patterns and make informed decisions based on this analysis. A key feature of ML is its adaptability; as it is exposed to new and varied data, an ML system refines its understanding, enhancing its decision-making capabilities. This characteristic is especially beneficial in dynamic fields like cybersecurity, where the nature of threats is constantly evolving. ML systems can keep pace with these changes, often detecting and responding to new threats more swiftly than human operators. Additionally, ML's capacity for handling and learning from large volumes of data is instrumental in automating tasks that are both time-consuming and complex for human analysts, such as sifting through extensive security logs or monitoring network traffic for anomalies. This not only expedites the response to potential cyber threats but also aids in the predictive analysis, providing foresight into potential future vulnerabilities or attack strategies.</p>
@@ -88,7 +93,7 @@
     </div>
 
     <!--    Chapter 1.3-->
-    <div>
+    <div id="module1_3" class="hidden">
 
         <h2 id="chapter1Sub3">1.3: Overview of AI and ML in Cybersecurity Education </h2>
 
@@ -240,7 +245,7 @@
     </div>
 
     <!--    Chapter 1.4-->
-    <div>
+    <div id="module1_4" class="hidden">
 
         <h2 id="chapter1Sub4">1.4: Applications of AI in Cybersecurity</h2>
 
@@ -266,7 +271,7 @@
     </div>
 
     <!--    Chapter 1.5-->
-    <div>
+    <div id="module1_5" class="hidden">
 
         <h2 id="chapter2Sub3">1.5: Benefits and Challenges of AI in Cybersecurity</h2>
 
@@ -314,7 +319,7 @@
     </div>
 
     <center><button onclick="redirectToQuiz()" type="button">Quiz</button></center>
-    <center><button onclick="window.location.href ='/chapter2'" type="button">Next Module</button></center>
+    <center><button onclick="showNextModule()" type="button">Next Module</button></center>
 
 
 </div>
@@ -322,6 +327,92 @@
     function redirectToQuiz() {
         window.location.href = "/module1quiz";
     }
+    let currentModule = 1;  // Starting with Module 1.1
+
+    function showNextModule() {
+        // Hide current module
+        document.getElementById("module1_" + currentModule).classList.add("hidden");
+
+        // Increment module count
+        currentModule++;
+
+        // Show next module
+        const nextModule = document.getElementById("module1_" + currentModule);
+        if (nextModule) {
+            nextModule.classList.remove("hidden");
+            window.scrollTo(0, 0);
+        } else {
+            // If no more modules, maybe redirect or hide the button
+            // For example: document.getElementById("nextButton").classList.add("hidden");
+            window.location.href ='/chapter2'
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        // Check if there is a URL fragment
+        if (window.location.hash) {
+            const hash = window.location.hash; // e.g., #chapter1Sub3Sub2
+
+            // Determine the module to show based on the hash
+            // You'll need to map hash values to your module IDs
+            const moduleToShow = mapHashToModuleId(hash);
+
+            if (moduleToShow) {
+                showModule(moduleToShow);
+            }
+        }
+    });
+
+    function showModule(moduleId) {
+        // Hide all modules first
+        let totalNumberOfModules=5;
+        for (let i = 1; i <= totalNumberOfModules; i++) {
+            document.getElementById("module1_" + i).classList.add("hidden");
+        }
+
+        // Show the requested module
+        document.getElementById(moduleId).classList.remove("hidden");
+
+        // Update currentModule
+        currentModule = parseInt(moduleId.split("_")[1]);
+
+        // Scroll to the top of the page
+        window.scrollTo(0, 0);
+    }
+
+    function mapHashToModuleId(hash) {
+        // Mapping each hash to its corresponding module ID
+        const hashToModuleMap = {
+            '#chapter1Sub1': 'module1_1',
+            '#chapter1Sub1Sub1': 'module1_1',
+            '#chapter1Sub1Sub2': 'module1_1',
+            '#chapter1Sub1Sub3': 'module1_1',
+            '#chapter1Sub1Sub4': 'module1_1',
+
+            '#chapter1Sub2': 'module1_2',
+            '#chapter1Sub2Sub1': 'module1_2',
+            '#chapter1Sub2Sub2': 'module1_2',
+
+            '#chapter1Sub3': 'module1_3',
+            '#chapter1Sub3Sub1': 'module1_3',
+            '#chapter1Sub3Sub2': 'module1_3',
+            '#chapter1Sub3Sub3': 'module1_3',
+            '#chapter1Sub3Sub4': 'module1_3',
+
+            '#chapter1Sub4': 'module1_4',
+            '#chapter1Sub4Sub1': 'module1_4',
+            '#chapter1Sub4Sub2': 'module1_4',
+            '#chapter1Sub4Sub3': 'module1_4',
+
+            '#chapter1Sub5': 'module1_5',
+            '#chapter1Sub5Sub1': 'module1_5',
+            '#chapter1Sub5Sub2': 'module1_5',
+            '#chapter1Sub5Sub3': 'module1_5'
+        };
+
+        return hashToModuleMap[hash] || null;
+    }
+
 </script>
 <script src="assets/js/script.js"></script>
 </body>
