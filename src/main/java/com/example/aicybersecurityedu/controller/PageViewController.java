@@ -102,6 +102,11 @@ public class PageViewController {
         return "draw"; // Returns the home view
     }
 
+    @GetMapping("/contact")
+    public String contact() {
+        return "contact"; // Returns the home view
+    }
+
     @GetMapping("/face")
     public String face() {
         return "faceRecognition"; // Returns the home view

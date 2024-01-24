@@ -505,3 +505,24 @@ button:hover {
     stroke: #ccc;
     stroke-width: 2px;
 }
+/* Style for dropdown content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    /* Add more styles here for positioning and aesthetics */
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Style the dropdown links */
+.dropdown-content a {
+    /* Add styles for your dropdown links */
+}
+
+/* Prevent the dropdown menu from disappearing when you hover over the submenu */
+.dropdown-content a:hover {
+    /* Add hover styles for your dropdown links */
+}
