@@ -4,26 +4,52 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI Education in Cybersecurity</title>
-  <link rel="stylesheet" type="text/css" href="assets/css/style2.css"/><!--ur CSS file -->
+  <link rel="stylesheet" type="text/css" href="assets/css/style2.css"/>
 </head>
 <body>
 <div th:include="common :: header"></div>
 
 <!-- Sidebar for chapters -->
 <div th:include="common :: sidebar"></div>
-<div style="margin-left: 380px">
+
+<!-- Description of Neural Network in Google's AutoDraw -->
+<div id="autoDrawDescription" style="margin-left: 380px">
+  <h2>Understanding AutoDraw's AI</h2>
+  <p>Google's AutoDraw uses advanced neural networks to interpret your sketches and recommend professional drawings from its extensive dataset. As you draw, the AI algorithm analyzes the shapes and patterns, comparing them to a vast library of predefined drawings. This smart tool is a perfect blend of machine learning and art, making drawing accessible to everyone.</p>
+  <p>Imagine you have a super-smart robot friend who loves to guess what you're drawing. You start drawing something, like a cat or a car, and even if your drawing isn't perfect, your robot friend tries really hard to guess what it is.
+
+  </p>
+  <p>This robot friend has looked at thousands of pictures before, so it's really good at guessing. When you draw a line that looks a bit like a cat's ear, the robot remembers all the cat ears it has seen in other drawings and thinks, "Hmm, this might be a cat!"
+
+  </p>
+  <p>
+    The robot does this using something called a 'neural network'. This is like a big, big brain inside the robot made up of tiny parts that work together to recognize patterns. Each part looks at a small piece of your drawing and makes a guess. Then, all these guesses are put together to make a big guess about what your whole drawing is.
+  </p>
+  <p>
+    It's like if you and your friends were trying to guess what's inside a mystery box by feeling only a small part of it. Each of you might feel something different – one feels a tail, another feels whiskers – and then you all guess together that there's probably a toy cat inside the box.
+  </p>
+  <p>
+    That's how AutoDraw's neural network works. It's like a group of friends inside the computer, all working together to guess what you're drawing, making it fun and easy for you to create nice pictures!
+  </p>
+  <button onclick="showAutoDraw()">Try It Yourself</button>
+</div>
+
+<!-- AutoDraw Interface -->
+<div id="autoDrawInterface" style="margin-left: 380px; display:none">
   <iframe  src="https://www.autodraw.com/" width="100%" height="1000px">
-    <!-- This text will display if the browser does not support iframes. -->
     <p>Your browser does not support iframes.</p>
   </iframe>
   <br>
   <button onclick="window.location.href='/chapter3#chapter3Sub5Sub2Sub2'" type="button" style="margin-right: 10px;">Go Back to Modules</button>
 </div>
 
-
-
+<script>
+  function showAutoDraw() {
+    document.getElementById('autoDrawDescription').style.display = 'none';
+    document.getElementById('autoDrawInterface').style.display = 'block';
+  }
+</script>
 
 <script src="assets/js/script.js"></script>
 </body>
 </html>
-
