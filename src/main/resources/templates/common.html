@@ -3,27 +3,67 @@
 <!-- ... [other parts of the file] ... -->
 
 <!-- Define Header Fragment -->
-<div th:fragment="header">
-    <header>
-        <h1>AI Education in Cybersecurity</h1>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/chapter" onclick="openNav()">Modules</a></li>
-<!--                <li class="dropdown">-->
-<!--                    <a href="#virtuallab">Virtual Lab</a>-->
-<!--                    <ul class="dropdown-content">-->
-<!--                        <li><a href="/lab1">Lab 1</a></li>-->
-<!--                        <li><a href="/lab2">Lab 2</a></li>-->
-<!--                        &lt;!&ndash; Add more submenu items here &ndash;&gt;-->
-<!--                    </ul>-->
-<!--                </li>-->
-                <li><a href="/contact">Contact Us</a></li>
-            </ul>
-        </nav>
-    </header>
-</div>
+<!--<div th:fragment="header">-->
+<!--    <header>-->
+<!--        <h1>AI Education in Cybersecurity</h1>-->
+<!--        <nav>-->
+<!--            <ul>-->
+<!--                <li><a href="/">Home</a></li>-->
+<!--                <li><a href="/chapter" onclick="openNav()">Modules</a></li>-->
+<!--&lt;!&ndash;                <li class="dropdown">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <a href="#virtuallab">Virtual Lab</a>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <ul class="dropdown-content">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <li><a href="/lab1">Lab 1</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <li><a href="/lab2">Lab 2</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;                        &lt;!&ndash; Add more submenu items here &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                    </ul>&ndash;&gt;-->
+<!--&lt;!&ndash;                </li>&ndash;&gt;-->
+<!--                <li><a href="/contact">Contact Us</a></li>-->
+<!--            </ul>-->
+<!--        </nav>-->
+<!--    </header>-->
+<!--</div>-->
 
+<div class="headerContent" th:fragment="header">
+    <div class="header">
+        <!-- Logo on the left -->
+        <div>
+            <!--            <img src="assets/images/ndsuextension.png" alt="NDSU Logo" class="logo">-->
+            <h2 id="headerTitle">AI Education in Cybersecurity</h2>
+        </div>
+
+        <!-- Buttons and search box on the right -->
+<!--        <div class="header-buttons">-->
+<!--            <input type="search" class="search-box" placeholder="Search...">-->
+<!--        </div>-->
+    </div>
+
+    <div class="black-bar"></div>
+
+    <!-- Navigation bar below the header -->
+    <nav class="nav-bar">
+
+        <a href="/" class="nav-item">Home</a>
+        <a href="/chapter" class="nav-item">Modules</a>
+
+        <!-- Dropdown for Extension Articles -->
+        <div class="nav-item dropdown">
+            <a href="#" class="nav-link">Virtual Lab</a>
+            <div class="dropdown-content">
+                <a href="/klab">K means clusturing simulation</a>
+                <a href="/spam-email">Email Spam Detection</a>
+                <a href="/draw">Quick Draw by Google</a>
+                <a href="/face">Facial Recognition</a>
+                <a href="/phishing">Phishing Campaigns</a>
+
+
+                <!-- More links as needed -->
+            </div>
+        </div>
+
+        <a href="/contact" class="nav-item">Contact Us</a>
+    </nav>
+</div>
 <!-- Define Sidebar Fragment -->
 <div th:fragment="sidebar">
     <div id="sidebar" class="sidebar">

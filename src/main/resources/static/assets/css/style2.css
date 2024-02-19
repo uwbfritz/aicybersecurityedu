@@ -4,12 +4,154 @@ body, h1, nav ul, nav ul li, nav ul li a {
     box-sizing: border-box; /* Ensures padding doesn't affect overall width */
 }
 
-header {
-    background-color: #658B6F; /* A pleasant blue background for the main header */
+/*header {*/
+/*    background-color: #658B6F; !* A pleasant blue background for the main header *!*/
+/*    color: white;*/
+/*    text-align: center;*/
+/*    padding: 20px 0;*/
+/*    height: 105px;*/
+/*}*/
+
+/*h1 {*/
+/*    margin-bottom: 10px;*/
+/*    font-size: 2.5em;*/
+/*}*/
+
+/*nav {*/
+/*    background-color: #28363D; !* A darker shade of blue for the sub header *!*/
+/*    overflow: hidden; !* Contains floated elements *!*/
+/*}*/
+
+/*nav ul {*/
+/*    list-style-type: none;*/
+/*    padding: 0;*/
+/*}*/
+
+/*nav ul li {*/
+/*    display: inline-block; !* Side by side display *!*/
+/*}*/
+
+/*nav ul li a {*/
+/*    display: block;*/
+/*    color: white;*/
+/*    text-align: center;*/
+/*    padding: 14px 16px;*/
+/*    text-decoration: none;*/
+/*    font-size: 1.2em;*/
+/*    transition: background-color 0.3s; !* Smooth transition for hover effect *!*/
+/*}*/
+
+/*nav ul li a:hover {*/
+/*    background-color: #003366; !* Even darker shade for hover state *!*/
+/*    color: #fff;*/
+/*}*/
+
+/*@media (max-width: 600px) {*/
+/*    nav ul li {*/
+/*        display: block; !* Stacks the navigation items under each other on small screens *!*/
+/*        width: 100%; !* Makes each link full width *!*/
+/*    }*/
+/*}*/
+
+
+/* Header styles */
+
+
+.header {
+    background-color: #0a5640; /* NDSU Green */
     color: white;
-    text-align: center;
-    padding: 20px 0;
-    height: 105px;
+    padding: 10px 20px; /* Increased padding */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* If the logo is not being used and h2 is the title, adjust h2 style */
+/*#headerTitle {*/
+/*    font-family: 'Arial', sans-serif;*/
+/*    font-size: 1.5em; !* Adjust size as needed *!*/
+/*    !* If there is no logo, you might not need padding-left *!*/
+/*}*/
+
+.logo {
+    height: auto;
+    /* Assume the logo is 150px wide; adjust as needed */
+    max-width: 280px;
+    padding-left: 100px;
+}
+
+#headerTitle {
+    height: auto;
+    font-family: 'Arial', sans-serif;
+    /* Assume the logo is 150px wide; adjust as needed */
+    max-width: 400px;
+    padding-left: 100px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-box {
+    padding: 5px;
+    /*padding-right: 100px;*/
+    margin-right: 100px;
+}
+
+/* Navigation bar styles */
+.nav-bar {
+    /*padding-right: 100px;*/
+    background-color: #0a5640; /* Darker green for contrast */
+    padding: 10px 20px; /* Consistent with header padding */
+    display: flex;
+    justify-content: center;
+    /*align-items: center; !* This line ensures vertical centering *!*/
+
+
+}
+
+.black-bar {
+    height: 2px; /* Height of the black bar */
+    background-color: black; /* Color of the bar */
+    width: 100%; /* Makes it span across the full width */
+
+}
+
+.nav-item {
+    /*padding-left: 10px;*/
+    padding-right: 100px;
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+    /*font-weight: bold;*/
+    font-family: Gotham,Helvetica,Arial,sans-serif;
+
+
+}
+
+.nav-item:hover {
+    text-decoration: underline;
+}
+
+/* Buttons on the right side of the header */
+.header-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.header-button {
+    background-color: #ffc72c; /* NDSU Yellow */
+    border: none;
+    color: black;
+    padding: 10px 15px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.header-button:hover {
+    opacity: 0.9;
 }
 
 h1 {
@@ -17,42 +159,58 @@ h1 {
     font-size: 2.5em;
 }
 
-nav {
-    background-color: #28363D; /* A darker shade of blue for the sub header */
-    overflow: hidden; /* Contains floated elements */
+/*--------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------*/
+/* Navigation bar styles */
+/* Show the dropdown content when hovering over dropdown */
+
+.nav-item.dropdown:hover .dropdown-content {
+    display: block; /* Display dropdown content on hover */
 }
 
-nav ul {
-    list-style-type: none;
-    padding: 0;
+
+/* Style for dropdown container */
+.nav-item.dropdown {
+    position: relative; /* Required for absolute positioning of dropdown content */
 }
 
-nav ul li {
-    display: inline-block; /* Side by side display */
+/* Dropdown Content (Hidden by default) */
+.dropdown-content {
+    display: none; /* Hide dropdown content by default */
+    position: absolute;
+    background-color: #f9f9f9; /* Light grey background */
+    min-width: 160px; /* Set a min-width if necessary */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+/* Remove underline and set text color for all nav-item links */
+.nav-bar .nav-item a {
+    text-decoration: none; /* Removes underline */
+    color: white; /* Set to the color you want for your nav items */
 }
 
-nav ul li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: #f1f1f1; /* Dark color for text for visibility */
+    padding: 12px 16px;
     text-decoration: none;
-    font-size: 1.2em;
-    transition: background-color 0.3s; /* Smooth transition for hover effect */
+    display: block;
+    background-color:#063729 ; /* Light background for the dropdown content */
+
 }
 
-nav ul li a:hover {
-    background-color: #003366; /* Even darker shade for hover state */
-    color: #fff;
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #FAE9C7; /* Light grey background on hover */
+    color: #0A5640; /* Change the color as needed for hover state */
+    text-decoration: none; /* Ensures underline doesn't re-appear on hover */
 }
 
-@media (max-width: 600px) {
-    nav ul li {
-        display: block; /* Stacks the navigation items under each other on small screens */
-        width: 100%; /* Makes each link full width */
-    }
-}
 
+/* Optional: style the dropdown links to match your nav-bar */
+.nav-item.dropdown > a {
+    cursor: pointer;
+}
 /*----------------------------Side bar starts here-----------------------------------*/
 
 .sidebar {
