@@ -1,4 +1,3 @@
-# Stage 1: Build the application
 FROM maven:3.8.4-openjdk-11-slim AS build
 RUN apt-get update && apt-get install -y git nodejs npm
 RUN mkdir /app
